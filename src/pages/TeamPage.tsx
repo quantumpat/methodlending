@@ -2,7 +2,7 @@ import { Link } from 'react-router-dom'
 
 const TeamPage = () => (
   <main>
-    <section className="hero-section">
+    <section id="team-hero" className="hero-section">
       <div className="container">
         <div className="row align-items-center g-4">
           <div className="col-lg-6">
@@ -66,7 +66,7 @@ const TeamPage = () => (
       </div>
     </section>
 
-    <section className="section bg-light">
+    <section id="team-leadership" className="section bg-light">
       <div className="container">
         <div className="row g-4">
           <div className="col-12">

@@ -2,7 +2,7 @@ import { Link } from 'react-router-dom'
 
 const LoanOptionsPage = () => (
   <main>
-    <section className="hero-section">
+    <section id="loan-options-hero" className="hero-section hero-section--image hero-section--image-house-2">
       <div className="container">
         <div className="row align-items-center g-4">
           <div className="col-lg-6">
@@ -66,7 +66,7 @@ const LoanOptionsPage = () => (
       </div>
     </section>
 
-    <section className="section bg-light">
+    <section id="loan-options-compare" className="section bg-light">
       <div className="container">
         <div className="row g-4">
           <div className="col-md-6 col-lg-3">

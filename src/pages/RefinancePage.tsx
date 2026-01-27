@@ -2,7 +2,7 @@ import { Link } from 'react-router-dom'
 
 const RefinancePage = () => (
   <main>
-    <section className="hero-section">
+    <section id="refinance-hero" className="hero-section hero-section--image hero-section--image-sky">
       <div className="container">
         <div className="row align-items-center g-4">
           <div className="col-lg-6">
@@ -80,7 +80,7 @@ const RefinancePage = () => (
       </div>
     </section>
 
-    <section className="section bg-light">
+    <section id="refinance-benefits" className="section bg-light">
       <div className="container">
         <div className="row g-4">
           <div className="col-lg-4">

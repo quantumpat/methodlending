@@ -23,6 +23,43 @@ const ScrollToTop = () => {
 }
 
 function App() {
+  const location = useLocation()
+  const footerSectionsByPath: Record<string, { label: string; href: string }[]> = {
+    '/': [
+      { label: 'Hero', href: '/#home' },
+      { label: 'Solutions', href: '/#solutions' },
+      { label: 'Process', href: '/#process' },
+      { label: 'Contact', href: '/#contact' },
+    ],
+    '/purchase': [
+      { label: 'Overview', href: '/purchase#purchase-hero' },
+      { label: 'Why Method', href: '/purchase#purchase-benefits' },
+    ],
+    '/refinance': [
+      { label: 'Overview', href: '/refinance#refinance-hero' },
+      { label: 'Benefits', href: '/refinance#refinance-benefits' },
+    ],
+    '/loan-options': [
+      { label: 'Overview', href: '/loan-options#loan-options-hero' },
+      { label: 'Compare Options', href: '/loan-options#loan-options-compare' },
+    ],
+    '/team': [
+      { label: 'Overview', href: '/team#team-hero' },
+      { label: 'Leadership', href: '/team#team-leadership' },
+    ],
+    '/request-quote': [
+      { label: 'Request Form', href: '/request-quote#request-hero' },
+      { label: 'Next Steps', href: '/request-quote#request-next' },
+    ],
+    '/privacy-policy': [
+      { label: 'Privacy Policy', href: '/privacy-policy#privacy-policy' },
+    ],
+    '/terms-of-use': [
+      { label: 'Terms of Use', href: '/terms-of-use#terms-of-use' },
+    ],
+  }
+  const footerSections = footerSectionsByPath[location.pathname] ?? footerSectionsByPath['/']
+
   return (
     <div className="page">
       <ScrollToTop />
@@ -140,18 +177,11 @@ function App() {
                 <div className="col-6">
                   <div className="footer-heading text-uppercase text-muted">Sections</div>
                   <div className="footer-links d-flex flex-column gap-2">
-                    <a className="text-muted" href="/#home">
-                      Hero
-                    </a>
-                    <a className="text-muted" href="/#solutions">
-                      Solutions
-                    </a>
-                    <a className="text-muted" href="/#process">
-                      Process
-                    </a>
-                    <a className="text-muted" href="/#contact">
-                      Contact
-                    </a>
+                    {footerSections.map((section) => (
+                      <Link key={section.href} className="text-muted" to={section.href}>
+                        {section.label}
+                      </Link>
+                    ))}
                   </div>
                 </div>
                 <div className="col-12 d-flex align-items-center gap-2">

@@ -2,7 +2,7 @@ import { Link } from 'react-router-dom'
 
 const PurchasePage = () => (
   <main>
-    <section className="hero-section">
+    <section id="purchase-hero" className="hero-section">
       <div className="container">
         <div className="row align-items-center g-4">
           <div className="col-lg-6">
@@ -80,7 +80,7 @@ const PurchasePage = () => (
       </div>
     </section>
 
-    <section className="section bg-light">
+    <section id="purchase-benefits" className="section bg-light">
       <div className="container">
         <div className="row g-4">
           <div className="col-lg-4">

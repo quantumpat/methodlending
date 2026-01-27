@@ -2,7 +2,7 @@ import { Link } from 'react-router-dom'
 
 const Home = () => (
   <main>
-    <section id="home" className="hero-section">
+    <section id="home" className="hero-section hero-section--image">
       <div className="container">
         <div className="row align-items-center g-4">
           <div className="col-lg-6">

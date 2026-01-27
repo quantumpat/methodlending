@@ -2,7 +2,7 @@ import { Link } from 'react-router-dom'
 
 const RequestQuotePage = () => (
   <main>
-    <section className="hero-section">
+    <section id="request-hero" className="hero-section">
       <div className="container">
         <div className="row align-items-center g-4">
           <div className="col-lg-6">
@@ -105,7 +105,7 @@ const RequestQuotePage = () => (
       </div>
     </section>
 
-    <section className="section bg-light">
+    <section id="request-next" className="section bg-light">
       <div className="container">
         <div className="row g-4 align-items-center">
           <div className="col-lg-7">
