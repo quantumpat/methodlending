@@ -6,6 +6,12 @@
   font-weight: 400;
   color: #0f172a;
   background-color: #f8fafc;
+  --bs-primary: #0d4e87;
+  --bs-primary-rgb: 13, 78, 135;
+  --bs-primary-bg-subtle: #e6eff7;
+  --bs-primary-border-subtle: #cfe0f1;
+  --bs-link-color: #0d4e87;
+  --bs-link-hover-color: #0a3b66;
   text-rendering: optimizeLegibility;
   -webkit-font-smoothing: antialiased;
   -moz-osx-font-smoothing: grayscale;
@@ -15,6 +21,33 @@ body {
   margin: 0;
   background-color: #f8fafc;
   color: #0f172a;
+}
+
+.btn-primary {
+  --bs-btn-bg: #0d4e87;
+  --bs-btn-border-color: #0d4e87;
+  --bs-btn-hover-bg: #0a3b66;
+  --bs-btn-hover-border-color: #0a3b66;
+  --bs-btn-active-bg: #09345a;
+  --bs-btn-active-border-color: #09345a;
+}
+
+.btn-outline-primary {
+  --bs-btn-color: #0d4e87;
+  --bs-btn-border-color: #0d4e87;
+  --bs-btn-hover-bg: #0d4e87;
+  --bs-btn-hover-border-color: #0d4e87;
+  --bs-btn-active-bg: #0a3b66;
+  --bs-btn-active-border-color: #0a3b66;
+}
+
+.btn-link {
+  color: #0d4e87;
+}
+
+.btn-link:hover,
+.btn-link:focus {
+  color: #0a3b66;
 }
 
 a {
@@ -27,7 +60,7 @@ a {
 
 .hero-section {
   padding: 5.5rem 0 5rem;
-  background: radial-gradient(circle at top right, #e0f2fe, #f8fafc 55%);
+  background: radial-gradient(circle at top right, #d9e8f4, #f8fafc 55%);
 }
 
 .hero-card,
@@ -60,7 +93,7 @@ a {
   width: 0.75rem;
   height: 0.75rem;
   border-radius: 999px;
-  background: #2563eb;
+  background: #0d4e87;
 }
 
 .footer {
