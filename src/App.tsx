@@ -5,8 +5,9 @@ function App() {
     <div className="page">
       <header className="navbar navbar-expand-lg bg-white border-bottom sticky-top shadow-sm">
         <div className="container">
-          <a className="navbar-brand fw-semibold" href="#home">
-            Method Lending
+          <a className="navbar-brand d-flex align-items-center gap-2" href="#home">
+            <img className="navbar-logo" src="/logo.svg" alt="Method Lending logo" />
+            <span className="fw-semibold">Method Lending</span>
           </a>
           <button
             className="navbar-toggler"
@@ -112,7 +113,7 @@ function App() {
                     </div>
                     <div>
                       <p className="text-muted mb-1">Loan sizes</p>
-                      <p className="h4 mb-0">$150k - $3M</p>
+                      <p className="h4 mb-0">$150k - $5M</p>
                     </div>
                   </div>
                 </div>
