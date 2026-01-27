@@ -22,7 +22,7 @@ const Home = () => (
                 Start a conversation
               </a>
               <Link className="btn btn-outline-primary btn-lg" to="/request-quote">
-                Request a quote
+                  Request a Quote
               </Link>
               <a className="btn btn-outline-primary btn-lg" href="/#process">
                 See how it works
@@ -137,7 +137,7 @@ const Home = () => (
             </div>
             <div className="mt-4">
               <Link className="btn btn-primary" to="/request-quote">
-                Request a quote
+                  Request a Quote
               </Link>
             </div>
           </div>
@@ -196,7 +196,7 @@ const Home = () => (
               </div>
               <div className="mt-4">
                 <Link className="btn btn-outline-primary" to="/request-quote">
-                  Request a quote
+                    Request a Quote
                 </Link>
               </div>
             </div>
@@ -269,7 +269,7 @@ const Home = () => (
                   />
                 </div>
                 <button className="btn btn-primary w-100" type="submit">
-                  Request quote
+                    Request a Quote
                 </button>
                 <Link className="btn btn-link mt-3 w-100" to="/request-quote">
                   Go to full request form

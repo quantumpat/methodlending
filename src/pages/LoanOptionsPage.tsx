@@ -18,10 +18,10 @@ const LoanOptionsPage = () => (
             </p>
             <div className="d-flex flex-wrap gap-3">
               <a className="btn btn-primary btn-lg" href="/#contact">
-                Request a quote
+                Request a Quote
               </a>
               <Link className="btn btn-outline-primary btn-lg" to="/request-quote">
-                Start a request
+                Request a Quote
               </Link>
               <a className="btn btn-outline-primary btn-lg" href="/purchase">
                 Start a purchase request
@@ -144,7 +144,7 @@ const LoanOptionsPage = () => (
         </div>
         <div className="mt-4">
           <Link className="btn btn-primary" to="/request-quote">
-            Request a quote
+            Request a Quote
           </Link>
         </div>
       </div>

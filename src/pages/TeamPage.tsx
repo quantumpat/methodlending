@@ -20,9 +20,9 @@ const TeamPage = () => (
               <a className="btn btn-primary btn-lg" href="/#contact">
                 Connect with us
               </a>
-              <Link className="btn btn-outline-primary btn-lg" to="/request-quote">
-                Request a quote
-              </Link>
+                <Link className="btn btn-outline-primary btn-lg" to="/request-quote">
+                  Request a Quote
+                </Link>
               <a className="btn btn-outline-primary btn-lg" href="/loan-options">
                 View loan options
               </a>
@@ -117,9 +117,9 @@ const TeamPage = () => (
           </div>
         </div>
         <div className="mt-4">
-          <Link className="btn btn-primary" to="/request-quote">
-            Request a quote
-          </Link>
+              <Link className="btn btn-primary" to="/request-quote">
+                Request a Quote
+              </Link>
         </div>
       </div>
     </section>

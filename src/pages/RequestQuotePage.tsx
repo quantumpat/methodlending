@@ -7,7 +7,7 @@ const RequestQuotePage = () => (
         <div className="row align-items-center g-4">
           <div className="col-lg-6">
             <p className="text-uppercase text-primary fw-semibold mb-2">
-              Request a quote
+              Request a Quote
             </p>
             <h1 className="display-5 fw-bold">
               Tell us about your deal. We’ll respond fast.

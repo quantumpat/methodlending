@@ -21,7 +21,7 @@ const PurchasePage = () => (
                 Start a purchase request
               </a>
               <Link className="btn btn-outline-primary btn-lg" to="/request-quote">
-                Request a quote
+                Request a Quote
               </Link>
               <a className="btn btn-outline-primary btn-lg" href="/#solutions">
                 Compare loan options
@@ -137,7 +137,7 @@ const PurchasePage = () => (
             </div>
             <div className="mt-4">
               <Link className="btn btn-primary" to="/request-quote">
-                Request a quote
+                Request a Quote
               </Link>
             </div>
           </div>

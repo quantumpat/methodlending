@@ -42,6 +42,9 @@ html::-webkit-scrollbar {
   -webkit-font-smoothing: antialiased;
   -moz-osx-font-smoothing: grayscale;
   text-rendering: optimizeLegibility;
+  min-height: 168px;
+  padding-top: 1.5rem;
+  padding-bottom: 1.5rem;
 }
 
 .navbar .nav-link.active {
@@ -75,6 +78,28 @@ html::-webkit-scrollbar {
 .btn-link:hover,
 .btn-link:focus {
   color: #0a3b66;
+}
+
+.footer {
+  padding-top: 6rem;
+  padding-bottom: 6rem;
+  min-height: 360px;
+}
+
+.footer-logo {
+  height: 64px;
+  width: auto;
+}
+
+.footer-heading {
+  font-size: 0.75rem;
+  letter-spacing: 0.12em;
+  font-weight: 600;
+  margin-bottom: 0.75rem;
+}
+
+.footer-links a {
+  text-decoration: none;
 }
 
 a {
