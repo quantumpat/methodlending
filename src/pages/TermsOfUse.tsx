@@ -1,7 +1,7 @@
 
 const TermsOfUse = () => (
 	<main>
-		<section id="terms-of-use" className="section">
+		<section id="terms-of-use" className="section policy-body">
 			<div className="container">
 				<h1 className="display-6 fw-bold mb-3">Terms of Use</h1>
 				<p className="text-muted mb-4">Effective Date: [Insert Date]</p>

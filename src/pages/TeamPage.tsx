@@ -116,7 +116,7 @@ const TeamPage = () => (
             </div>
           </div>
         </div>
-        <div className="mt-4">
+        <div className="mt-4 text-center">
               <Link className="btn btn-primary" to="/request-quote">
                 Request a Quote
               </Link>

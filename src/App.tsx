@@ -86,10 +86,34 @@ function App() {
                   Home
                 </NavLink>
               </li>
-              <li className="nav-item">
-                <NavLink className={({ isActive }) => `nav-link${isActive ? ' active' : ''}`} to="/purchase">
+              <li className="nav-item dropdown">
+                <NavLink
+                  className={({ isActive }) => `nav-link dropdown-toggle${isActive ? ' active' : ''}`}
+                  to="/purchase"
+                  id="purchaseDropdown"
+                  role="button"
+                  data-bs-toggle="dropdown"
+                  aria-expanded="false"
+                >
                   Purchase
                 </NavLink>
+                <ul className="dropdown-menu" aria-labelledby="purchaseDropdown">
+                  <li>
+                    <Link className="dropdown-item" to="/">
+                      Option 1
+                    </Link>
+                  </li>
+                  <li>
+                    <Link className="dropdown-item" to="/">
+                      Option 2
+                    </Link>
+                  </li>
+                  <li>
+                    <Link className="dropdown-item" to="/">
+                      Option 3
+                    </Link>
+                  </li>
+                </ul>
               </li>
               <li className="nav-item">
                 <NavLink className={({ isActive }) => `nav-link${isActive ? ' active' : ''}`} to="/refinance">

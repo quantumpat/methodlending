@@ -53,6 +53,31 @@ html::-webkit-scrollbar {
   text-underline-offset: 6px;
 }
 
+.navbar .dropdown:hover .dropdown-menu {
+  display: block;
+  margin-top: 0;
+}
+
+.navbar .dropdown-menu {
+  border-radius: 0;
+  border: 1px solid rgba(15, 23, 42, 0.08);
+  box-shadow: 0 10px 30px rgba(15, 23, 42, 0.08);
+  padding: 0;
+  min-width: 12rem;
+}
+
+.navbar .dropdown-item {
+  padding: 0.5rem 1rem;
+  font-weight: 500;
+  color: #0f172a;
+}
+
+.navbar .dropdown-item:hover,
+.navbar .dropdown-item:focus {
+  background-color: #f1f5f9;
+  color: #0f172a;
+}
+
 .btn-primary {
   --bs-btn-bg: #0d4e87;
   --bs-btn-border-color: #0d4e87;
@@ -99,6 +124,12 @@ html::-webkit-scrollbar {
   letter-spacing: 0.12em;
   font-weight: 600;
   margin-bottom: 0.75rem;
+}
+
+.policy-body p,
+.policy-body li {
+  font-family: 'Vend Sans', 'Gowun Dodum', system-ui, -apple-system,
+    BlinkMacSystemFont, 'Segoe UI', sans-serif;
 }
 
 .footer-links a {

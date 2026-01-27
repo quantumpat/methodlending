@@ -1,6 +1,6 @@
 const PrivacyPolicy = () => (
   <main>
-    <section id="privacy-policy" className="section">
+    <section id="privacy-policy" className="section policy-body">
       <div className="container">
         <h1 className="display-6 fw-bold mb-3">Privacy Policy</h1>
         <p className="text-muted mb-4">Effective Date: [Insert Date]</p>
