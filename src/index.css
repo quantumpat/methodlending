@@ -1,7 +1,6 @@
 :root {
   color-scheme: light;
-  font-family: 'Inter', system-ui, -apple-system, BlinkMacSystemFont, 'Segoe UI',
-    sans-serif;
+  font-family: 'Bitter', serif;
   line-height: 1.5;
   font-weight: 400;
   color: #0f172a;
@@ -21,6 +20,34 @@ body {
   margin: 0;
   background-color: #f8fafc;
   color: #0f172a;
+  overflow: auto;
+}
+
+html {
+  scrollbar-width: none;
+  -ms-overflow-style: none;
+}
+
+body::-webkit-scrollbar,
+html::-webkit-scrollbar {
+  width: 0;
+  height: 0;
+}
+
+.navbar {
+  font-family: 'Gowun Dodum', 'Vend Sans', system-ui, -apple-system,
+    BlinkMacSystemFont, 'Segoe UI', sans-serif;
+  font-weight: 500;
+  letter-spacing: 0.2px;
+  -webkit-font-smoothing: antialiased;
+  -moz-osx-font-smoothing: grayscale;
+  text-rendering: optimizeLegibility;
+}
+
+.navbar .nav-link.active {
+  text-decoration: underline;
+  text-decoration-thickness: 2px;
+  text-underline-offset: 6px;
 }
 
 .btn-primary {
@@ -98,4 +125,21 @@ a {
 
 .footer {
   background: #ffffff;
+}
+
+.team-photo {
+  width: 100%;
+  height: 380px;
+  display: block;
+  object-fit: cover;
+  object-position: top center;
+  background: #f8fafc;
+}
+
+.team-photo--aaron {
+  object-position: 50% 20%;
+}
+
+.team-card .card-body {
+  padding: 2rem;
 }

@@ -69,61 +69,57 @@ const TeamPage = () => (
     <section className="section bg-light">
       <div className="container">
         <div className="row g-4">
-          <div className="col-lg-4">
+          <div className="col-12">
             <h2 className="h3 fw-bold">Meet the people behind Method</h2>
             <p className="text-muted">
               Dedicated teams for underwriting, closing, and portfolio support.
             </p>
           </div>
-          <div className="col-lg-8">
-            <div className="row g-4">
-              <div className="col-md-6">
-                <div className="card h-100 border-0 shadow-sm">
-                  <div className="card-body">
-                    <h3 className="h5">Capital Markets</h3>
-                    <p className="text-muted mb-0">
-                      Structures tailored to purchase, rehab, and refinance.
-                    </p>
-                  </div>
-                </div>
+        </div>
+        <div className="row g-4 mt-1">
+          <div className="col-lg-6">
+            <div className="card team-card h-100 border-0 shadow-sm">
+              <img
+                className="card-img-top team-photo team-photo--aaron"
+                src="/images/Aaron%20Iverson.jpg"
+                alt="Aaron Iverson"
+              />
+              <div className="card-body">
+                <h3 className="h5">Aaron Iverson</h3>
+                <p className="fw-semibold mb-2">CEO</p>
+                <p className="text-muted mb-0">
+                  With years of mortgage industry experience, Aaron Iverson is
+                  dedicated to making financing simple and stress-free. He
+                  focuses on clear communication, smart solutions, and building
+                  trust with every client.
+                </p>
               </div>
-              <div className="col-md-6">
-                <div className="card h-100 border-0 shadow-sm">
-                  <div className="card-body">
-                    <h3 className="h5">Underwriting</h3>
-                    <p className="text-muted mb-0">
-                      Fast reviews with clear conditions and next steps.
-                    </p>
-                  </div>
-                </div>
-              </div>
-              <div className="col-md-6">
-                <div className="card h-100 border-0 shadow-sm">
-                  <div className="card-body">
-                    <h3 className="h5">Closing</h3>
-                    <p className="text-muted mb-0">
-                      Dedicated coordinators to keep your timeline on track.
-                    </p>
-                  </div>
-                </div>
-              </div>
-              <div className="col-md-6">
-                <div className="card h-100 border-0 shadow-sm">
-                  <div className="card-body">
-                    <h3 className="h5">Servicing</h3>
-                    <p className="text-muted mb-0">
-                      Support for draws, extensions, and portfolio strategy.
-                    </p>
-                  </div>
-                </div>
-              </div>
-            </div>
-            <div className="mt-4">
-              <Link className="btn btn-primary" to="/request-quote">
-                Request a quote
-              </Link>
             </div>
           </div>
+          <div className="col-lg-6">
+            <div className="card team-card h-100 border-0 shadow-sm">
+              <img
+                className="card-img-top team-photo"
+                src="/images/Miles%20Trotter.jpg"
+                alt="Miles Trotter"
+              />
+              <div className="card-body">
+                <h3 className="h5">Miles Trotter</h3>
+                <p className="fw-semibold mb-2">President</p>
+                <p className="text-muted mb-0">
+                  Miles Trotter brings expertise in both mortgages and real
+                  estate, offering clients a well-rounded perspective. His goal
+                  is to guide borrowers with insight and confidence through
+                  every step of the process.
+                </p>
+              </div>
+            </div>
+          </div>
+        </div>
+        <div className="mt-4">
+          <Link className="btn btn-primary" to="/request-quote">
+            Request a quote
+          </Link>
         </div>
       </div>
     </section>

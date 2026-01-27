@@ -1,4 +1,4 @@
-import { Route, Routes, Link } from 'react-router-dom'
+import { Route, Routes, Link, NavLink } from 'react-router-dom'
 import './App.css'
 import Home from './pages/Home.tsx'
 import PurchasePage from './pages/PurchasePage.tsx'
@@ -28,31 +28,31 @@ function App() {
             <span className="navbar-toggler-icon" />
           </button>
           <div className="collapse navbar-collapse" id="mainNav">
-            <ul className="navbar-nav ms-auto mb-2 mb-lg-0">
+            <ul className="navbar-nav ms-auto mb-2 mb-lg-0 gap-lg-3">
               <li className="nav-item">
-                <Link className="nav-link" to="/">
+                <NavLink className={({ isActive }) => `nav-link${isActive ? ' active' : ''}`} to="/">
                   Home
-                </Link>
+                </NavLink>
               </li>
               <li className="nav-item">
-                <Link className="nav-link" to="/purchase">
+                <NavLink className={({ isActive }) => `nav-link${isActive ? ' active' : ''}`} to="/purchase">
                   Purchase
-                </Link>
+                </NavLink>
               </li>
               <li className="nav-item">
-                <Link className="nav-link" to="/refinance">
+                <NavLink className={({ isActive }) => `nav-link${isActive ? ' active' : ''}`} to="/refinance">
                   Refinance
-                </Link>
+                </NavLink>
               </li>
               <li className="nav-item">
-                <Link className="nav-link" to="/loan-options">
+                <NavLink className={({ isActive }) => `nav-link${isActive ? ' active' : ''}`} to="/loan-options">
                   Loan Options
-                </Link>
+                </NavLink>
               </li>
               <li className="nav-item">
-                <Link className="nav-link" to="/team">
+                <NavLink className={({ isActive }) => `nav-link${isActive ? ' active' : ''}`} to="/team">
                   Our Team
-                </Link>
+                </NavLink>
               </li>
             </ul>
             <Link className="btn btn-primary ms-lg-3" to="/request-quote">
