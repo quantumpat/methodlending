@@ -90,7 +90,7 @@ function App() {
             <span className="navbar-toggler-icon" />
           </button>
           <div className="collapse navbar-collapse" id="mainNav">
-            <ul className="navbar-nav ms-auto mb-2 mb-lg-0 gap-3 gap-lg-5">
+            <ul className="navbar-nav ms-auto mb-2 mb-lg-0 gap-2 gap-lg-4">
               <li className="nav-item">
                 <NavLink className={({ isActive }) => `nav-link${isActive ? ' active' : ''}`} to="/">
                   Home
