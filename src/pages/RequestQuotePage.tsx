@@ -1,7 +1,24 @@
+import { useEffect } from 'react'
 import { Link } from 'react-router-dom'
 
-const RequestQuotePage = () => (
-  <main>
+const RequestQuotePage = () => {
+  useEffect(() => {
+    const existingScript = document.querySelector<HTMLScriptElement>(
+      'script[src="https://assets.calendly.com/assets/external/widget.js"]'
+    )
+
+    if (existingScript) {
+      return
+    }
+
+    const script = document.createElement('script')
+    script.src = 'https://assets.calendly.com/assets/external/widget.js'
+    script.async = true
+    document.body.appendChild(script)
+  }, [])
+
+  return (
+    <main>
     <section id="request-hero" className="hero-section">
       <div className="container">
         <div className="row align-items-center g-4">
@@ -26,80 +43,16 @@ const RequestQuotePage = () => (
             </div>
           </div>
           <div className="col-lg-6">
-            <form className="card border-0 shadow-sm">
-              <div className="card-body p-4 p-md-5">
-                <div className="mb-3">
-                  <label className="form-label" htmlFor="quote-name">
-                    Full name
-                  </label>
-                  <input
-                    className="form-control"
-                    id="quote-name"
-                    placeholder="Alex Morgan"
-                    type="text"
-                  />
-                </div>
-                <div className="mb-3">
-                  <label className="form-label" htmlFor="quote-email">
-                    Email
-                  </label>
-                  <input
-                    className="form-control"
-                    id="quote-email"
-                    placeholder="alex@email.com"
-                    type="email"
-                  />
-                </div>
-                <div className="mb-3">
-                  <label className="form-label" htmlFor="quote-phone">
-                    Phone
-                  </label>
-                  <input
-                    className="form-control"
-                    id="quote-phone"
-                    placeholder="(555) 123-4567"
-                    type="tel"
-                  />
-                </div>
-                <div className="mb-3">
-                  <label className="form-label" htmlFor="quote-type">
-                    Loan type
-                  </label>
-                  <select className="form-select" id="quote-type">
-                    <option>Purchase</option>
-                    <option>Rehab</option>
-                    <option>Bridge</option>
-                    <option>Refinance</option>
-                    <option>Portfolio</option>
-                  </select>
-                </div>
-                <div className="mb-3">
-                  <label className="form-label" htmlFor="quote-amount">
-                    Target loan amount
-                  </label>
-                  <input
-                    className="form-control"
-                    id="quote-amount"
-                    placeholder="$250,000"
-                    type="text"
-                  />
-                </div>
-                <div className="mb-4">
-                  <label className="form-label" htmlFor="quote-details">
-                    Project details
-                  </label>
-                  <textarea
-                    className="form-control"
-                    id="quote-details"
-                    rows={4}
-                    placeholder="Property address, timeline, and your goals."
-                  />
-                </div>
-                <button className="btn btn-primary w-100" type="submit">
-                  Submit request
-                </button>
+            <div className="card border-0 shadow-sm h-100">
+              <div className="card-body p-3 p-md-4">
+                <h2 className="h5 fw-bold mb-3">Schedule a meeting</h2>
+                <div
+                  className="calendly-inline-widget"
+                  data-url="https://calendly.com/d/cxnp-zp2-b7w/15-minute-meeting?hide_gdpr_banner=1&primary_color=3274d2"
+                  style={{ minWidth: '320px', height: '700px' }}
+                />
               </div>
-            </form>
+            </div>
           </div>
         </div>
       </div>
@@ -123,7 +76,8 @@ const RequestQuotePage = () => (
         </div>
       </div>
     </section>
-  </main>
-)
+    </main>
+  )
+}
 
 export default RequestQuotePage

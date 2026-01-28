@@ -16,6 +16,16 @@ const ScrollToTop = () => {
   useEffect(() => {
     if (!location.hash) {
       window.scrollTo({ top: 0, left: 0, behavior: 'instant' })
+      return
+    }
+
+    const elementId = location.hash.replace('#', '')
+    const target = document.getElementById(elementId)
+
+    if (target) {
+      window.setTimeout(() => {
+        target.scrollIntoView({ behavior: 'smooth', block: 'start' })
+      }, 0)
     }
   }, [location.pathname, location.hash])
 
@@ -48,7 +58,7 @@ function App() {
       { label: 'Leadership', href: '/team#team-leadership' },
     ],
     '/request-quote': [
-      { label: 'Request Form', href: '/request-quote#request-hero' },
+      { label: 'Schedule a Meeting', href: '/request-quote#request-hero' },
       { label: 'Next Steps', href: '/request-quote#request-next' },
     ],
     '/privacy-policy': [
@@ -80,7 +90,7 @@ function App() {
             <span className="navbar-toggler-icon" />
           </button>
           <div className="collapse navbar-collapse" id="mainNav">
-            <ul className="navbar-nav ms-auto mb-2 mb-lg-0 gap-lg-3">
+            <ul className="navbar-nav ms-auto mb-2 mb-lg-0 gap-3 gap-lg-5">
               <li className="nav-item">
                 <NavLink className={({ isActive }) => `nav-link${isActive ? ' active' : ''}`} to="/">
                   Home
