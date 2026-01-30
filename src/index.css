@@ -147,6 +147,19 @@ a {
   text-decoration: none;
 }
 
+.btn-loan-options {
+  background-color: #ffffff;
+  border-color: #0f172a;
+  color: #0f172a;
+}
+
+.btn-loan-options:hover,
+.btn-loan-options:focus {
+  background-color: #0f172a;
+  border-color: #0f172a;
+  color: #ffffff;
+}
+
 .section {
   padding: 5rem 0;
 }
@@ -160,6 +173,12 @@ a {
   position: relative;
   background: url('/images/House%201.png') center/cover no-repeat;
   color: #0f172a;
+  image-rendering: high-quality;
+}
+
+#home.hero-section--image {
+  min-height: calc(50vh - 168px);
+  padding: 8.25rem 0 7.5rem;
 }
 
 .hero-section--image-house-2 {
@@ -174,7 +193,7 @@ a {
   content: '';
   position: absolute;
   inset: 0;
-  background: linear-gradient(90deg, rgba(248, 250, 252, 0.95), rgba(248, 250, 252, 0.75) 45%, rgba(15, 23, 42, 0));
+  background: linear-gradient(90deg, rgba(248, 250, 252, 0.3), rgba(248, 250, 252, 0.2) 45%, rgba(15, 23, 42, 0));
   z-index: 0;
 }
 
@@ -235,4 +254,9 @@ a {
 
 .team-card .card-body {
   padding: 2rem;
+}
+
+.light-fade {
+  background: rgba(255, 255, 255, 0.6);
+  backdrop-filter: blur(10px);
 }

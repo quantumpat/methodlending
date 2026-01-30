@@ -167,7 +167,7 @@ function App() {
               <div className="text-muted">© 2026 Method Lending</div>
             </div>
             <div className="col-lg-5">
-              <p className="text-muted mb-0">
+              <p className="text-muted mb-0 hidden">
                 Method Lending is a mortgage brokerage company. NMLS #2753300. Licensed by the California
                 Department of Financial Protection and Innovation under the California Residential Mortgage
                 Lending Act. Equal Housing Opportunity. For licensing information, visit{' '}

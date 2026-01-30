@@ -28,40 +28,6 @@ const TeamPage = () => (
               </a>
             </div>
           </div>
-          <div className="col-lg-6">
-            <div className="hero-card p-4 p-md-5">
-              <h2 className="h4 fw-semibold mb-3">Leadership at a glance</h2>
-              <ul className="list-unstyled mb-0">
-                <li className="d-flex align-items-start gap-3 mb-3">
-                  <span className="badge bg-primary-subtle text-primary">15+</span>
-                  <div>
-                    <strong>Years of lending expertise</strong>
-                    <p className="text-muted mb-0">
-                      Our team has closed hundreds of investor projects.
-                    </p>
-                  </div>
-                </li>
-                <li className="d-flex align-items-start gap-3 mb-3">
-                  <span className="badge bg-primary-subtle text-primary">9</span>
-                  <div>
-                    <strong>Local market analysts</strong>
-                    <p className="text-muted mb-0">
-                      Deep data on submarkets and property performance.
-                    </p>
-                  </div>
-                </li>
-                <li className="d-flex align-items-start gap-3">
-                  <span className="badge bg-primary-subtle text-primary">24/7</span>
-                  <div>
-                    <strong>Client-first support</strong>
-                    <p className="text-muted mb-0">
-                      Quick responses and clear updates at every step.
-                    </p>
-                  </div>
-                </li>
-              </ul>
-            </div>
-          </div>
         </div>
       </div>
     </section>

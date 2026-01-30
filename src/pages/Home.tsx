@@ -5,32 +5,27 @@ const Home = () => (
     <section id="home" className="hero-section hero-section--image">
       <div className="container">
         <div className="row align-items-center g-4">
-          <div className="col-lg-6">
-            <p className="text-uppercase text-primary fw-semibold mb-2">
-              Method Lending
-            </p>
+          <div className="col-lg-8">
             <h1 className="display-5 fw-bold">
-              Modern capital solutions for real estate investors
+              Finding the Right Mortgage for You
             </h1>
+            <h5 className="display-7 fs-3">
+              Your path to home ownership starts here
+            </h5>
             <p className="lead text-muted">
-              Fast, transparent lending for acquisitions, rehab, and bridge
-              financing. We help you close confidently with clear terms and
-              responsive support.
+              Purchase, refinance, and investment opportunity with clarity. <br /> Professional guidance and structure at every step.
             </p>
             <div className="d-flex flex-wrap gap-3">
-              <a className="btn btn-primary btn-lg" href="/#contact">
-                Start a conversation
-              </a>
-              <Link className="btn btn-outline-primary btn-lg" to="/request-quote">
-                  Request a Quote
+              <Link className="btn btn-primary btn-lg" to="/request-quote">
+                Request a Quote
               </Link>
-              <a className="btn btn-outline-primary btn-lg" href="/#process">
-                See how it works
-              </a>
+              <Link className="btn btn-lg btn-loan-options" to="/loan-options">
+                Loan Options
+              </Link>
             </div>
           </div>
           <div className="col-lg-6">
-            <div className="hero-card p-4 p-md-5">
+            <div className="hero-card p-4 p-md-5 hidden">
               <h2 className="h4 fw-semibold mb-3">Funding highlights</h2>
               <ul className="list-unstyled mb-4">
                 <li className="d-flex align-items-start gap-3 mb-3">
