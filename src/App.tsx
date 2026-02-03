@@ -41,6 +41,13 @@ function App() {
   useEffect(() => {
     document.title = 'Method Lending'
   }, [location.pathname])
+  const closeMobileNav = () => {
+    const nav = document.getElementById('mainNav')
+    if (nav?.classList.contains('show')) {
+      const toggler = document.querySelector<HTMLButtonElement>('.navbar-toggler')
+      toggler?.click()
+    }
+  }
   const footerSectionsByPath: Record<string, { label: string; href: string }[]> = {
     '/': [
       { label: 'Hero', href: '/#home' },
@@ -103,32 +110,52 @@ function App() {
           <div className="collapse navbar-collapse" id="mainNav">
             <ul className="navbar-nav ms-auto mb-2 mb-lg-0 gap-2 gap-lg-4">
               <li className="nav-item">
-                <NavLink className={({ isActive }) => `nav-link${isActive ? ' active' : ''}`} to="/">
+                <NavLink
+                  className={({ isActive }) => `nav-link${isActive ? ' active' : ''}`}
+                  to="/"
+                  onClick={closeMobileNav}
+                >
                   Home
                 </NavLink>
               </li>
               <li className="nav-item">
-                <NavLink className={({ isActive }) => `nav-link${isActive ? ' active' : ''}`} to="/purchase">
+                <NavLink
+                  className={({ isActive }) => `nav-link${isActive ? ' active' : ''}`}
+                  to="/purchase"
+                  onClick={closeMobileNav}
+                >
                   Purchase
                 </NavLink>
               </li>
               <li className="nav-item">
-                <NavLink className={({ isActive }) => `nav-link${isActive ? ' active' : ''}`} to="/refinance">
+                <NavLink
+                  className={({ isActive }) => `nav-link${isActive ? ' active' : ''}`}
+                  to="/refinance"
+                  onClick={closeMobileNav}
+                >
                   Refinance
                 </NavLink>
               </li>
               <li className="nav-item">
-                <NavLink className={({ isActive }) => `nav-link${isActive ? ' active' : ''}`} to="/loan-options">
+                <NavLink
+                  className={({ isActive }) => `nav-link${isActive ? ' active' : ''}`}
+                  to="/loan-options"
+                  onClick={closeMobileNav}
+                >
                   Loan Options
                 </NavLink>
               </li>
               <li className="nav-item">
-                <NavLink className={({ isActive }) => `nav-link${isActive ? ' active' : ''}`} to="/team">
+                <NavLink
+                  className={({ isActive }) => `nav-link${isActive ? ' active' : ''}`}
+                  to="/team"
+                  onClick={closeMobileNav}
+                >
                   Our Team
                 </NavLink>
               </li>
             </ul>
-            <Link className="btn btn-primary ms-lg-3" to="/request-quote">
+            <Link className="btn btn-primary ms-lg-3" to="/request-quote" onClick={closeMobileNav}>
               Request a Quote
             </Link>
           </div>
