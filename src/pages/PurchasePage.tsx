@@ -2,7 +2,10 @@ import { Link } from 'react-router-dom'
 
 const PurchasePage = () => (
   <main>
-    <section id="purchase-hero" className="hero-section">
+    <section
+      id="purchase-hero"
+      className="hero-section hero-section--image hero-section--image-sky"
+    >
       <div className="container">
         <div className="row align-items-center g-4">
           <div className="col-lg-6">
@@ -10,11 +13,10 @@ const PurchasePage = () => (
               Purchase lending
             </p>
             <h1 className="display-5 fw-bold">
-              Acquisition capital built for fast closings
+              DSCR purchase loans built for real estate investors.
             </h1>
             <p className="lead text-muted">
-              Move quickly on your next deal with clear terms, dedicated
-              underwriting, and a streamlined checklist.
+              Our DSCR programs focus on the property’s ability to generate cash flow, allowing investors to qualify based on rental income rather than personal earnings.
             </p>
             <div className="d-flex flex-wrap gap-3">
               <a className="btn btn-primary btn-lg" href="/#contact">
