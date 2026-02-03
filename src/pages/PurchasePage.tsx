@@ -28,54 +28,6 @@ const PurchasePage = () => (
               </a>
             </div>
           </div>
-          <div className="col-lg-6">
-            <div className="hero-card p-4 p-md-5">
-              <h2 className="h4 fw-semibold mb-3">Purchase checklist</h2>
-              <ul className="list-unstyled mb-4">
-                <li className="d-flex align-items-start gap-3 mb-3">
-                  <span className="badge bg-primary-subtle text-primary">01</span>
-                  <div>
-                    <strong>Property details</strong>
-                    <p className="text-muted mb-0">
-                      Address, purchase price, rehab scope, and exit strategy.
-                    </p>
-                  </div>
-                </li>
-                <li className="d-flex align-items-start gap-3 mb-3">
-                  <span className="badge bg-primary-subtle text-primary">02</span>
-                  <div>
-                    <strong>Borrower profile</strong>
-                    <p className="text-muted mb-0">
-                      Entity name, experience summary, and liquidity snapshot.
-                    </p>
-                  </div>
-                </li>
-                <li className="d-flex align-items-start gap-3">
-                  <span className="badge bg-primary-subtle text-primary">03</span>
-                  <div>
-                    <strong>Timeline</strong>
-                    <p className="text-muted mb-0">
-                      Target close date, inspection timing, and seller needs.
-                    </p>
-                  </div>
-                </li>
-              </ul>
-              <div className="d-flex flex-wrap gap-4">
-                <div>
-                  <p className="text-muted mb-1">Max LTV</p>
-                  <p className="h4 mb-0">85%</p>
-                </div>
-                <div>
-                  <p className="text-muted mb-1">Close in</p>
-                  <p className="h4 mb-0">7 days</p>
-                </div>
-                <div>
-                  <p className="text-muted mb-1">Rates from</p>
-                  <p className="h4 mb-0">9.5%</p>
-                </div>
-              </div>
-            </div>
-          </div>
         </div>
       </div>
     </section>

@@ -28,54 +28,6 @@ const RefinancePage = () => (
               </a>
             </div>
           </div>
-          <div className="col-lg-6">
-            <div className="hero-card p-4 p-md-5">
-              <h2 className="h4 fw-semibold mb-3">Refinance checklist</h2>
-              <ul className="list-unstyled mb-4">
-                <li className="d-flex align-items-start gap-3 mb-3">
-                  <span className="badge bg-primary-subtle text-primary">01</span>
-                  <div>
-                    <strong>Current loan summary</strong>
-                    <p className="text-muted mb-0">
-                      Rate, term, payoff amount, and closing timeline.
-                    </p>
-                  </div>
-                </li>
-                <li className="d-flex align-items-start gap-3 mb-3">
-                  <span className="badge bg-primary-subtle text-primary">02</span>
-                  <div>
-                    <strong>Property financials</strong>
-                    <p className="text-muted mb-0">
-                      Rent roll, operating expenses, and stabilization plan.
-                    </p>
-                  </div>
-                </li>
-                <li className="d-flex align-items-start gap-3">
-                  <span className="badge bg-primary-subtle text-primary">03</span>
-                  <div>
-                    <strong>Exit strategy</strong>
-                    <p className="text-muted mb-0">
-                      Hold, refinance again, or sell within a set timeframe.
-                    </p>
-                  </div>
-                </li>
-              </ul>
-              <div className="d-flex flex-wrap gap-4">
-                <div>
-                  <p className="text-muted mb-1">Max LTV</p>
-                  <p className="h4 mb-0">80%</p>
-                </div>
-                <div>
-                  <p className="text-muted mb-1">Term</p>
-                  <p className="h4 mb-0">12-36 mo</p>
-                </div>
-                <div>
-                  <p className="text-muted mb-1">Close in</p>
-                  <p className="h4 mb-0">10 days</p>
-                </div>
-              </div>
-            </div>
-          </div>
         </div>
       </div>
     </section>

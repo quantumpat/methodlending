@@ -42,12 +42,12 @@ const LoanOptionsPage = () => (
               <div className="card-body">
                 <h3 className="h5">DSCR</h3>
                 <p className="text-muted">
-                  High leverage for quick closings and competitive offers.
+                  Qualify on property cash flow for faster, investor-ready approvals.
                 </p>
                 <ul className="list-unstyled text-muted">
-                  <li>Up to 85% LTV</li>
-                  <li>Close in 7 days</li>
-                  <li>Rates from 9.5%</li>
+                  <li>Offer One</li>
+                  <li>Offer Two</li>
+                  <li>Offer Three</li>
                 </ul>
                 <a className="btn btn-link p-0" href="/request-quote">
                   Explore
@@ -60,12 +60,12 @@ const LoanOptionsPage = () => (
               <div className="card-body">
                 <h3 className="h5">Non-QM</h3>
                 <p className="text-muted">
-                  Draw schedules with clear scopes and inspections.
+                  Alternative documentation and flexible terms for complex income.
                 </p>
                 <ul className="list-unstyled text-muted">
-                  <li>Up to 90% LTC</li>
-                  <li>Same-week draws</li>
-                  <li>Flexible scopes</li>
+                  <li>Offer One</li>
+                  <li>Offer Two</li>
+                  <li>Offer Three</li>
                 </ul>
                 <a className="btn btn-link p-0" href="/request-quote">
                   Explore
@@ -78,12 +78,12 @@ const LoanOptionsPage = () => (
               <div className="card-body">
                 <h3 className="h5">FHA</h3>
                 <p className="text-muted">
-                  Short-term options for timing gaps and refinances.
+                  Low down payment options with government-backed guidelines.
                 </p>
                 <ul className="list-unstyled text-muted">
-                  <li>12-24 month terms</li>
-                  <li>Interest-only</li>
-                  <li>Fast approvals</li>
+                  <li>Offer One</li>
+                  <li>Offer Two</li>
+                  <li>Offer Three</li>
                 </ul>
                 <a className="btn btn-link p-0" href="/request-quote">
                   Explore
@@ -96,12 +96,12 @@ const LoanOptionsPage = () => (
               <div className="card-body">
                 <h3 className="h5">HELOC</h3>
                 <p className="text-muted">
-                  Scalable financing for repeat investors and growing teams.
+                  Revolving credit that taps equity as projects and needs change.
                 </p>
                 <ul className="list-unstyled text-muted">
-                  <li>Cross-collateral</li>
-                  <li>Custom pricing</li>
-                  <li>Dedicated PM</li>
+                  <li>Offer One</li>
+                  <li>Offer Two</li>
+                  <li>Offer Three</li>
                 </ul>
                 <a className="btn btn-link p-0" href="/request-quote">
                   Explore

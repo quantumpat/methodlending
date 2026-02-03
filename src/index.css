@@ -105,6 +105,10 @@ html::-webkit-scrollbar {
   color: #0a3b66;
 }
 
+.btn {
+  border-radius: 0.125rem;
+}
+
 .footer {
   padding-top: 6rem;
   padding-bottom: 6rem;
@@ -149,7 +153,7 @@ a {
 
 .btn-loan-options {
   background-color: #ffffff;
-  border-color: #0f172a;
+  border-color: #f0f0f0;
   color: #0f172a;
 }
 
@@ -167,6 +171,45 @@ a {
 .hero-section {
   padding: 5.5rem 0 5rem;
   background: radial-gradient(circle at top right, #d9e8f4, #f8fafc 55%);
+}
+
+#purchase-hero.hero-section {
+  background: #0b3f6c;
+  color: #ffffff;
+  border-top: 8px solid #224f7d;
+  border-bottom: 8px solid #224f7d;
+}
+
+#purchase-hero .text-muted {
+  color: rgba(255, 255, 255, 0.75) !important;
+}
+
+#purchase-hero .text-primary {
+  color: #f5f5f5 !important;
+  background-color: #4169e1;
+  display: inline-block;
+  padding: 0.25rem 0.75rem;
+  border-radius: 0.25rem;
+}
+
+#purchase-hero .btn,
+#purchase-hero .btn:hover,
+#purchase-hero .btn:focus {
+  background-color: #ffffff;
+  border-color: #ffffff;
+  color: #333333;
+}
+
+#purchase-hero .btn {
+  text-decoration: none;
+  transition: color 0.2s ease, border-color 0.2s ease;
+}
+
+#purchase-hero .btn:hover,
+#purchase-hero .btn:focus {
+  text-decoration: underline;
+  text-underline-offset: 4px;
+  text-decoration-thickness: 2px;
 }
 
 .hero-section--image {

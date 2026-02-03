@@ -24,51 +24,6 @@ const Home = () => (
               </Link>
             </div>
           </div>
-          <div className="col-lg-6">
-            <div className="hero-card p-4 p-md-5 hidden">
-              <h2 className="h4 fw-semibold mb-3">Funding highlights</h2>
-              <ul className="list-unstyled mb-4">
-                <li className="d-flex align-items-start gap-3 mb-3">
-                  <span className="badge bg-primary-subtle text-primary">1</span>
-                  <div>
-                    <strong>Fast approvals</strong>
-                    <p className="text-muted mb-0">
-                      Same-week decisions with streamlined underwriting.
-                    </p>
-                  </div>
-                </li>
-                <li className="d-flex align-items-start gap-3 mb-3">
-                  <span className="badge bg-primary-subtle text-primary">2</span>
-                  <div>
-                    <strong>Flexible terms</strong>
-                    <p className="text-muted mb-0">
-                      Short-term, rehab, and bridge products tailored to your
-                      strategy.
-                    </p>
-                  </div>
-                </li>
-                <li className="d-flex align-items-start gap-3">
-                  <span className="badge bg-primary-subtle text-primary">3</span>
-                  <div>
-                    <strong>Dedicated support</strong>
-                    <p className="text-muted mb-0">
-                      Real people, clear updates, and a partner in your corner.
-                    </p>
-                  </div>
-                </li>
-              </ul>
-              <div className="d-flex flex-wrap gap-3">
-                <div>
-                  <p className="text-muted mb-1">Typical close</p>
-                  <p className="h4 mb-0">7-10 days</p>
-                </div>
-                <div>
-                  <p className="text-muted mb-1">Loan sizes</p>
-                  <p className="h4 mb-0">$150k - $5M</p>
-                </div>
-              </div>
-            </div>
-          </div>
         </div>
       </div>
     </section>
@@ -77,10 +32,10 @@ const Home = () => (
       <div className="container">
         <div className="row g-4">
           <div className="col-lg-4">
-            <h2 className="h3 fw-bold">Solutions built for speed</h2>
+            <h2 className="h3 fw-bold">Loan options built for you</h2>
             <p className="text-muted">
-              We specialize in lending that keeps projects moving with
-              predictable draws and clear milestones.
+              Compare products designed for acquisitions, rehabs, bridge needs,
+              and portfolio growth.
             </p>
           </div>
           <div className="col-lg-8">
@@ -88,10 +43,9 @@ const Home = () => (
               <div className="col-md-6">
                 <div className="card h-100 border-0 shadow-sm">
                   <div className="card-body">
-                    <h3 className="h5">Acquisition Loans</h3>
+                    <h3 className="h5">DSCR</h3>
                     <p className="text-muted mb-0">
-                      Competitive terms for property purchases with quick
-                      turnarounds.
+                      Qualify on property cash flow for faster, investor-ready approvals.
                     </p>
                   </div>
                 </div>
@@ -99,10 +53,9 @@ const Home = () => (
               <div className="col-md-6">
                 <div className="card h-100 border-0 shadow-sm">
                   <div className="card-body">
-                    <h3 className="h5">Rehab Financing</h3>
+                    <h3 className="h5">Non-QM</h3>
                     <p className="text-muted mb-0">
-                      Structured draw schedules and clear budgets for renovation
-                      work.
+                      Alternative documentation and flexible terms for complex income.
                     </p>
                   </div>
                 </div>
@@ -110,10 +63,9 @@ const Home = () => (
               <div className="col-md-6">
                 <div className="card h-100 border-0 shadow-sm">
                   <div className="card-body">
-                    <h3 className="h5">Bridge Loans</h3>
+                    <h3 className="h5">FHA</h3>
                     <p className="text-muted mb-0">
-                      Short-term flexibility to cover timing gaps or refinance
-                      quickly.
+                      Low down payment options with government-backed guidelines.
                     </p>
                   </div>
                 </div>
@@ -121,10 +73,9 @@ const Home = () => (
               <div className="col-md-6">
                 <div className="card h-100 border-0 shadow-sm">
                   <div className="card-body">
-                    <h3 className="h5">Portfolio Support</h3>
+                    <h3 className="h5">HELOC</h3>
                     <p className="text-muted mb-0">
-                      Scaling guidance and repeat borrower perks as your
-                      portfolio grows.
+                      Revolving credit that taps equity as projects and needs change.
                     </p>
                   </div>
                 </div>
