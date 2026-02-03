@@ -36,6 +36,22 @@ const Home = () => (
       </div>
     </section>
 
+    <section className="section">
+      <div className="container">
+        <div className="hero-cta-grid">
+          <Link className="hero-cta-button" to="/refinance#refinance-cash-out">
+            Access Equity
+          </Link>
+          <Link className="hero-cta-button" to="/refinance">
+            Refinance
+          </Link>
+          <Link className="hero-cta-button" to="/purchase">
+            Buy a home
+          </Link>
+        </div>
+      </div>
+    </section>
+
     <section id="solutions" className="section bg-light">
       <div className="container">
         <div className="row g-4">
@@ -53,37 +69,37 @@ const Home = () => (
                   <div className="card-body">
                     <h3 className="h5">DSCR</h3>
                     <p className="text-muted mb-0">
-                      Qualify on property cash flow for faster, investor-ready approvals.
+                      Debt Service Coverage Ratio loans for real estate investors, qualifying on rental income instead of personal income.
                     </p>
                   </div>
                 </div>
               </div>
               <div className="col-md-6">
-                <div className="card h-100 border-0 shadow-sm">
+                <div className="card h-100 border-0 shadow-sm hidden">
                   <div className="card-body">
                     <h3 className="h5">Non-QM</h3>
                     <p className="text-muted mb-0">
-                      Alternative documentation and flexible terms for complex income.
+                      Flexible financing for self-employed borrowers, investors, and non-traditional income sources.
                     </p>
                   </div>
                 </div>
               </div>
               <div className="col-md-6">
-                <div className="card h-100 border-0 shadow-sm">
+                <div className="card h-100 border-0 shadow-sm hidden">
                   <div className="card-body">
                     <h3 className="h5">FHA</h3>
                     <p className="text-muted mb-0">
-                      Low down payment options with government-backed guidelines.
+                      Government-backed mortgages with lower down payment requirements and flexible credit guidelines.
                     </p>
                   </div>
                 </div>
               </div>
               <div className="col-md-6">
-                <div className="card h-100 border-0 shadow-sm">
+                <div className="card h-100 border-0 shadow-sm hidden">
                   <div className="card-body">
                     <h3 className="h5">HELOC</h3>
                     <p className="text-muted mb-0">
-                      Revolving credit that taps equity as projects and needs change.
+                      A flexible line of credit that lets homeowners borrow against their home equity.
                     </p>
                   </div>
                 </div>
@@ -175,7 +191,7 @@ const Home = () => (
                     </p>
                     <div className="contact-card p-4">
                       <p className="mb-1 fw-semibold">Contact</p>
-                      <p className="text-muted mb-3">contact@methodlending.com</p>
+                      <p className="text-muted mb-3">aiverson@methodlending.com <br />mtrotter@methodlending.com</p>
                       <p className="mb-1 fw-semibold">Office</p>
                       <p className="text-muted mb-0">San Juan Capistrano, CA</p>
                     </div>

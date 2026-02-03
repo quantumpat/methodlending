@@ -87,6 +87,15 @@ html::-webkit-scrollbar {
   --bs-btn-active-border-color: #09345a;
 }
 
+.btn-success {
+  --bs-btn-bg: #0d4e87;
+  --bs-btn-border-color: #0d4e87;
+  --bs-btn-hover-bg: #0a3b66;
+  --bs-btn-hover-border-color: #0a3b66;
+  --bs-btn-active-bg: #09345a;
+  --bs-btn-active-border-color: #09345a;
+}
+
 .btn-outline-primary {
   --bs-btn-color: #0d4e87;
   --bs-btn-border-color: #0d4e87;
@@ -243,6 +252,110 @@ a {
 .hero-section--image .container {
   position: relative;
   z-index: 1;
+}
+
+.check-list {
+  list-style: none;
+  padding-left: 0;
+  margin: 1.5rem 0;
+  display: grid;
+  gap: 0.75rem;
+  color: #0f172a;
+}
+
+.check-list li {
+  position: relative;
+  padding-left: 2rem;
+  font-weight: 500;
+}
+
+.check-list li::before {
+  content: '✓';
+  position: absolute;
+  left: 0;
+  top: 0;
+  color: #0d4e87;
+  font-weight: 700;
+}
+
+.refinance-eligibility-image {
+  width: 100%;
+  border-radius: 1rem;
+  box-shadow: 0 16px 35px rgba(15, 23, 42, 0.12);
+  object-fit: cover;
+  max-height: 320px;
+}
+
+input:required:invalid,
+select:required:invalid,
+textarea:required:invalid {
+  border-color: #dc2626;
+  box-shadow: 0 0 0 0.2rem rgba(220, 38, 38, 0.15);
+}
+
+input:required:invalid:focus,
+select:required:invalid:focus,
+textarea:required:invalid:focus {
+  border-color: #dc2626;
+  box-shadow: 0 0 0 0.25rem rgba(220, 38, 38, 0.2);
+}
+
+.section-highlight {
+  position: relative;
+}
+
+.section-highlight::after {
+  content: '';
+  position: absolute;
+  inset: 0;
+  background: rgba(13, 78, 135, 0.14);
+  border-radius: 0.5rem;
+  pointer-events: none;
+  animation: section-highlight-fade 0.8s ease-out forwards;
+}
+
+@keyframes section-highlight-fade {
+  from {
+    opacity: 1;
+  }
+  to {
+    opacity: 0;
+  }
+}
+
+.hero-cta-grid {
+  margin-top: 0;
+  display: grid;
+  grid-template-columns: repeat(3, minmax(0, 1fr));
+  gap: 1.5rem;
+  width: 100%;
+}
+
+.hero-cta-button {
+  background: #ffffff;
+  color: #0f172a;
+  border: 1px solid rgba(15, 23, 42, 0.1);
+  border-radius: 0.5rem;
+  padding: 2.25rem 2rem;
+  font-size: 1.35rem;
+  font-weight: 600;
+  text-align: center;
+  box-shadow: 0 12px 30px rgba(15, 23, 42, 0.1);
+  transition: transform 0.2s ease, box-shadow 0.2s ease, border-color 0.2s ease, color 0.2s ease;
+}
+
+@media (max-width: 992px) {
+  .hero-cta-grid {
+    grid-template-columns: 1fr;
+  }
+}
+
+.hero-cta-button:hover,
+.hero-cta-button:focus {
+  color: #0d4e87;
+  border-color: rgba(13, 78, 135, 0.35);
+  box-shadow: 0 18px 40px rgba(15, 23, 42, 0.14);
+  transform: translateY(-2px);
 }
 
 .hero-card,

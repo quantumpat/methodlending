@@ -50,13 +50,11 @@ const LoanOptionsPage = () => (
               <div className="card-body">
                 <h3 className="h5">DSCR</h3>
                 <p className="text-muted">
-                  Qualify on property cash flow for faster, investor-ready approvals.
+                  Debt Service Coverage Ratio loans are designed for real estate investors. Qualification is primarily based on the property's rental income rather than personal income.
                 </p>
-                <ul className="list-unstyled text-muted">
-                  <li>Offer One</li>
-                  <li>Offer Two</li>
-                  <li>Offer Three</li>
-                </ul>
+                <p className="text-muted mb-0">
+                  These loans are ideal for investors looking to scale without traditional income documentation.
+                </p>
                 <a className="btn btn-link p-0" href="/request-quote">
                   Explore
                 </a>
@@ -64,17 +62,12 @@ const LoanOptionsPage = () => (
             </div>
           </div>
           <div className="col-md-6 col-lg-3">
-            <div className="card h-100 border-0 shadow-sm">
+            <div className="card h-100 border-0 shadow-sm hidden">
               <div className="card-body">
                 <h3 className="h5">Non-QM</h3>
                 <p className="text-muted">
-                  Alternative documentation and flexible terms for complex income.
+                  Non-Qualified Mortgage loans offer flexible financing options for borrowers who don’t fit traditional lending guidelines. Ideal for self-employed individuals, investors, and borrowers with non-traditional income sources.
                 </p>
-                <ul className="list-unstyled text-muted">
-                  <li>Offer One</li>
-                  <li>Offer Two</li>
-                  <li>Offer Three</li>
-                </ul>
                 <a className="btn btn-link p-0" href="/request-quote">
                   Explore
                 </a>
@@ -82,17 +75,15 @@ const LoanOptionsPage = () => (
             </div>
           </div>
           <div className="col-md-6 col-lg-3">
-            <div className="card h-100 border-0 shadow-sm">
+            <div className="card h-100 border-0 shadow-sm hidden">
               <div className="card-body">
                 <h3 className="h5">FHA</h3>
                 <p className="text-muted">
-                  Low down payment options with government-backed guidelines.
+                  FHA loans are government-backed mortgages designed to help first-time and low-to-moderate income borrowers achieve homeownership.
                 </p>
-                <ul className="list-unstyled text-muted">
-                  <li>Offer One</li>
-                  <li>Offer Two</li>
-                  <li>Offer Three</li>
-                </ul>
+                <p className="text-muted mb-0">
+                  These loans typically offer lower down payment requirements and more flexible credit guidelines. Buying a home for the American family.
+                </p>
                 <a className="btn btn-link p-0" href="/request-quote">
                   Explore
                 </a>
@@ -100,17 +91,15 @@ const LoanOptionsPage = () => (
             </div>
           </div>
           <div className="col-md-6 col-lg-3">
-            <div className="card h-100 border-0 shadow-sm">
+            <div className="card h-100 border-0 shadow-sm hidden">
               <div className="card-body">
                 <h3 className="h5">HELOC</h3>
                 <p className="text-muted">
-                  Revolving credit that taps equity as projects and needs change.
+                  A Home Equity Line of Credit allows homeowners to borrow against the equity in their home.
                 </p>
-                <ul className="list-unstyled text-muted">
-                  <li>Offer One</li>
-                  <li>Offer Two</li>
-                  <li>Offer Three</li>
-                </ul>
+                <p className="text-muted mb-0">
+                  Funds can be accessed as needed, making it a flexible option for renovations, investments, or major expenses.
+                </p>
                 <a className="btn btn-link p-0" href="/request-quote">
                   Explore
                 </a>

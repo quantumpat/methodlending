@@ -62,20 +62,35 @@ const RequestQuotePage = () => {
                   method="post"
                   encType="text/plain"
                 >
-                  <div className="mb-3">
-                    <label className="form-label" htmlFor="quote-name">
-                      Full name
-                    </label>
-                    <input
-                      className="form-control"
-                      id="quote-name"
-                      name="name"
-                      placeholder="Alex Morgan"
-                      type="text"
-                      required
-                    />
+                  <div className="row g-3">
+                    <div className="col-md-6">
+                      <label className="form-label" htmlFor="quote-name">
+                        Full name
+                      </label>
+                      <input
+                        className="form-control"
+                        id="quote-name"
+                        name="name"
+                        placeholder="Alex Morgan"
+                        type="text"
+                        required
+                      />
+                    </div>
+                    <div className="col-md-6">
+                      <label className="form-label" htmlFor="quote-phone">
+                        Phone
+                      </label>
+                      <input
+                        className="form-control"
+                        id="quote-phone"
+                        name="phone"
+                        placeholder="(555) 123-4567"
+                        type="tel"
+                        required
+                      />
+                    </div>
                   </div>
-                  <div className="mb-3">
+                  <div className="mb-3 mt-3">
                     <label className="form-label" htmlFor="quote-email">
                       Email
                     </label>
@@ -88,17 +103,60 @@ const RequestQuotePage = () => {
                       required
                     />
                   </div>
+                  <div className="mb-3">
+                    <label className="form-label" htmlFor="quote-address">
+                      Property address (optional)
+                    </label>
+                    <input
+                      className="form-control"
+                      id="quote-address"
+                      name="propertyAddress"
+                      placeholder="123 Main St, San Juan Capistrano, CA"
+                      type="text"
+                    />
+                  </div>
+                  <div className="row g-3 mb-3">
+                    <div className="col-md-6">
+                      <label className="form-label" htmlFor="quote-purpose">
+                        Loan purpose
+                      </label>
+                      <select
+                        className="form-select"
+                        id="quote-purpose"
+                        name="purpose"
+                        required
+                        defaultValue=""
+                      >
+                        <option value="" disabled>
+                          Select purchase or refinance
+                        </option>
+                        <option value="purchase">Purchase</option>
+                        <option value="refinance">Refinance</option>
+                      </select>
+                    </div>
+                    <div className="col-md-6">
+                      <label className="form-label" htmlFor="quote-amount">
+                        Loan amount sought (optional)
+                      </label>
+                      <input
+                        className="form-control"
+                        id="quote-amount"
+                        name="loanAmount"
+                        placeholder="$350,000"
+                        type="text"
+                      />
+                    </div>
+                  </div>
                   <div className="mb-4 flex-grow-1 d-flex flex-column">
                     <label className="form-label" htmlFor="quote-message">
-                      Deal details
+                      Details
                     </label>
                     <textarea
                       className="form-control flex-grow-1"
                       id="quote-message"
-                      name="message"
-                      placeholder="Property type, timeline, and amount needed."
+                      name="details"
+                      placeholder="Property type, timeline, and any special circumstances."
                       style={{ resize: 'none', overflowY: 'auto' }}
-                      required
                     />
                   </div>
                   <button className="btn btn-primary w-100" type="submit">
@@ -114,7 +172,7 @@ const RequestQuotePage = () => {
                 <h2 className="h5 fw-bold mb-3">Schedule a meeting</h2>
                 <div
                   className="calendly-inline-widget"
-                  data-url="https://calendly.com/d/cxnp-zp2-b7w/15-minute-meeting?hide_gdpr_banner=1&primary_color=3274d2"
+                  data-url="https://calendly.com/aiverson-methodlending/discovery-call?hide_gdpr_banner=1"
                   style={{ minWidth: '320px', height: '700px' }}
                 />
               </div>

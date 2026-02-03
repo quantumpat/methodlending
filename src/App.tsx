@@ -25,6 +25,10 @@ const ScrollToTop = () => {
     if (target) {
       window.setTimeout(() => {
         target.scrollIntoView({ behavior: 'smooth', block: 'start' })
+        target.classList.add('section-highlight')
+        window.setTimeout(() => {
+          target.classList.remove('section-highlight')
+        }, 800)
       }, 0)
     }
   }, [location.pathname, location.hash])
@@ -51,6 +55,8 @@ function App() {
     '/refinance': [
       { label: 'Overview', href: '/refinance#refinance-hero' },
       { label: 'Benefits', href: '/refinance#refinance-benefits' },
+      { label: 'Is refinancing right?', href: '/refinance#refinance-eligibility' },
+      { label: 'Cash-out', href: '/refinance#refinance-cash-out' },
     ],
     '/loan-options': [
       { label: 'Overview', href: '/loan-options#loan-options-hero' },
