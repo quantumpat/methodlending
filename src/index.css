@@ -78,6 +78,38 @@ html::-webkit-scrollbar {
   color: #0f172a;
 }
 
+.navbar-toggler--animated {
+  border: 0;
+  padding: 0.5rem;
+  width: 44px;
+  height: 44px;
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  justify-content: center;
+  gap: 6px;
+}
+
+.navbar-toggler--animated .navbar-toggler-line {
+  display: block;
+  width: 24px;
+  height: 2px;
+  background-color: #0f172a;
+  transition: transform 0.2s ease, opacity 0.2s ease;
+}
+
+.navbar-toggler--animated[aria-expanded='true'] .navbar-toggler-line:nth-child(1) {
+  transform: translateY(8px) rotate(45deg);
+}
+
+.navbar-toggler--animated[aria-expanded='true'] .navbar-toggler-line:nth-child(2) {
+  opacity: 0;
+}
+
+.navbar-toggler--animated[aria-expanded='true'] .navbar-toggler-line:nth-child(3) {
+  transform: translateY(-8px) rotate(-45deg);
+}
+
 .btn-primary {
   --bs-btn-bg: #0d4e87;
   --bs-btn-border-color: #0d4e87;

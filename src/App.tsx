@@ -88,7 +88,7 @@ function App() {
             <img className="navbar-logo" src="/images/Method%20Logo%20Trace.png" alt="Method logo" />
           </Link>
           <button
-            className="navbar-toggler"
+            className="navbar-toggler navbar-toggler--animated"
             type="button"
             data-bs-toggle="collapse"
             data-bs-target="#mainNav"
@@ -96,7 +96,9 @@ function App() {
             aria-expanded="false"
             aria-label="Toggle navigation"
           >
-            <span className="navbar-toggler-icon" />
+            <span className="navbar-toggler-line" />
+            <span className="navbar-toggler-line" />
+            <span className="navbar-toggler-line" />
           </button>
           <div className="collapse navbar-collapse" id="mainNav">
             <ul className="navbar-nav ms-auto mb-2 mb-lg-0 gap-2 gap-lg-4">
