@@ -34,6 +34,9 @@ const ScrollToTop = () => {
 
 function App() {
   const location = useLocation()
+  useEffect(() => {
+    document.title = 'Method Lending'
+  }, [location.pathname])
   const footerSectionsByPath: Record<string, { label: string; href: string }[]> = {
     '/': [
       { label: 'Hero', href: '/#home' },
