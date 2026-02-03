@@ -21,6 +21,14 @@ const LoanOptionsPage = () => (
                 <a className="btn btn-primary btn-lg" href="/#contact">
                   Request a Quote
                 </a>
+                <a
+                  className="btn btn-success btn-lg"
+                  href="http://methodlending.loanzify.io/register"
+                  target="_blank"
+                  rel="noopener noreferrer"
+                >
+                  Apply Now
+                </a>
                 <Link className="btn btn-outline-primary btn-lg" to="/request-quote">
                   Request a Quote
                 </Link>

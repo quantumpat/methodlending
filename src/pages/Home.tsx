@@ -19,6 +19,14 @@ const Home = () => (
               <Link className="btn btn-primary btn-lg" to="/request-quote">
                 Request a Quote
               </Link>
+              <a
+                className="btn btn-success btn-lg"
+                href="http://methodlending.loanzify.io/register"
+                target="_blank"
+                rel="noopener noreferrer"
+              >
+                Apply Now
+              </a>
               <Link className="btn btn-lg btn-loan-options" to="/loan-options">
                 Loan Options
               </Link>
@@ -81,11 +89,6 @@ const Home = () => (
                 </div>
               </div>
             </div>
-            <div className="mt-4">
-              <Link className="btn btn-primary" to="/request-quote">
-                  Request a Quote
-              </Link>
-            </div>
           </div>
         </div>
       </div>
@@ -124,25 +127,31 @@ const Home = () => (
           <div className="col-lg-6">
             <div className="process-card p-4 p-md-5">
               <p className="text-uppercase text-muted fw-semibold mb-2">
-                Sample timeline
+                Why borrowers choose us
               </p>
-              <div className="d-flex justify-content-between">
-                <div>
-                  <p className="h2 mb-0">Day 1</p>
-                  <p className="text-muted">Initial review</p>
-                </div>
-                <div>
-                  <p className="h2 mb-0">Day 4</p>
-                  <p className="text-muted">Term sheet</p>
-                </div>
-                <div>
-                  <p className="h2 mb-0">Day 9</p>
-                  <p className="text-muted">Funds released</p>
-                </div>
-              </div>
+              <ul className="list-unstyled mb-4">
+                <li className="d-flex gap-3 align-items-start mb-3">
+                  <div>
+                    <p className="h2 mb-0">Fast</p>
+                    <p className="text-muted mb-0">Clear updates from application to close.</p>
+                  </div>
+                </li>
+                <li className="d-flex gap-3 align-items-start mb-3">
+                  <div>
+                    <p className="h2 mb-0">Flexible</p>
+                    <p className="text-muted mb-0">Solutions for purchase, refinance, and investment.</p>
+                  </div>
+                </li>
+                <li className="d-flex gap-3 align-items-start">
+                  <div>
+                    <p className="h2 mb-0">Supported</p>
+                    <p className="text-muted mb-0">A lending specialist helps you every step.</p>
+                  </div>
+                </li>
+              </ul>
               <div className="mt-4">
                 <Link className="btn btn-outline-primary" to="/request-quote">
-                    Request a Quote
+                  Request a Quote
                 </Link>
               </div>
             </div>
@@ -153,75 +162,40 @@ const Home = () => (
 
     <section id="contact" className="section bg-light">
       <div className="container">
-        <div className="row g-4 align-items-center">
-          <div className="col-lg-6">
-            <h2 className="h3 fw-bold">Let’s build your funding plan</h2>
-            <p className="text-muted">
-              Tell us about your next deal and we’ll follow up with a tailored
-              quote.
-            </p>
-            <div className="contact-card p-4">
-              <p className="mb-1 fw-semibold">Contact</p>
-              <p className="text-muted mb-3">hello@methodlending.com</p>
-              <p className="mb-1 fw-semibold">Office</p>
-              <p className="text-muted mb-0">Austin, TX</p>
-            </div>
-          </div>
-          <div className="col-lg-6">
-            <form className="card border-0 shadow-sm">
-              <div className="card-body p-4">
-                <div className="mb-3">
-                  <label className="form-label" htmlFor="name">
-                    Full name
-                  </label>
-                  <input
-                    className="form-control"
-                    id="name"
-                    placeholder="Alex Morgan"
-                    type="text"
-                  />
+        <div className="row g-4">
+          <div className="col-12">
+            <div className="card border-0 shadow-sm">
+              <div className="card-body p-4 p-md-5">
+                <div className="row g-4 align-items-center">
+                  <div className="col-lg-8">
+                    <h2 className="h3 fw-bold">Apply Now</h2>
+                    <p className="text-muted">
+                      Start your application to get matched with the right lending
+                      options.
+                    </p>
+                    <div className="contact-card p-4">
+                      <p className="mb-1 fw-semibold">Contact</p>
+                      <p className="text-muted mb-3">contact@methodlending.com</p>
+                      <p className="mb-1 fw-semibold">Office</p>
+                      <p className="text-muted mb-0">San Juan Capistrano, CA</p>
+                    </div>
+                  </div>
+                  <div className="col-lg-4">
+                    <p className="text-muted mb-4">
+                      Complete a quick online application to get started.
+                    </p>
+                    <a
+                      className="btn btn-success btn-lg w-100"
+                      href="http://methodlending.loanzify.io/register"
+                      target="_blank"
+                      rel="noopener noreferrer"
+                    >
+                      Apply Now
+                    </a>
+                  </div>
                 </div>
-                <div className="mb-3">
-                  <label className="form-label" htmlFor="email">
-                    Email
-                  </label>
-                  <input
-                    className="form-control"
-                    id="email"
-                    placeholder="alex@email.com"
-                    type="email"
-                  />
-                </div>
-                <div className="mb-3">
-                  <label className="form-label" htmlFor="project">
-                    Project type
-                  </label>
-                  <select className="form-select" id="project">
-                    <option>Acquisition</option>
-                    <option>Rehab</option>
-                    <option>Bridge</option>
-                    <option>Portfolio</option>
-                  </select>
-                </div>
-                <div className="mb-4">
-                  <label className="form-label" htmlFor="details">
-                    Project details
-                  </label>
-                  <textarea
-                    className="form-control"
-                    id="details"
-                    rows={4}
-                    placeholder="Tell us about your property and timeline."
-                  />
-                </div>
-                <button className="btn btn-primary w-100" type="submit">
-                    Request a Quote
-                </button>
-                <Link className="btn btn-link mt-3 w-100" to="/request-quote">
-                  Go to full request form
-                </Link>
               </div>
-            </form>
+            </div>
           </div>
         </div>
       </div>

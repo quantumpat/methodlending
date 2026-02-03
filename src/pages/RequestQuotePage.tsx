@@ -42,7 +42,73 @@ const RequestQuotePage = () => {
               </a>
             </div>
           </div>
-          <div className="col-lg-6">
+        </div>
+      </div>
+    </section>
+
+    <section id="request-connect" className="section bg-light">
+      <div className="container">
+        <div className="row g-4">
+          <div className="col-12 col-lg-6">
+            <div className="card border-0 shadow-sm h-100">
+              <div className="card-body p-3 p-md-4 h-100 d-flex flex-column">
+                <h2 className="h5 fw-bold mb-3">Email us instead</h2>
+                <p className="text-muted">
+                  Share a few details and we will reply within one business day.
+                </p>
+                <form
+                  className="d-flex flex-column flex-grow-1"
+                  action="mailto:hello@methodlending.com"
+                  method="post"
+                  encType="text/plain"
+                >
+                  <div className="mb-3">
+                    <label className="form-label" htmlFor="quote-name">
+                      Full name
+                    </label>
+                    <input
+                      className="form-control"
+                      id="quote-name"
+                      name="name"
+                      placeholder="Alex Morgan"
+                      type="text"
+                      required
+                    />
+                  </div>
+                  <div className="mb-3">
+                    <label className="form-label" htmlFor="quote-email">
+                      Email
+                    </label>
+                    <input
+                      className="form-control"
+                      id="quote-email"
+                      name="email"
+                      placeholder="alex@email.com"
+                      type="email"
+                      required
+                    />
+                  </div>
+                  <div className="mb-4 flex-grow-1 d-flex flex-column">
+                    <label className="form-label" htmlFor="quote-message">
+                      Deal details
+                    </label>
+                    <textarea
+                      className="form-control flex-grow-1"
+                      id="quote-message"
+                      name="message"
+                      placeholder="Property type, timeline, and amount needed."
+                      style={{ resize: 'none', overflowY: 'auto' }}
+                      required
+                    />
+                  </div>
+                  <button className="btn btn-primary w-100" type="submit">
+                    Send email
+                  </button>
+                </form>
+              </div>
+            </div>
+          </div>
+          <div className="col-12 col-lg-6">
             <div className="card border-0 shadow-sm h-100">
               <div className="card-body p-3 p-md-4">
                 <h2 className="h5 fw-bold mb-3">Schedule a meeting</h2>

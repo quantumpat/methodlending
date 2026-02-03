@@ -59,6 +59,9 @@ const TeamPage = () => (
                   focuses on clear communication, smart solutions, and building
                   trust with every client.
                 </p>
+                <p className="mt-3 mb-0">
+                  <a href="mailto:aiverson@methodlending.com">aiverson@methodlending.com</a>
+                </p>
               </div>
             </div>
           </div>
@@ -77,6 +80,9 @@ const TeamPage = () => (
                   estate, offering clients a well-rounded perspective. His goal
                   is to guide borrowers with insight and confidence through
                   every step of the process.
+                </p>
+                <p className="mt-3 mb-0">
+                  <a href="mailto:mtrotter@methodlending.com">mtrotter@methodlending.com</a>
                 </p>
               </div>
             </div>
