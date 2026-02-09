@@ -20,3 +20,13 @@ This project is Vercel-ready. Import the repository in Vercel and use the defaul
 
 - Build command: `npm run build`
 - Output directory: `dist`
+
+### Email form configuration
+
+Set the following environment variables in Vercel (Project Settings -> Environment Variables):
+
+- `SMTP_HOST`
+- `SMTP_PORT`
+- `SMTP_USER`
+- `SMTP_PASS`
+- `SMTP_FROM` (optional, defaults to `SMTP_USER`)

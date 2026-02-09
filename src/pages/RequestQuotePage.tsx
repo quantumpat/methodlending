@@ -1,7 +1,10 @@
-import { useEffect } from 'react'
+import { useEffect, useState, type FormEvent } from 'react'
 import { Link } from 'react-router-dom'
 
 const RequestQuotePage = () => {
+  const [submitStatus, setSubmitStatus] = useState<'idle' | 'sending' | 'success' | 'error'>('idle')
+  const [submitMessage, setSubmitMessage] = useState('')
+
   useEffect(() => {
     const existingScript = document.querySelector<HTMLScriptElement>(
       'script[src="https://assets.calendly.com/assets/external/widget.js"]'
@@ -16,6 +19,42 @@ const RequestQuotePage = () => {
     script.async = true
     document.body.appendChild(script)
   }, [])
+
+  const handleSubmit = async (event: FormEvent<HTMLFormElement>) => {
+    event.preventDefault()
+    if (submitStatus === 'sending') {
+      return
+    }
+
+    setSubmitStatus('sending')
+    setSubmitMessage('')
+
+    const form = event.currentTarget
+    const formData = new FormData(form)
+    const payload = Object.fromEntries(
+      Array.from(formData.entries()).map(([key, value]) => [key, String(value).trim()])
+    )
+
+    try {
+      const response = await fetch('/api/send-quote', {
+        method: 'POST',
+        headers: {
+          'Content-Type': 'application/json',
+        },
+        body: JSON.stringify(payload),
+      })
+
+      if (!response.ok) {
+        throw new Error('Request failed')
+      }
+
+      setSubmitStatus('success')
+      form.reset()
+    } catch {
+      setSubmitStatus('error')
+      setSubmitMessage('We could not send your request. Please try again or email us directly.')
+    }
+  }
 
   return (
     <main>
@@ -58,9 +97,7 @@ const RequestQuotePage = () => {
                 </p>
                 <form
                   className="d-flex flex-column flex-grow-1"
-                  action="mailto:hello@methodlending.com"
-                  method="post"
-                  encType="text/plain"
+                  onSubmit={handleSubmit}
                 >
                   <div className="row g-3">
                     <div className="col-md-6">
@@ -159,9 +196,23 @@ const RequestQuotePage = () => {
                       style={{ resize: 'none', overflowY: 'auto' }}
                     />
                   </div>
-                  <button className="btn btn-primary w-100" type="submit">
-                    Send email
+                  <button
+                    className="btn btn-primary w-100"
+                    type="submit"
+                    disabled={submitStatus === 'sending'}
+                  >
+                    {submitStatus === 'sending' ? 'Sending...' : 'Send email'}
                   </button>
+                  {submitStatus === 'success' && (
+                    <p className="text-success mt-3 mb-0" role="status">
+                      Thanks! We received your request and will reply within one business day.
+                    </p>
+                  )}
+                  {submitStatus === 'error' && (
+                    <p className="text-danger mt-3 mb-0" role="alert">
+                      {submitMessage}
+                    </p>
+                  )}
                 </form>
               </div>
             </div>
