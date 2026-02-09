@@ -3,6 +3,11 @@ import nodemailer from 'nodemailer'
 const getString = (value) => (typeof value === 'string' ? value.trim() : '')
 
 export default async function handler(req, res) {
+  console.log('send-quote request', {
+    method: req.method,
+    hasBody: Boolean(req.body),
+  })
+
   if (req.method !== 'POST') {
     res.setHeader('Allow', 'POST')
     return res.status(405).json({ error: 'Method Not Allowed' })
@@ -13,6 +18,7 @@ export default async function handler(req, res) {
     try {
       payload = JSON.parse(payload)
     } catch {
+      console.warn('send-quote invalid JSON payload')
       return res.status(400).json({ error: 'Invalid payload.' })
     }
   }
@@ -36,8 +42,21 @@ export default async function handler(req, res) {
   const smtpFrom = process.env.SMTP_FROM
 
   if (!smtpHost || !smtpPort || !smtpUser || !smtpPass) {
+    console.error('send-quote SMTP config missing', {
+      smtpHostPresent: Boolean(smtpHost),
+      smtpPortPresent: Boolean(smtpPort),
+      smtpUserPresent: Boolean(smtpUser),
+      smtpPassPresent: Boolean(smtpPass),
+    })
     return res.status(500).json({ error: 'Email service not configured.' })
   }
+
+  console.log('send-quote SMTP config', {
+    host: smtpHost,
+    port: smtpPort,
+    user: smtpUser,
+    from: smtpFrom ?? smtpUser,
+  })
 
   const transporter = nodemailer.createTransport({
     host: smtpHost,
@@ -62,6 +81,11 @@ export default async function handler(req, res) {
   ].join('\n')
 
   try {
+    console.log('send-quote email send attempt', {
+      to: recipients,
+      subject,
+      replyTo: email,
+    })
     await transporter.sendMail({
       from: smtpFrom ?? `Method Lending <${smtpUser}>`,
       to: recipients,
@@ -70,9 +94,14 @@ export default async function handler(req, res) {
       replyTo: email,
     })
 
+    console.log('send-quote email sent')
     return res.status(200).json({ ok: true })
   } catch (error) {
-    console.error('Failed to send quote email', error)
-    return res.status(500).json({ error: 'Failed to send email.' })
+    const message = error instanceof Error ? error.message : 'Unknown error'
+    console.error('Failed to send quote email', {
+      message,
+      error,
+    })
+    return res.status(500).json({ error: 'Failed to send email.', message })
   }
 }
