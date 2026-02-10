@@ -188,7 +188,6 @@ const PurchaseCalculator = () => {
     if (rent && payment.pitia && showDSCRCalculator) {
       const dscrValue = rent / payment.pitia
       setCalculatedDSCR(dscrValue)
-      setDscr(dscrValue >= 1.0 ? '1.00+' : '<1.00')
     }
   }, [monthlyRent, payment.pitia, showDSCRCalculator])
 
