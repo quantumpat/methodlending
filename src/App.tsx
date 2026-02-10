@@ -158,6 +158,15 @@ function App() {
             <Link className="btn btn-primary ms-lg-3" to="/request-quote" onClick={closeMobileNav}>
               Request a Quote
             </Link>
+            <a
+              className="btn btn-success ms-lg-2"
+              href="http://methodlending.loanzify.io/register"
+              target="_blank"
+              rel="noopener noreferrer"
+              onClick={closeMobileNav}
+            >
+              Apply Now
+            </a>
           </div>
         </div>
       </header>
