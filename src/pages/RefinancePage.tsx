@@ -1,4 +1,5 @@
 import { Link } from 'react-router-dom'
+import PurchaseCalculator from '../components/PurchaseCalculator'
 
 const RefinancePage = () => (
   <main>
@@ -31,6 +32,8 @@ const RefinancePage = () => (
         </div>
       </div>
     </section>
+
+    <PurchaseCalculator />
 
     <section id="refinance-benefits" className="section bg-light">
       <div className="container">
