@@ -155,18 +155,20 @@ function App() {
                 </NavLink>
               </li>
             </ul>
-            <Link className="btn btn-primary ms-lg-3" to="/request-quote" onClick={closeMobileNav}>
-              Request a Quote
-            </Link>
-            <a
-              className="btn btn-success ms-lg-2"
-              href="http://methodlending.loanzify.io/register"
-              target="_blank"
-              rel="noopener noreferrer"
-              onClick={closeMobileNav}
-            >
-              Apply Now
-            </a>
+            <div className="d-flex flex-column flex-lg-row gap-2 ms-lg-3">
+              <Link className="btn btn-primary w-100 w-lg-auto" to="/request-quote" onClick={closeMobileNav}>
+                Request a Quote
+              </Link>
+              <a
+                className="btn btn-success w-100 w-lg-auto"
+                href="http://methodlending.loanzify.io/register"
+                target="_blank"
+                rel="noopener noreferrer"
+                onClick={closeMobileNav}
+              >
+                Apply Now
+              </a>
+            </div>
           </div>
         </div>
       </header>
