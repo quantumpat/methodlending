@@ -1,6 +1,13 @@
 import nodemailer from 'nodemailer'
 
 const getString = (value) => (typeof value === 'string' ? value.trim() : '')
+const escapeHtml = (value) =>
+  String(value)
+    .replace(/&/g, '&amp;')
+    .replace(/</g, '&lt;')
+    .replace(/>/g, '&gt;')
+    .replace(/"/g, '&quot;')
+    .replace(/'/g, '&#39;')
 
 export default async function handler(req, res) {
   console.log('send-quote request', {
@@ -69,16 +76,91 @@ export default async function handler(req, res) {
   })
 
   const recipients = 'aiverson@methodlending.com, mtrotter@methodlending.com'
+  const purposeLabel =
+    purpose === 'purchase' ? 'Purchase' : purpose === 'refinance' ? 'Refinance' : purpose || 'N/A'
   const subject = `New quote request - ${name}`
   const text = [
+    'New quote request',
+    '',
+    'Contact',
     `Name: ${name}`,
     `Phone: ${phone}`,
     `Email: ${email}`,
-    `Property address: ${propertyAddress || 'N/A'}`,
-    `Purpose: ${purpose}`,
+    '',
+    'Loan details',
+    `Purpose: ${purposeLabel}`,
     `Loan amount: ${loanAmount || 'N/A'}`,
-    `Details: ${details || 'N/A'}`,
+    `Property address: ${propertyAddress || 'N/A'}`,
+    '',
+    'Notes',
+    `${details || 'N/A'}`,
   ].join('\n')
+
+  const html = `
+    <div style="background:#f3f6fb;padding:24px 0;font-family:'Segoe UI',Arial,sans-serif;color:#0f172a;">
+      <table role="presentation" cellspacing="0" cellpadding="0" border="0" width="100%">
+        <tr>
+          <td align="center">
+            <table role="presentation" cellspacing="0" cellpadding="0" border="0" width="620" style="width:620px;max-width:92%;background:#ffffff;border:1px solid #e2e8f0;border-radius:12px;overflow:hidden;">
+              <tr>
+                <td style="padding:24px 28px;background:linear-gradient(135deg,#e6eff7 0%,#ffffff 70%);">
+                  <div style="text-transform:uppercase;letter-spacing:2px;font-size:11px;color:#0d4e87;font-weight:700;">Method Lending</div>
+                  <div style="font-size:22px;font-weight:700;margin-top:8px;">New quote request</div>
+                  <div style="font-size:14px;color:#475569;margin-top:6px;">Reply directly to contact the client.</div>
+                </td>
+              </tr>
+              <tr>
+                <td style="padding:22px 28px;">
+                  <div style="font-size:13px;text-transform:uppercase;letter-spacing:1.6px;color:#0d4e87;font-weight:700;margin-bottom:10px;">Contact</div>
+                  <table role="presentation" cellspacing="0" cellpadding="0" border="0" width="100%" style="font-size:14px;">
+                    <tr>
+                      <td style="padding:6px 0;color:#64748b;width:160px;">Name</td>
+                      <td style="padding:6px 0;font-weight:600;">${escapeHtml(name)}</td>
+                    </tr>
+                    <tr>
+                      <td style="padding:6px 0;color:#64748b;">Phone</td>
+                      <td style="padding:6px 0;font-weight:600;">${escapeHtml(phone)}</td>
+                    </tr>
+                    <tr>
+                      <td style="padding:6px 0;color:#64748b;">Email</td>
+                      <td style="padding:6px 0;font-weight:600;">${escapeHtml(email)}</td>
+                    </tr>
+                  </table>
+                </td>
+              </tr>
+              <tr>
+                <td style="padding:0 28px 22px;">
+                  <div style="font-size:13px;text-transform:uppercase;letter-spacing:1.6px;color:#0d4e87;font-weight:700;margin-bottom:10px;">Loan details</div>
+                  <table role="presentation" cellspacing="0" cellpadding="0" border="0" width="100%" style="font-size:14px;">
+                    <tr>
+                      <td style="padding:6px 0;color:#64748b;width:160px;">Purpose</td>
+                      <td style="padding:6px 0;font-weight:600;">${escapeHtml(purposeLabel)}</td>
+                    </tr>
+                    <tr>
+                      <td style="padding:6px 0;color:#64748b;">Loan amount</td>
+                      <td style="padding:6px 0;font-weight:600;">${escapeHtml(loanAmount || 'N/A')}</td>
+                    </tr>
+                    <tr>
+                      <td style="padding:6px 0;color:#64748b;">Property address</td>
+                      <td style="padding:6px 0;font-weight:600;">${escapeHtml(propertyAddress || 'N/A')}</td>
+                    </tr>
+                  </table>
+                </td>
+              </tr>
+              <tr>
+                <td style="padding:0 28px 26px;">
+                  <div style="font-size:13px;text-transform:uppercase;letter-spacing:1.6px;color:#0d4e87;font-weight:700;margin-bottom:10px;">Notes</div>
+                  <div style="background:#f8fafc;border:1px solid #e2e8f0;border-radius:10px;padding:14px;font-size:14px;line-height:1.6;color:#0f172a;">
+                    ${escapeHtml(details || 'N/A')}
+                  </div>
+                </td>
+              </tr>
+            </table>
+          </td>
+        </tr>
+      </table>
+    </div>
+  `
 
   try {
     console.log('send-quote email send attempt', {
@@ -91,6 +173,7 @@ export default async function handler(req, res) {
       to: recipients,
       subject,
       text,
+      html,
       replyTo: email,
     })
 
