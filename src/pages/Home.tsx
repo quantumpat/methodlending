@@ -186,13 +186,14 @@ const Home = () => (
 
     <section id="contact" className="section">
       <div className="container">
-        <div className="col-lg-4">
-        </div>
+        <div className="row-g-4">
+          <div className="col-lg-4"></div>
           <div className="col-lg-4">
             <Link className="btn btn-primary btn-lg w-100" to="/request-quote">
               Request a Quote
             </Link>
           </div>
+        </div>
       </div>
     </section>
   </main>
