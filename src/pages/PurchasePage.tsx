@@ -3,45 +3,13 @@ import PurchaseCalculator from '../components/PurchaseCalculator'
 
 const PurchasePage = () => (
   <main>
-    <section
-      id="purchase-hero"
-      className="hero-section hero-section--image hero-section--image-sky"
-    >
-      <div className="container">
-        <div className="row align-items-center g-4">
-          <div className="col-lg-6">
-            <p className="text-uppercase text-primary fw-semibold mb-2">
-              Purchase lending
-            </p>
-            <h1 className="display-5 fw-bold">
-              DSCR purchase loans built for real estate investors.
-            </h1>
-            <p className="lead text-muted">
-              Our DSCR programs focus on the property’s ability to generate cash flow, allowing investors to qualify based on rental income rather than personal earnings.
-            </p>
-            <div className="d-flex flex-wrap gap-3">
-              <Link className="btn btn-primary btn-lg" to="/request-quote">
-                Request a Quote
-              </Link>
-              <a className="btn btn-outline-primary btn-lg" href="/loan-options">
-                Compare loan options
-              </a>
-            </div>
-          </div>
-        </div>
-      </div>
-    </section>
-
-    <PurchaseCalculator />
-
-    <section id="purchase-benefits" className="section bg-light">
+    <section id="purchase-highlights" className="section bg-light">
       <div className="container">
         <div className="row g-4">
           <div className="col-lg-4">
-            <h2 className="h3 fw-bold">Why investors choose Method</h2>
+            <h2 className="h3 fw-bold">Business Purpose/DSCR highlights</h2>
             <p className="text-muted">
-              A purchase experience designed around speed, clarity, and
-              predictable draws.
+              Proven DSCR purchase lending built for business-purpose investment properties.
             </p>
           </div>
           <div className="col-lg-8">
@@ -89,13 +57,20 @@ const PurchasePage = () => (
                 </div>
               </div>
             </div>
-            <div className="mt-4">
-              <Link className="btn btn-primary" to="/request-quote">
-                Request a Quote
-              </Link>
-            </div>
           </div>
         </div>
+      </div>
+    </section>
+
+    <PurchaseCalculator />
+
+    <section id="purchase-cta" className="section bg-primary text-white">
+      <div className="container text-center">
+        <h2 className="h2 fw-bold">Ready to start your purchase?</h2>
+        <p className="lead">Get a custom DSCR purchase quote for your investment property.</p>
+        <Link className="btn btn-light" to="/request-quote">
+          Request a Quote
+        </Link>
       </div>
     </section>
   </main>
