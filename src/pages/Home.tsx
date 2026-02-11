@@ -67,69 +67,67 @@ const Home = () => (
     <section id="solutions" className="section bg-light">
       <div className="container">
         <div className="row g-4">
-          <div className="col-lg-4">
+          <div className="col-12">
             <h2 className="h3 fw-bold">Loan options built for you</h2>
-            <p className="text-muted">
+            <p className="text-muted mb-0">
               Business-purpose financing solutions built for real estate investors.
             </p>
           </div>
-          <div className="col-lg-8">
-            <div className="row g-4">
-              <div className="col-md-6">
-                <div className="card h-100 border-0 shadow-sm loan-option-card">
-                  <div className="card-body">
-                    <h3 className="h5">DSCR</h3>
-                    <ul className="text-muted mb-0">
-                      <li>Purchase financing for income-producing investment properties</li>
-                      <li>Qualification based on property cash flow and debt service coverage</li>
-                      <li>Business-purpose, non-owner-occupied transactions only</li>
-                    </ul>
-                  </div>
-                </div>
-              </div>
-              <div className="col-md-6">
-                <div className="card h-100 border-0 shadow-sm loan-option-card">
-                  <div className="card-body">
-                    <h3 className="h5">Asset Utilization</h3>
-                    <ul className="text-muted mb-0">
-                      <li>Uses verified assets in place of traditional income documentation</li>
-                      <li>Ideal for investors with strong balance sheets and complex cash flow</li>
-                      <li>Business-purpose real estate financing only</li>
-                    </ul>
-                  </div>
-                </div>
-              </div>
-              <div className="col-md-6">
-                <div className="card h-100 border-0 shadow-sm loan-option-card">
-                  <div className="card-body">
-                    <h3 className="h5">Bank Statement and Alt Doc for Business Purpose</h3>
-                    <ul className="text-muted mb-0">
-                      <li>Uses business bank statements or alternative financial records in place of traditional income</li>
-                      <li>Designed for self-employed investors and entity-owned properties</li>
-                      <li>Business-purpose real estate transactions only</li>
-                    </ul>
-                  </div>
-                </div>
-              </div>
-              <div className="col-md-6">
-                <div className="card h-100 border-0 shadow-sm loan-option-card">
-                  <div className="card-body">
-                    <h3 className="h5">Multi-Unit Property</h3>
-                    <ul className="text-muted mb-0">
-                      <li>Financing for 5+ unit residential investment properties</li>
-                      <li>Focused on cash flow, scale, and long-term portfolio growth</li>
-                      <li>Non-owner-occupied, business-purpose only</li>
-                    </ul>
-                  </div>
-                </div>
+        </div>
+        <div className="row g-4 mt-1">
+          <div className="col-md-6">
+            <div className="card h-100 border-0 shadow-sm loan-option-card">
+              <div className="card-body">
+                <h3 className="h5">DSCR</h3>
+                <ul className="text-muted mb-0">
+                  <li>Purchase financing for income-producing investment properties</li>
+                  <li>Qualification based on property cash flow and debt service coverage</li>
+                  <li>Business-purpose, non-owner-occupied transactions only</li>
+                </ul>
               </div>
             </div>
-            <p className="text-muted fst-italic mt-4 mb-0">
-              Loan Options - All programs are offered for business-purpose, non-owner-occupied real estate
-              transactions only.
-            </p>
+          </div>
+          <div className="col-md-6">
+            <div className="card h-100 border-0 shadow-sm loan-option-card">
+              <div className="card-body">
+                <h3 className="h5">Asset Utilization</h3>
+                <ul className="text-muted mb-0">
+                  <li>Uses verified assets in place of traditional income documentation</li>
+                  <li>Ideal for investors with strong balance sheets and complex cash flow</li>
+                  <li>Business-purpose real estate financing only</li>
+                </ul>
+              </div>
+            </div>
+          </div>
+          <div className="col-md-6">
+            <div className="card h-100 border-0 shadow-sm loan-option-card">
+              <div className="card-body">
+                <h3 className="h5">Bank Statement and Alt Doc for Business Purpose</h3>
+                <ul className="text-muted mb-0">
+                  <li>Uses business bank statements or alternative financial records in place of traditional income</li>
+                  <li>Designed for self-employed investors and entity-owned properties</li>
+                  <li>Business-purpose real estate transactions only</li>
+                </ul>
+              </div>
+            </div>
+          </div>
+          <div className="col-md-6">
+            <div className="card h-100 border-0 shadow-sm loan-option-card">
+              <div className="card-body">
+                <h3 className="h5">Multi-Unit Property</h3>
+                <ul className="text-muted mb-0">
+                  <li>Financing for 5+ unit residential investment properties</li>
+                  <li>Focused on cash flow, scale, and long-term portfolio growth</li>
+                  <li>Non-owner-occupied, business-purpose only</li>
+                </ul>
+              </div>
+            </div>
           </div>
         </div>
+        <p className="text-muted fst-italic mt-4 mb-0">
+          Loan Options - All programs are offered for business-purpose, non-owner-occupied real estate
+          transactions only.
+        </p>
       </div>
     </section>
 
