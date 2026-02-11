@@ -38,7 +38,7 @@ const Home = () => (
 
     <section className="section">
       <div className="container">
-        <div className="hero-cta-grid">
+        <div className="hero-cta-grid hero-cta-grid--slide">
           <Link
             className="hero-cta-button hero-cta-button--access-equity"
             to="/access-equity"
