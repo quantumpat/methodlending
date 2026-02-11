@@ -65,7 +65,6 @@ function App() {
       { label: 'Overview', href: '/refinance#refinance-hero' },
       { label: 'Why Refi?', href: '/refinance#refinance-reasons' },
       { label: 'Refi Calculator', href: '/refinance#refinance-savings-calculator' },
-      { label: 'Rate/Term Benefits', href: '/refinance#refinance-benefits' },
       { label: 'Request a Quote', href: '/refinance#refinance-cta' },
     ],
     '/access-equity': [
@@ -84,8 +83,8 @@ function App() {
       { label: 'Leadership', href: '/team#team-leadership' },
     ],
     '/request-quote': [
-      { label: 'Schedule a Meeting', href: '/request-quote#request-hero' },
-      { label: 'Next Steps', href: '/request-quote#request-next' },
+      { label: 'Overview', href: '/request-quote#request-hero' },
+      { label: 'Schedule a Meeting', href: '/request-quote#request-connect' },
     ],
     '/privacy-policy': [
       { label: 'Privacy Policy', href: '/privacy-policy#privacy-policy' },

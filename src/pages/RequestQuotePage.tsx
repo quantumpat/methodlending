@@ -101,102 +101,109 @@ const RequestQuotePage = () => {
             </div>
           </div>
           <div className="col-12 col-lg-6">
-            <div className="card border-0 shadow-sm h-100">
+            <div className="card border-0 shadow-sm h-100 quote-form-card">
               <div className="card-body p-3 p-md-4 h-100 d-flex flex-column">
-                <h2 className="h5 fw-bold mb-3">Email us instead</h2>
-                <p className="text-muted">
-                  Share a few details and we will reply within one business day.
-                </p>
-                <form
-                  className="d-flex flex-column flex-grow-1"
-                  onSubmit={handleSubmit}
-                >
-                  <div className="row g-3">
-                    <div className="col-md-6">
-                      <label className="form-label" htmlFor="quote-name">
-                        Full name
-                      </label>
-                      <input
-                        className="form-control"
-                        id="quote-name"
-                        name="name"
-                        placeholder="Alex Morgan"
-                        type="text"
-                        required
-                      />
-                    </div>
-                    <div className="col-md-6">
-                      <label className="form-label" htmlFor="quote-phone">
-                        Phone
-                      </label>
-                      <input
-                        className="form-control"
-                        id="quote-phone"
-                        name="phone"
-                        placeholder="(555) 123-4567"
-                        type="tel"
-                        required
-                      />
-                    </div>
-                  </div>
-                  <div className="mb-3 mt-3">
-                    <label className="form-label" htmlFor="quote-email">
-                      Email
-                    </label>
-                    <input
-                      className="form-control"
-                      id="quote-email"
-                      name="email"
-                      placeholder="alex@email.com"
-                      type="email"
-                      required
-                    />
-                  </div>
-                  <div className="mb-3">
-                    <label className="form-label" htmlFor="quote-address">
-                      Property address (optional)
-                    </label>
-                    <input
-                      className="form-control"
-                      id="quote-address"
-                      name="propertyAddress"
-                      placeholder="123 Main St, San Juan Capistrano, CA"
-                      type="text"
-                    />
-                  </div>
-                  <div className="row g-3 mb-3">
-                    <div className="col-md-6">
-                      <label className="form-label" htmlFor="quote-purpose">
-                        Loan purpose
-                      </label>
-                      <select
-                        className="form-select"
-                        id="quote-purpose"
-                        name="purpose"
-                        required
-                        defaultValue=""
-                      >
-                        <option value="" disabled>
-                          Select purchase or refinance
-                        </option>
-                        <option value="purchase">Purchase</option>
-                        <option value="refinance">Refinance</option>
-                      </select>
-                    </div>
-                    <div className="col-md-6">
-                      <label className="form-label" htmlFor="quote-amount">
-                        Loan amount sought (optional)
-                      </label>
-                      <input
-                        className="form-control"
-                        id="quote-amount"
-                        name="loanAmount"
-                        placeholder="$350,000"
-                        type="text"
-                      />
+                <div className="quote-form-header">
+                  <p className="text-uppercase text-primary fw-semibold mb-2">Email request</p>
+                  <h2 className="h5 fw-bold mb-2">Email us instead</h2>
+                  <p className="text-muted mb-0">
+                    Share a few details and we will reply within one business day.
+                  </p>
+                </div>
+                <form className="d-flex flex-column flex-grow-1 quote-form" onSubmit={handleSubmit}>
+                  <div className="quote-form-section">
+                    <div className="quote-form-section__title">Contact</div>
+                    <div className="row g-3">
+                      <div className="col-md-6">
+                        <label className="form-label" htmlFor="quote-name">
+                          Full name
+                        </label>
+                        <input
+                          className="form-control"
+                          id="quote-name"
+                          name="name"
+                          placeholder="Alex Morgan"
+                          type="text"
+                          required
+                        />
+                      </div>
+                      <div className="col-md-6">
+                        <label className="form-label" htmlFor="quote-phone">
+                          Phone
+                        </label>
+                        <input
+                          className="form-control"
+                          id="quote-phone"
+                          name="phone"
+                          placeholder="(555) 123-4567"
+                          type="tel"
+                          required
+                        />
+                      </div>
+                      <div className="col-12">
+                        <label className="form-label" htmlFor="quote-email">
+                          Email
+                        </label>
+                        <input
+                          className="form-control"
+                          id="quote-email"
+                          name="email"
+                          placeholder="alex@email.com"
+                          type="email"
+                          required
+                        />
+                      </div>
                     </div>
                   </div>
-                  <div className="mb-4 flex-grow-1 d-flex flex-column">
+                  <div className="quote-form-section">
+                    <div className="quote-form-section__title">Loan details</div>
+                    <div className="row g-3">
+                      <div className="col-12">
+                        <label className="form-label" htmlFor="quote-address">
+                          Property address (optional)
+                        </label>
+                        <input
+                          className="form-control"
+                          id="quote-address"
+                          name="propertyAddress"
+                          placeholder="123 Main St, San Juan Capistrano, CA"
+                          type="text"
+                        />
+                      </div>
+                      <div className="col-md-6">
+                        <label className="form-label" htmlFor="quote-purpose">
+                          Loan purpose
+                        </label>
+                        <select
+                          className="form-select"
+                          id="quote-purpose"
+                          name="purpose"
+                          required
+                          defaultValue=""
+                        >
+                          <option value="" disabled>
+                            Select purchase or refinance
+                          </option>
+                          <option value="purchase">Purchase</option>
+                          <option value="refinance">Refinance</option>
+                        </select>
+                      </div>
+                      <div className="col-md-6">
+                        <label className="form-label" htmlFor="quote-amount">
+                          Loan amount sought (optional)
+                        </label>
+                        <input
+                          className="form-control"
+                          id="quote-amount"
+                          name="loanAmount"
+                          placeholder="$350,000"
+                          type="text"
+                        />
+                      </div>
+                    </div>
+                  </div>
+                  <div className="quote-form-section quote-form-section--grow">
+                    <div className="quote-form-section__title">Notes</div>
                     <label className="form-label" htmlFor="quote-message">
                       Details
                     </label>
@@ -228,25 +235,6 @@ const RequestQuotePage = () => {
                 </form>
               </div>
             </div>
-          </div>
-        </div>
-      </div>
-    </section>
-
-    <section id="request-next" className="section bg-light">
-      <div className="container">
-        <div className="row g-4 align-items-center">
-          <div className="col-lg-7">
-            <h2 className="h3 fw-bold">What happens next?</h2>
-            <p className="text-muted mb-0">
-              We review your submission within one business day, confirm any
-              missing details, and send back a term summary and next steps.
-            </p>
-          </div>
-          <div className="col-lg-5 text-lg-end">
-            <Link className="btn btn-primary btn-lg" to="/purchase">
-              Start with purchase loans
-            </Link>
           </div>
         </div>
       </div>

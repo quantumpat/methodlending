@@ -134,9 +134,6 @@ const Home = () => (
     
     <section id="refinance-benefits" className="section">
         <div className="container">
-          <div className="text-center mb-5">
-            <h2 className="h2 fw-bold">Rate and Term Refinance Benefits</h2>
-          </div>
           <div className="row g-4">
             <div className="col-lg-4">
               <div className="card h-100 border-0 shadow-sm">
@@ -187,25 +184,15 @@ const Home = () => (
         </div>
       </section>
 
-    <section id="contact" className="section bg-light">
+    <section id="contact" className="section">
       <div className="container">
-        <div className="row g-4">
-          <div className="col-12">
-            <div className="card border-0 shadow-sm">
-              <div className="card-body p-4 p-md-5">
-                <div className="row g-4 align-items-center">
-                  <div className="col-lg-4">
-                  </div>
-                  <div className="col-lg-4">
-                    <Link className="btn btn-primary btn-lg w-100" to="/request-quote">
-                      Request a Quote
-                    </Link>
-                  </div>
-                </div>
-              </div>
-            </div>
-          </div>
+        <div className="col-lg-4">
         </div>
+          <div className="col-lg-4">
+            <Link className="btn btn-primary btn-lg w-100" to="/request-quote">
+              Request a Quote
+            </Link>
+          </div>
       </div>
     </section>
   </main>
