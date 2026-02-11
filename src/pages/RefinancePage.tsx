@@ -307,61 +307,6 @@ const RefinancePage = () => {
         </div>
       </section>
 
-      <section id="refinance-benefits" className="section">
-        <div className="container">
-          <div className="text-center mb-5">
-            <h2 className="h2 fw-bold">Rate and Term Refinance Benefits</h2>
-          </div>
-          <div className="row g-4">
-            <div className="col-lg-4">
-              <div className="card h-100 border-0 shadow-sm">
-                <div className="card-body">
-                  <h3 className="h5">Standard DSCR Refinance</h3>
-                  <ul className="check-list mb-0">
-                    <li>DSCR {'>='} 1.00 required.</li>
-                    <li>Up to 80% LTV (varies by credit and loan amount).</li>
-                    <li>No income verification needed.</li>
-                    <li>Credit scores from 620.</li>
-                    <li>Close in LLC or personal name.</li>
-                    <li>Loan amounts up to $3.5M.</li>
-                  </ul>
-                </div>
-              </div>
-            </div>
-            <div className="col-lg-4">
-              <div className="card h-100 border-0 shadow-sm">
-                <div className="card-body">
-                  <h3 className="h5">Lower DSCR Options</h3>
-                  <ul className="check-list mb-0">
-                    <li>DSCR as low as 0.75 accepted.</li>
-                    <li>Up to 75% LTV available.</li>
-                    <li>Loan amounts up to $3M.</li>
-                    <li>Minimum 680 credit score.</li>
-                    <li>Experienced investors preferred.</li>
-                    <li>Ideal for value-add properties.</li>
-                  </ul>
-                </div>
-              </div>
-            </div>
-            <div className="col-lg-4">
-              <div className="card h-100 border-0 shadow-sm">
-                <div className="card-body">
-                  <h3 className="h5">Premium Options</h3>
-                  <ul className="check-list mb-0">
-                    <li>Asset depletion allowed.</li>
-                    <li>Final DSCR must be {'>='} 1.15.</li>
-                    <li>Use assets to augment DSCR.</li>
-                    <li>Perfect credit required (0x30x12).</li>
-                    <li>Loan amounts up to $2M.</li>
-                    <li>Initial DSCR 0.75-0.99.</li>
-                  </ul>
-                </div>
-              </div>
-            </div>
-          </div>
-        </div>
-      </section>
-
       <section id="refinance-cta" className="section bg-primary text-white">
         <div className="container text-center">
           <h2 className="h2 fw-bold">Ready to Optimize Your Investment?</h2>
