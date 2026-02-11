@@ -42,6 +42,50 @@ function App() {
   useEffect(() => {
     document.title = 'Method Lending'
   }, [location.pathname])
+  useEffect(() => {
+    const shouldAnimate = location.pathname !== '/request-quote'
+    const sections = Array.from(document.querySelectorAll('main > section'))
+
+    if (!shouldAnimate) {
+      sections.forEach((section) => section.classList.remove('scroll-reveal', 'is-visible'))
+      return
+    }
+
+    sections.forEach((section) => section.classList.add('scroll-reveal'))
+
+    if (window.matchMedia('(prefers-reduced-motion: reduce)').matches) {
+      sections.forEach((section) => section.classList.add('is-visible'))
+      return
+    }
+
+    const viewportHeight = window.innerHeight || document.documentElement.clientHeight
+    sections.forEach((section) => {
+      const rect = section.getBoundingClientRect()
+      if (rect.bottom > 0 && rect.top < viewportHeight) {
+        section.classList.add('is-visible')
+      }
+    })
+
+    const observer = new IntersectionObserver(
+      (entries) => {
+        entries.forEach((entry) => {
+          if (entry.isIntersecting) {
+            entry.target.classList.add('is-visible')
+            observer.unobserve(entry.target)
+          }
+        })
+      },
+      { threshold: 0, rootMargin: '0px 0px -5% 0px' }
+    )
+
+    sections.forEach((section) => {
+      if (!section.classList.contains('is-visible')) {
+        observer.observe(section)
+      }
+    })
+
+    return () => observer.disconnect()
+  }, [location.pathname])
   const closeMobileNav = () => {
     const nav = document.getElementById('mainNav')
     if (nav?.classList.contains('show')) {
