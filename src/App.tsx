@@ -4,6 +4,7 @@ import './App.css'
 import Home from './pages/Home.tsx'
 import PurchasePage from './pages/PurchasePage.tsx'
 import RefinancePage from './pages/RefinancePage.tsx'
+import AccessEquityPage from './pages/AccessEquityPage.tsx'
 import LoanOptionsPage from './pages/LoanOptionsPage.tsx'
 import TeamPage from './pages/TeamPage.tsx'
 import RequestQuotePage from './pages/RequestQuotePage.tsx'
@@ -52,7 +53,6 @@ function App() {
     '/': [
       { label: 'Hero', href: '/#home' },
       { label: 'Solutions', href: '/#solutions' },
-      { label: 'Process', href: '/#process' },
       { label: 'Contact', href: '/#contact' },
     ],
     '/purchase': [
@@ -64,6 +64,12 @@ function App() {
       { label: 'Benefits', href: '/refinance#refinance-benefits' },
       { label: 'Is refinancing right?', href: '/refinance#refinance-eligibility' },
       { label: 'Cash-out', href: '/refinance#refinance-cash-out' },
+    ],
+    '/access-equity': [
+      { label: 'Overview', href: '/access-equity#access-equity-hero' },
+      { label: 'How It Works', href: '/access-equity#access-equity-steps' },
+      { label: 'Use Cases', href: '/access-equity#access-equity-uses' },
+      { label: 'Next Steps', href: '/access-equity#access-equity-next' },
     ],
     '/loan-options': [
       { label: 'Overview', href: '/loan-options#loan-options-hero' },
@@ -139,6 +145,15 @@ function App() {
               <li className="nav-item">
                 <NavLink
                   className={({ isActive }) => `nav-link${isActive ? ' active' : ''}`}
+                  to="/access-equity"
+                  onClick={closeMobileNav}
+                >
+                  Access Equity
+                </NavLink>
+              </li>
+              <li className="nav-item">
+                <NavLink
+                  className={({ isActive }) => `nav-link${isActive ? ' active' : ''}`}
                   to="/loan-options"
                   onClick={closeMobileNav}
                 >
@@ -159,15 +174,6 @@ function App() {
               <Link className="btn btn-primary w-100 w-lg-auto" to="/request-quote" onClick={closeMobileNav}>
                 Request a Quote
               </Link>
-              <a
-                className="btn btn-success w-100 w-lg-auto"
-                href="http://methodlending.loanzify.io/register"
-                target="_blank"
-                rel="noopener noreferrer"
-                onClick={closeMobileNav}
-              >
-                Apply Now
-              </a>
             </div>
           </div>
         </div>
@@ -177,6 +183,7 @@ function App() {
         <Route path="/" element={<Home />} />
         <Route path="/purchase" element={<PurchasePage />} />
         <Route path="/refinance" element={<RefinancePage />} />
+        <Route path="/access-equity" element={<AccessEquityPage />} />
         <Route path="/loan-options" element={<LoanOptionsPage />} />
         <Route path="/team" element={<TeamPage />} />
         <Route path="/request-quote" element={<RequestQuotePage />} />
@@ -215,6 +222,9 @@ function App() {
                     </Link>
                     <Link className="text-muted" to="/refinance">
                       Refinance
+                    </Link>
+                    <Link className="text-muted" to="/access-equity">
+                      Access Equity
                     </Link>
                     <Link className="text-muted" to="/loan-options">
                       Loan Options

@@ -325,16 +325,22 @@ textarea:required:invalid:focus {
 }
 
 .hero-cta-button {
-  background: #ffffff;
+  background-color: #ffffff;
+  background-position: center;
+  background-size: cover;
+  background-repeat: no-repeat;
   color: #0f172a;
   border: 1px solid rgba(15, 23, 42, 0.1);
   border-radius: 0.5rem;
-  padding: 2.25rem 2rem;
+  padding: 0;
   font-size: 1.35rem;
   font-weight: 600;
   text-align: center;
   box-shadow: 0 12px 30px rgba(15, 23, 42, 0.1);
-  transition: transform 0.2s ease, box-shadow 0.2s ease, border-color 0.2s ease, color 0.2s ease;
+  transition: transform 0.2s ease, box-shadow 0.2s ease, border-color 0.2s ease;
+  min-height: 240px;
+  aspect-ratio: 3 / 4;
+  display: block;
 }
 
 @media (max-width: 992px) {
@@ -345,10 +351,21 @@ textarea:required:invalid:focus {
 
 .hero-cta-button:hover,
 .hero-cta-button:focus {
-  color: #0d4e87;
   border-color: rgba(13, 78, 135, 0.35);
   box-shadow: 0 18px 40px rgba(15, 23, 42, 0.14);
   transform: translateY(-2px);
+}
+
+.hero-cta-button--access-equity {
+  background-image: url('/images/AccessEquityBtn.png');
+}
+
+.hero-cta-button--refinance {
+  background-image: url('/images/RefinanceBtn.png');
+}
+
+.hero-cta-button--purchase {
+  background-image: url('/images/PurchaseBtn.png');
 }
 
 .hero-card,
@@ -357,6 +374,41 @@ textarea:required:invalid:focus {
   background: #ffffff;
   border-radius: 1.25rem;
   box-shadow: 0 20px 45px rgba(15, 23, 42, 0.08);
+}
+
+.loan-option-card .card-body {
+  padding: 2rem 1.25rem;
+}
+
+@media (max-width: 768px) {
+  .loan-option-card .card-body {
+    padding: 1.5rem 1.25rem;
+  }
+}
+
+.loan-option-card .h5 {
+  margin-bottom: 0.75rem;
+}
+
+.loan-option-card__body {
+  display: flex;
+  flex-direction: column;
+  height: 100%;
+}
+
+.loan-option-card__cta {
+  margin-top: auto;
+  padding-top: 1.6rem !important;
+  border-top: 1px solid rgba(15, 23, 42, 0.12);
+  display: block;
+  text-align: left;
+  align-self: flex-start;
+  width: 100%;
+}
+
+.loan-option-card__cta:hover,
+.loan-option-card__cta:focus {
+  border-top-color: rgba(15, 23, 42, 0.12);
 }
 
 .timeline {

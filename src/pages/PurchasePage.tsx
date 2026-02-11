@@ -20,13 +20,10 @@ const PurchasePage = () => (
               Our DSCR programs focus on the property’s ability to generate cash flow, allowing investors to qualify based on rental income rather than personal earnings.
             </p>
             <div className="d-flex flex-wrap gap-3">
-              <a className="btn btn-primary btn-lg" href="/#contact">
-                Start a purchase request
-              </a>
-              <Link className="btn btn-outline-primary btn-lg" to="/request-quote">
+              <Link className="btn btn-primary btn-lg" to="/request-quote">
                 Request a Quote
               </Link>
-              <a className="btn btn-outline-primary btn-lg" href="/#solutions">
+              <a className="btn btn-outline-primary btn-lg" href="/loan-options">
                 Compare loan options
               </a>
             </div>
