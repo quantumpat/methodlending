@@ -56,6 +56,7 @@ function App() {
       { label: 'Contact', href: '/#contact' },
     ],
     '/purchase': [
+      { label: 'Overview', href: '/purchase#purchase-hero' },
       { label: 'Highlights', href: '/purchase#purchase-highlights' },
       { label: 'Loan/DSCR Calc', href: '/purchase#purchase-calculator' },
       { label: 'Request a Quote', href: '/purchase#purchase-cta' },

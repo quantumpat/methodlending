@@ -3,6 +3,27 @@ import PurchaseCalculator from '../components/PurchaseCalculator'
 
 const PurchasePage = () => (
   <main>
+    <section
+      id="purchase-hero"
+      className="hero-section hero-section--image hero-section--image-sky hero-section--image-contrast"
+    >
+      <div className="container">
+        <div className="row align-items-center g-4">
+          <div className="col-lg-6">
+            <p className="text-uppercase text-primary fw-semibold mb-2">
+              Purchase lending
+            </p>
+            <h1 className="display-5 fw-bold">
+              DSCR purchase loans built for real estate investors.
+            </h1>
+            <p className="lead text-muted">
+              Our DSCR programs focus on the property’s ability to generate cash flow, allowing investors to qualify based on rental income rather than personal earnings.
+            </p>
+          </div>
+        </div>
+      </div>
+    </section>
+
     <section id="purchase-highlights" className="section bg-light">
       <div className="container">
         <div className="row g-4">
@@ -40,8 +61,7 @@ const PurchasePage = () => (
                   <div className="card-body">
                     <h3 className="h5">Flexible structures</h3>
                     <p className="text-muted mb-0">
-                      Bridge, rehab, and portfolio options built around your
-                      timeline.
+                      Flexible DSCR options for your Business Purpose purchase needs
                     </p>
                   </div>
                 </div>

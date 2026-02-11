@@ -84,7 +84,7 @@ const RefinancePage = () => {
     <main>
       <section
         id="refinance-hero"
-        className="hero-section hero-section--image hero-section--image-sky"
+        className="hero-section hero-section--image hero-section--image-sky hero-section--image-contrast"
       >
         <div className="container">
           <div className="row align-items-center g-4">

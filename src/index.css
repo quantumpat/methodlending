@@ -242,6 +242,10 @@ a {
   z-index: 0;
 }
 
+.hero-section--image-contrast::before {
+  background: linear-gradient(90deg, rgba(248, 250, 252, 0.85), rgba(248, 250, 252, 0.55) 55%, rgba(15, 23, 42, 0));
+}
+
 .hero-section--image .container {
   position: relative;
   z-index: 1;
