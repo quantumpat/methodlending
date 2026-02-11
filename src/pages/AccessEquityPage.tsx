@@ -108,14 +108,14 @@ const AccessEquityPage = () => {
     <main>
       <section
         id="access-equity-hero"
-        className="hero-section hero-section--image hero-section--image-sky"
+        className="hero-section hero-section--image hero-section--image-sky hero-section--image-contrast"
       >
         <div className="container">
           <div className="row align-items-center g-4">
             <div className="col-lg-6">
               <p className="text-uppercase text-primary fw-semibold mb-2">Access equity</p>
               <h1 className="display-5 fw-bold">
-                Unlock property equity without slowing your momentum
+                Turn your equity into opportunity
               </h1>
               <p className="lead text-muted">
                 Turn built-up equity into capital for acquisitions, renovations, or portfolio growth

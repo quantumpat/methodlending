@@ -14,8 +14,7 @@ const LoanOptionsPage = () => (
                 Find the right structure for every investment
               </h1>
               <p className="display-7">
-                Compare products designed for acquisitions, rehabs, bridge needs,
-                and portfolio growth.
+                Business-purpose financing solutions built for real estate investors.
               </p>
               <div className="d-flex flex-wrap gap-3">
                 <Link className="btn btn-outline-primary btn-lg" to="/request-quote">
