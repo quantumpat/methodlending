@@ -90,6 +90,18 @@ const RequestQuotePage = () => {
         <div className="row g-4">
           <div className="col-12 col-lg-6">
             <div className="card border-0 shadow-sm h-100">
+              <div className="card-body p-3 p-md-4">
+                <h2 className="h5 fw-bold mb-3">Schedule a meeting</h2>
+                <div
+                  className="calendly-inline-widget"
+                  data-url="https://calendly.com/aiverson-methodlending/discovery-call?hide_gdpr_banner=1"
+                  style={{ minWidth: '320px', height: '700px' }}
+                />
+              </div>
+            </div>
+          </div>
+          <div className="col-12 col-lg-6">
+            <div className="card border-0 shadow-sm h-100">
               <div className="card-body p-3 p-md-4 h-100 d-flex flex-column">
                 <h2 className="h5 fw-bold mb-3">Email us instead</h2>
                 <p className="text-muted">
@@ -214,18 +226,6 @@ const RequestQuotePage = () => {
                     </p>
                   )}
                 </form>
-              </div>
-            </div>
-          </div>
-          <div className="col-12 col-lg-6">
-            <div className="card border-0 shadow-sm h-100">
-              <div className="card-body p-3 p-md-4">
-                <h2 className="h5 fw-bold mb-3">Schedule a meeting</h2>
-                <div
-                  className="calendly-inline-widget"
-                  data-url="https://calendly.com/aiverson-methodlending/discovery-call?hide_gdpr_banner=1"
-                  style={{ minWidth: '320px', height: '700px' }}
-                />
               </div>
             </div>
           </div>

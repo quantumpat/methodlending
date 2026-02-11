@@ -194,31 +194,12 @@ const Home = () => (
             <div className="card border-0 shadow-sm">
               <div className="card-body p-4 p-md-5">
                 <div className="row g-4 align-items-center">
-                  <div className="col-lg-8">
-                    <h2 className="h3 fw-bold">Apply Now</h2>
-                    <p className="text-muted">
-                      Start your application to get matched with the right lending
-                      options.
-                    </p>
-                    <div className="contact-card p-4">
-                      <p className="mb-1 fw-semibold">Contact</p>
-                      <p className="text-muted mb-3">aiverson@methodlending.com <br />mtrotter@methodlending.com</p>
-                      <p className="mb-1 fw-semibold">Office</p>
-                      <p className="text-muted mb-0">San Juan Capistrano, CA</p>
-                    </div>
+                  <div className="col-lg-4">
                   </div>
-                  <div className="col-lg-4 hidden">
-                    <p className="text-muted mb-4">
-                      Complete a quick online application to get started.
-                    </p>
-                    <a
-                      className="btn btn-success btn-lg w-100"
-                      href="http://methodlending.loanzify.io/register"
-                      target="_blank"
-                      rel="noopener noreferrer"
-                    >
-                      Apply Now
-                    </a>
+                  <div className="col-lg-4">
+                    <Link className="btn btn-primary btn-lg w-100" to="/request-quote">
+                      Request a Quote
+                    </Link>
                   </div>
                 </div>
               </div>
