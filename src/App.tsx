@@ -61,15 +61,17 @@ function App() {
     ],
     '/refinance': [
       { label: 'Overview', href: '/refinance#refinance-hero' },
-      { label: 'Benefits', href: '/refinance#refinance-benefits' },
-      { label: 'Is refinancing right?', href: '/refinance#refinance-eligibility' },
-      { label: 'Cash-out', href: '/refinance#refinance-cash-out' },
+      { label: 'Why Refi?', href: '/refinance#refinance-reasons' },
+      { label: 'Refi Calculator', href: '/refinance#refinance-savings-calculator' },
+      { label: 'Rate/Term Benefits', href: '/refinance#refinance-benefits' },
+      { label: 'Request a Quote', href: '/refinance#refinance-cta' },
     ],
     '/access-equity': [
       { label: 'Overview', href: '/access-equity#access-equity-hero' },
-      { label: 'How It Works', href: '/access-equity#access-equity-steps' },
-      { label: 'Use Cases', href: '/access-equity#access-equity-uses' },
-      { label: 'Next Steps', href: '/access-equity#access-equity-next' },
+      { label: 'Cashout Refi', href: '/access-equity#access-equity-cashout' },
+      { label: 'Cashout Benefits', href: '/access-equity#access-equity-benefits' },
+      { label: 'Cashout Calc', href: '/access-equity#access-equity-calc' },
+      { label: 'Request a Quote', href: '/access-equity#access-equity-cta' },
     ],
     '/loan-options': [
       { label: 'Overview', href: '/loan-options#loan-options-hero' },
