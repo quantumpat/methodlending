@@ -18,23 +18,9 @@ const LoanOptionsPage = () => (
                 and portfolio growth.
               </p>
               <div className="d-flex flex-wrap gap-3">
-                <a className="btn btn-primary btn-lg" href="/#contact">
-                  Request a Quote
-                </a>
-                <a
-                  className="btn btn-success btn-lg"
-                  href="http://methodlending.loanzify.io/register"
-                  target="_blank"
-                  rel="noopener noreferrer"
-                >
-                  Apply Now
-                </a>
                 <Link className="btn btn-outline-primary btn-lg" to="/request-quote">
                   Request a Quote
                 </Link>
-                <a className="btn btn-outline-primary btn-lg" href="/purchase">
-                  Start a purchase request
-                </a>
               </div>
             </div>
           </div>
@@ -46,67 +32,70 @@ const LoanOptionsPage = () => (
       <div className="container">
         <div className="row g-4">
           <div className="col-md-6 col-lg-3">
-            <div className="card h-100 border-0 shadow-sm">
-              <div className="card-body">
+            <div className="card h-100 border-0 shadow-sm loan-option-card">
+              <div className="card-body loan-option-card__body">
                 <h3 className="h5">DSCR</h3>
-                <p className="text-muted">
-                  Debt Service Coverage Ratio loans are designed for real estate investors. Qualification is primarily based on the property's rental income rather than personal income.
-                </p>
-                <p className="text-muted mb-0">
-                  These loans are ideal for investors looking to scale without traditional income documentation.
-                </p>
-                <a className="btn btn-link p-0" href="/request-quote">
+                <ul className="text-muted mb-3">
+                  <li>Purchase financing for income-producing investment properties</li>
+                  <li>Qualification based on property cash flow and debt service coverage</li>
+                  <li>Business-purpose, non-owner-occupied transactions only</li>
+                </ul>
+                <a className="btn btn-link p-0 loan-option-card__cta" href="/request-quote">
                   Explore
                 </a>
               </div>
             </div>
           </div>
           <div className="col-md-6 col-lg-3">
-            <div className="card h-100 border-0 shadow-sm hidden">
-              <div className="card-body">
-                <h3 className="h5">Non-QM</h3>
-                <p className="text-muted">
-                  Non-Qualified Mortgage loans offer flexible financing options for borrowers who don’t fit traditional lending guidelines. Ideal for self-employed individuals, investors, and borrowers with non-traditional income sources.
-                </p>
-                <a className="btn btn-link p-0" href="/request-quote">
+            <div className="card h-100 border-0 shadow-sm loan-option-card">
+              <div className="card-body loan-option-card__body">
+                <h3 className="h5">Asset Utilization</h3>
+                <ul className="text-muted mb-3">
+                  <li>Uses verified assets in place of traditional income documentation</li>
+                  <li>Ideal for investors with strong balance sheets and complex cash flow</li>
+                  <li>Business-purpose real estate financing only</li>
+                </ul>
+                <a className="btn btn-link p-0 loan-option-card__cta" href="/request-quote">
                   Explore
                 </a>
               </div>
             </div>
           </div>
           <div className="col-md-6 col-lg-3">
-            <div className="card h-100 border-0 shadow-sm hidden">
-              <div className="card-body">
-                <h3 className="h5">FHA</h3>
-                <p className="text-muted">
-                  FHA loans are government-backed mortgages designed to help first-time and low-to-moderate income borrowers achieve homeownership.
-                </p>
-                <p className="text-muted mb-0">
-                  These loans typically offer lower down payment requirements and more flexible credit guidelines. Buying a home for the American family.
-                </p>
-                <a className="btn btn-link p-0" href="/request-quote">
+            <div className="card h-100 border-0 shadow-sm loan-option-card">
+              <div className="card-body loan-option-card__body">
+                <h3 className="h5">Bank Statement and Alt Doc for Business Purpose</h3>
+                <ul className="text-muted mb-3">
+                  <li>Uses business bank statements or alternative financial records in place of traditional income</li>
+                  <li>Designed for self-employed investors and entity-owned properties</li>
+                  <li>Business-purpose real estate transactions only</li>
+                </ul>
+                <a className="btn btn-link p-0 loan-option-card__cta" href="/request-quote">
                   Explore
                 </a>
               </div>
             </div>
           </div>
           <div className="col-md-6 col-lg-3">
-            <div className="card h-100 border-0 shadow-sm hidden">
-              <div className="card-body">
-                <h3 className="h5">HELOC</h3>
-                <p className="text-muted">
-                  A Home Equity Line of Credit allows homeowners to borrow against the equity in their home.
-                </p>
-                <p className="text-muted mb-0">
-                  Funds can be accessed as needed, making it a flexible option for renovations, investments, or major expenses.
-                </p>
-                <a className="btn btn-link p-0" href="/request-quote">
+            <div className="card h-100 border-0 shadow-sm loan-option-card">
+              <div className="card-body loan-option-card__body">
+                <h3 className="h5">Multi-Unit Property</h3>
+                <ul className="text-muted mb-3">
+                  <li>Financing for 5+ unit residential investment properties</li>
+                  <li>Focused on cash flow, scale, and long-term portfolio growth</li>
+                  <li>Non-owner-occupied, business-purpose only</li>
+                </ul>
+                <a className="btn btn-link p-0 loan-option-card__cta" href="/request-quote">
                   Explore
                 </a>
               </div>
             </div>
           </div>
         </div>
+        <p className="text-muted fst-italic mt-4 mb-0">
+          Loan Options - All programs are offered for business-purpose, non-owner-occupied real estate
+          transactions only.
+        </p>
       </div>
     </section>
   </main>

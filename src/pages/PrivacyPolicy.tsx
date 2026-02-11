@@ -3,113 +3,94 @@ const PrivacyPolicy = () => (
     <section id="privacy-policy" className="section policy-body">
       <div className="container">
         <h1 className="display-6 fw-bold mb-3">Privacy Policy</h1>
-        <p className="text-muted mb-4">Effective Date: [Insert Date]</p>
+        <p className="text-muted mb-4">Effective Date: 02/10/2026</p>
 
         <p className="text-muted">
-          At Method Lending, we are committed to protecting your privacy and handling your personal
-          information responsibly. This Privacy Policy explains how we collect, use, share, and safeguard
-          your information in compliance with the California Consumer Privacy Act (CCPA) and the
-          Gramm-Leach-Bliley Act (GLBA).
+          Method Lending (&quot;Method,&quot; &quot;we,&quot; &quot;us,&quot; or &quot;our&quot;) respects your privacy and is committed to
+          protecting the information you share with us. This Privacy Policy explains how we collect,
+          use, and safeguard your information when you visit our website or submit an inquiry.
+        </p>
+        <p className="text-muted">
+          At this time, Method Lending provides information related to business-purpose real estate
+          financing only. We do not offer consumer mortgage loans and do not accept loan applications
+          through this website.
         </p>
 
         <h2 className="h4 fw-semibold mt-5">Information We Collect</h2>
+        <p className="text-muted">We may collect limited information when you voluntarily provide it, including:</p>
         <ul className="text-muted">
           <li>
-            <strong>Personal identification information:</strong> Name, address, date of birth, Social
-            Security number, driver&apos;s license number.
+            <strong>Contact information:</strong> Name, email address, phone number
           </li>
           <li>
-            <strong>Financial information:</strong> Income, assets, credit history, bank account information,
-            employment details.
+            <strong>Business inquiry details:</strong> Property type, estimated loan amount, investment intent
           </li>
           <li>
-            <strong>Property information:</strong> Address, value, intended use of property.
-          </li>
-          <li>
-            <strong>Communication records:</strong> Email addresses, phone numbers, correspondence with our
-            team.
-          </li>
-          <li>
-            <strong>Technical data:</strong> IP address, browser type, device information when you visit our
-            website.
+            <strong>Technical information:</strong> IP address, browser type, device information, and website usage
+            data
           </li>
         </ul>
+        <p className="text-muted">
+          We do not collect Social Security numbers, dates of birth, credit information, bank account
+          information, or other sensitive consumer financial data through this website.
+        </p>
 
         <h2 className="h4 fw-semibold mt-5">How We Use Your Information</h2>
+        <p className="text-muted">We use collected information to:</p>
         <ul className="text-muted">
-          <li>Evaluate your eligibility for mortgage loan products.</li>
-          <li>Process and service your loan application.</li>
-          <li>Comply with federal and state regulatory requirements.</li>
-          <li>Communicate with you about your loan and our services.</li>
-          <li>Improve our website and customer experience.</li>
-          <li>Prevent fraud and maintain security.</li>
-        </ul>
-
-        <h2 className="h4 fw-semibold mt-5">How We Share Your Information</h2>
-        <ul className="text-muted">
-          <li>
-            <strong>Service providers:</strong> Third-party vendors who assist with loan processing,
-            underwriting, closing, and servicing.
-          </li>
-          <li>
-            <strong>Credit bureaus:</strong> To obtain and report credit information.
-          </li>
-          <li>
-            <strong>Regulatory agencies:</strong> As required by law or regulation.
-          </li>
-          <li>
-            <strong>Investors and lenders:</strong> Who may purchase or fund your loan.
-          </li>
-          <li>
-            <strong>Title companies and settlement agents:</strong> To facilitate closing.
-          </li>
-          <li>
-            <strong>Appraisers and inspectors:</strong> To evaluate property value and condition.
-          </li>
-        </ul>
-        <p className="text-muted">We do not sell your personal information to third parties.</p>
-
-        <h2 className="h4 fw-semibold mt-5">Your Rights</h2>
-        <p className="text-muted">Under the CCPA and GLBA, you have the right to:</p>
-        <ul className="text-muted">
-          <li>Know what personal information we collect and how it is used.</li>
-          <li>Request access to your personal information.</li>
-          <li>Request correction of inaccurate information.</li>
-          <li>Request deletion of your information (subject to legal and regulatory limitations).</li>
-          <li>Opt out of certain data sharing practices.</li>
-          <li>Non-discrimination for exercising your privacy rights.</li>
-        </ul>
-
-        <h2 className="h4 fw-semibold mt-5">Opt-Out Instructions</h2>
-        <p className="text-muted">
-          If you wish to limit our sharing of your information with affiliates or third parties for
-          marketing purposes, you may opt out by:
-        </p>
-        <ul className="text-muted">
-          <li>Calling us at [Insert Phone Number]</li>
-          <li>Emailing us at [Insert Email Address]</li>
-          <li>Writing to us at [Insert Mailing Address]</li>
+          <li>Respond to inquiries regarding business-purpose financing</li>
+          <li>Provide general information about our services</li>
+          <li>Communicate with you at your request</li>
+          <li>Improve website functionality and user experience</li>
+          <li>Maintain security and prevent unauthorized activity</li>
         </ul>
         <p className="text-muted">
-          Please note that even if you opt out, we may still share your information as necessary to
-          process your loan and comply with legal requirements.
+          Submitting information through this website does not constitute a loan application, credit
+          decision, or offer to lend.
         </p>
+
+        <h2 className="h4 fw-semibold mt-5">How We Share Information</h2>
+        <p className="text-muted">We do not sell personal information.</p>
+        <p className="text-muted">We may share information with:</p>
+        <ul className="text-muted">
+          <li>Service providers assisting with website operations or communications</li>
+          <li>Regulatory or legal authorities when required by law</li>
+        </ul>
+        <p className="text-muted">
+          Any information sharing related to loan origination, underwriting, or funding will occur only
+          after all required licenses are obtained and in compliance with applicable privacy laws.
+        </p>
+
+        <h2 className="h4 fw-semibold mt-5">Your Privacy Rights</h2>
+        <p className="text-muted">
+          California residents may have rights under the California Consumer Privacy Act (CCPA), including
+          the right to request access to or deletion of personal information, subject to legal and
+          regulatory limitations.
+        </p>
+        <p className="text-muted">Requests may be submitted using the contact information below.</p>
 
         <h2 className="h4 fw-semibold mt-5">Data Security</h2>
         <p className="text-muted">
-          We maintain physical, electronic, and procedural safeguards to protect your information from
-          unauthorized access and use.
+          We maintain reasonable administrative, technical, and physical safeguards designed to protect
+          the information collected through our website.
+        </p>
+
+        <h2 className="h4 fw-semibold mt-5">Licensing Disclosure</h2>
+        <p className="text-muted">
+          Method Lending is in the process of obtaining required state licensing. No lending or brokering
+          activity will occur until all applicable licenses are approved.
         </p>
 
         <h2 className="h4 fw-semibold mt-5">Contact Information</h2>
-        <p className="text-muted">
-          For questions about this Privacy Policy or to exercise your privacy rights, contact us:
-        </p>
         <p className="text-muted mb-0">Method Lending</p>
-        <p className="text-muted mb-0">NMLS #2753300</p>
-        <p className="text-muted mb-0">[Insert Address]</p>
-        <p className="text-muted mb-0">Phone: [Insert Phone Number]</p>
-        <p className="text-muted">Email: [Insert Email Address]</p>
+        <p className="text-muted mb-0">31751 Via Granada, CA 92675</p>
+        <p className="text-muted mb-0">Phone: 949-531-9623</p>
+        <p className="text-muted">
+          Email:{" "}
+          <a href="mailto:aiverson@methodlending.com">aiverson@methodlending.com</a>
+          {" "}/ {" "}
+          <a href="mailto:mrotter@methodlending.com">mrotter@methodlending.com</a>
+        </p>
       </div>
     </section>
   </main>

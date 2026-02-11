@@ -10,7 +10,7 @@ const Home = () => (
               Finding the Right Mortgage for You
             </h1>
             <h5 className="display-7 fs-3">
-              Your path to home ownership starts here
+              Your path to home investment starts here
             </h5>
             <p className="lead text-muted">
               Purchase, refinance, and investment opportunity with clarity. <br /> Professional guidance and structure at every step.
@@ -20,7 +20,7 @@ const Home = () => (
                 Request a Quote
               </Link>
               <a
-                className="btn btn-success btn-lg"
+                className="btn btn-success btn-lg hidden"
                 href="http://methodlending.loanzify.io/register"
                 target="_blank"
                 rel="noopener noreferrer"
@@ -39,14 +39,26 @@ const Home = () => (
     <section className="section">
       <div className="container">
         <div className="hero-cta-grid">
-          <Link className="hero-cta-button" to="/refinance#refinance-cash-out">
-            Access Equity
+          <Link
+            className="hero-cta-button hero-cta-button--access-equity"
+            to="/access-equity"
+            aria-label="Access Equity"
+          >
+            <span className="visually-hidden">Access Equity</span>
           </Link>
-          <Link className="hero-cta-button" to="/refinance">
-            Refinance
+          <Link
+            className="hero-cta-button hero-cta-button--refinance"
+            to="/refinance"
+            aria-label="Refinance"
+          >
+            <span className="visually-hidden">Refinance</span>
           </Link>
-          <Link className="hero-cta-button" to="/purchase">
-            Buy a home
+          <Link
+            className="hero-cta-button hero-cta-button--purchase"
+            to="/purchase"
+            aria-label="Investment Property Purchase"
+          >
+            <span className="visually-hidden">Investment Property Purchase</span>
           </Link>
         </div>
       </div>
@@ -58,119 +70,64 @@ const Home = () => (
           <div className="col-lg-4">
             <h2 className="h3 fw-bold">Loan options built for you</h2>
             <p className="text-muted">
-              Compare products designed for acquisitions, rehabs, bridge needs,
-              and portfolio growth.
+              Business-purpose financing solutions built for real estate investors.
             </p>
           </div>
           <div className="col-lg-8">
             <div className="row g-4">
               <div className="col-md-6">
-                <div className="card h-100 border-0 shadow-sm">
+                <div className="card h-100 border-0 shadow-sm loan-option-card">
                   <div className="card-body">
                     <h3 className="h5">DSCR</h3>
-                    <p className="text-muted mb-0">
-                      Debt Service Coverage Ratio loans for real estate investors, qualifying on rental income instead of personal income.
-                    </p>
+                    <ul className="text-muted mb-0">
+                      <li>Purchase financing for income-producing investment properties</li>
+                      <li>Qualification based on property cash flow and debt service coverage</li>
+                      <li>Business-purpose, non-owner-occupied transactions only</li>
+                    </ul>
                   </div>
                 </div>
               </div>
               <div className="col-md-6">
-                <div className="card h-100 border-0 shadow-sm hidden">
+                <div className="card h-100 border-0 shadow-sm loan-option-card">
                   <div className="card-body">
-                    <h3 className="h5">Non-QM</h3>
-                    <p className="text-muted mb-0">
-                      Flexible financing for self-employed borrowers, investors, and non-traditional income sources.
-                    </p>
+                    <h3 className="h5">Asset Utilization</h3>
+                    <ul className="text-muted mb-0">
+                      <li>Uses verified assets in place of traditional income documentation</li>
+                      <li>Ideal for investors with strong balance sheets and complex cash flow</li>
+                      <li>Business-purpose real estate financing only</li>
+                    </ul>
                   </div>
                 </div>
               </div>
               <div className="col-md-6">
-                <div className="card h-100 border-0 shadow-sm hidden">
+                <div className="card h-100 border-0 shadow-sm loan-option-card">
                   <div className="card-body">
-                    <h3 className="h5">FHA</h3>
-                    <p className="text-muted mb-0">
-                      Government-backed mortgages with lower down payment requirements and flexible credit guidelines.
-                    </p>
+                    <h3 className="h5">Bank Statement and Alt Doc for Business Purpose</h3>
+                    <ul className="text-muted mb-0">
+                      <li>Uses business bank statements or alternative financial records in place of traditional income</li>
+                      <li>Designed for self-employed investors and entity-owned properties</li>
+                      <li>Business-purpose real estate transactions only</li>
+                    </ul>
                   </div>
                 </div>
               </div>
               <div className="col-md-6">
-                <div className="card h-100 border-0 shadow-sm hidden">
+                <div className="card h-100 border-0 shadow-sm loan-option-card">
                   <div className="card-body">
-                    <h3 className="h5">HELOC</h3>
-                    <p className="text-muted mb-0">
-                      A flexible line of credit that lets homeowners borrow against their home equity.
-                    </p>
+                    <h3 className="h5">Multi-Unit Property</h3>
+                    <ul className="text-muted mb-0">
+                      <li>Financing for 5+ unit residential investment properties</li>
+                      <li>Focused on cash flow, scale, and long-term portfolio growth</li>
+                      <li>Non-owner-occupied, business-purpose only</li>
+                    </ul>
                   </div>
                 </div>
               </div>
             </div>
-          </div>
-        </div>
-      </div>
-    </section>
-
-    <section id="process" className="section">
-      <div className="container">
-        <div className="row align-items-center g-4">
-          <div className="col-lg-6">
-            <h2 className="h3 fw-bold">Our process</h2>
-            <p className="text-muted">
-              A simple three-step workflow designed to keep your deal on track
-              without surprises.
+            <p className="text-muted fst-italic mt-4 mb-0">
+              Loan Options - All programs are offered for business-purpose, non-owner-occupied real estate
+              transactions only.
             </p>
-            <ol className="timeline">
-              <li>
-                <h3 className="h6 fw-semibold">Share your deal</h3>
-                <p className="text-muted">
-                  Provide the basics and your goals. We handle the rest.
-                </p>
-              </li>
-              <li>
-                <h3 className="h6 fw-semibold">Review terms</h3>
-                <p className="text-muted">
-                  Transparent pricing with a clear closing plan.
-                </p>
-              </li>
-              <li>
-                <h3 className="h6 fw-semibold">Close and fund</h3>
-                <p className="text-muted">
-                  Get capital in place quickly so you can move forward.
-                </p>
-              </li>
-            </ol>
-          </div>
-          <div className="col-lg-6">
-            <div className="process-card p-4 p-md-5">
-              <p className="text-uppercase text-muted fw-semibold mb-2">
-                Why borrowers choose us
-              </p>
-              <ul className="list-unstyled mb-4">
-                <li className="d-flex gap-3 align-items-start mb-3">
-                  <div>
-                    <p className="h2 mb-0">Fast</p>
-                    <p className="text-muted mb-0">Clear updates from application to close.</p>
-                  </div>
-                </li>
-                <li className="d-flex gap-3 align-items-start mb-3">
-                  <div>
-                    <p className="h2 mb-0">Flexible</p>
-                    <p className="text-muted mb-0">Solutions for purchase, refinance, and investment.</p>
-                  </div>
-                </li>
-                <li className="d-flex gap-3 align-items-start">
-                  <div>
-                    <p className="h2 mb-0">Supported</p>
-                    <p className="text-muted mb-0">A lending specialist helps you every step.</p>
-                  </div>
-                </li>
-              </ul>
-              <div className="mt-4">
-                <Link className="btn btn-outline-primary" to="/request-quote">
-                  Request a Quote
-                </Link>
-              </div>
-            </div>
           </div>
         </div>
       </div>
@@ -196,7 +153,7 @@ const Home = () => (
                       <p className="text-muted mb-0">San Juan Capistrano, CA</p>
                     </div>
                   </div>
-                  <div className="col-lg-4">
+                  <div className="col-lg-4 hidden">
                     <p className="text-muted mb-4">
                       Complete a quick online application to get started.
                     </p>
