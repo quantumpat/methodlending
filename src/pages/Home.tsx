@@ -171,9 +171,9 @@ const Home = () => (
                   <h3 className="h5">Premium Options</h3>
                   <ul className="check-list mb-0">
                     <li>Asset depletion allowed.</li>
-                    <li>Final DSCR must be {'>='} 1.15.</li>
+                    <li>Minimum 680 credit score</li>
                     <li>Use assets to augment DSCR.</li>
-                    <li>Perfect credit required (0x30x12).</li>
+                    <li>Required credit (0x30x12).</li>
                     <li>Loan amounts up to $2M.</li>
                     <li>Initial DSCR 0.75-0.99.</li>
                   </ul>
