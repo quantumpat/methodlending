@@ -143,7 +143,7 @@ What NOT to do:
         const errorDetails =
           typeof data === 'string'
             ? data
-            : data?.error || data?.message || JSON.stringify(data)
+            : data?.details || data?.error || data?.message || JSON.stringify(data)
         const requestId = typeof data === 'object' ? data?.requestId : undefined
         throw new Error(
           `API error (${response.status}).${requestId ? ` Request ID: ${requestId}.` : ''} ${errorDetails}`
