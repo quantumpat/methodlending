@@ -5,12 +5,14 @@
   "type": "module",
   "scripts": {
     "dev": "vite",
+    "dev:vercel": "vercel dev",
     "build": "tsc -b && vite build",
     "lint": "eslint .",
     "preview": "vite preview"
   },
   "dependencies": {
     "bootstrap": "^5.3.3",
+    "lucide-react": "^0.538.0",
     "nodemailer": "^6.9.18",
     "react": "^19.2.0",
     "react-dom": "^19.2.0",

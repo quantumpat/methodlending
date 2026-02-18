@@ -138,19 +138,19 @@ const PurchaseCalculator = () => {
   }
 
   const calculateMonthlyPayment = () => {
-    let rate = 7.5
+    let rate = 7.0
     const score = Number.parseInt(creditScore, 10)
 
-    if (score >= 740) rate = 7.25
-    else if (score >= 700) rate = 7.375
-    else if (score >= 680) rate = 7.5
-    else if (score >= 660) rate = 7.625
-    else if (score >= 640) rate = 7.875
-    else rate = 8.125
+    if (score >= 740) rate = 6.75
+    else if (score >= 700) rate = 6.875
+    else if (score >= 680) rate = 7.0
+    else if (score >= 660) rate = 7.25
+    else if (score >= 640) rate = 7.5
+    else rate = 7.75
 
     if (loanType === 'refinance') rate -= 0.125
-    if (loanType === 'cashout') rate += 0.375
-    if (dscr === '<1.00') rate += 0.5
+    if (loanType === 'cashout') rate += 0.25
+    if (dscr === '<1.00') rate += 0.375
 
     const monthlyRate = rate / 100 / 12
     const numPayments = 360
@@ -174,7 +174,6 @@ const PurchaseCalculator = () => {
       insurance,
       pmi,
       total: pi + propertyTax + insurance + pmi,
-      rate,
       maxLTV,
       ltvValid,
       pitia,
@@ -188,6 +187,7 @@ const PurchaseCalculator = () => {
     if (rent && payment.pitia && showDSCRCalculator) {
       const dscrValue = rent / payment.pitia
       setCalculatedDSCR(dscrValue)
+      setDscr(dscrValue >= 1 ? '1.00+' : '<1.00')
     }
   }, [monthlyRent, payment.pitia, showDSCRCalculator])
 
@@ -528,11 +528,9 @@ const PurchaseCalculator = () => {
                       {formatCurrency(payment.pitia)}
                     </span>
                   </div>
-                  <div className="d-flex justify-content-between align-items-center mt-2 p-2 bg-light rounded">
-                    <span className="fw-semibold">Estimated Rate</span>
-                    <span className="h5 fw-bold text-primary mb-0">
-                      {payment.rate.toFixed(3)}%
-                    </span>
+                  <div className="small text-muted mt-3">
+                    Interest rates vary by lender and market conditions. Contact Method Lending for
+                    current rates and personalized quotes.
                   </div>
                 </div>
               </div>

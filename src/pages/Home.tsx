@@ -40,11 +40,11 @@ const Home = () => (
       <div className="container">
         <div className="hero-cta-grid hero-cta-grid--slide">
           <Link
-            className="hero-cta-button hero-cta-button--access-equity"
-            to="/access-equity"
-            aria-label="Access Equity"
+            className="hero-cta-button hero-cta-button--purchase"
+            to="/purchase"
+            aria-label="Investment Property Purchase"
           >
-            <span className="visually-hidden">Access Equity</span>
+            <span className="visually-hidden">Investment Property Purchase</span>
           </Link>
           <Link
             className="hero-cta-button hero-cta-button--refinance"
@@ -54,11 +54,11 @@ const Home = () => (
             <span className="visually-hidden">Refinance</span>
           </Link>
           <Link
-            className="hero-cta-button hero-cta-button--purchase"
-            to="/purchase"
-            aria-label="Investment Property Purchase"
+            className="hero-cta-button hero-cta-button--access-equity"
+            to="/access-equity"
+            aria-label="Access Equity"
           >
-            <span className="visually-hidden">Investment Property Purchase</span>
+            <span className="visually-hidden">Access Equity</span>
           </Link>
         </div>
       </div>
@@ -186,9 +186,8 @@ const Home = () => (
 
     <section id="contact" className="section">
       <div className="container">
-        <div className="row-g-4">
-          <div className="col-lg-4"></div>
-          <div className="col-lg-4">
+        <div className="row g-4 justify-content-center">
+          <div className="col-12 col-md-6 col-lg-4">
             <Link className="btn btn-primary btn-lg w-100" to="/request-quote">
               Request a Quote
             </Link>

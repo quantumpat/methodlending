@@ -116,7 +116,9 @@ const RequestQuotePage = () => {
                     <div className="row g-3">
                       <div className="col-md-6">
                         <label className="form-label" htmlFor="quote-name">
-                          Full name
+                          Full name{' '}
+                          <span className="required-asterisk" aria-hidden="true">*</span>
+                          <span className="visually-hidden">required</span>
                         </label>
                         <input
                           className="form-control"
@@ -129,7 +131,9 @@ const RequestQuotePage = () => {
                       </div>
                       <div className="col-md-6">
                         <label className="form-label" htmlFor="quote-phone">
-                          Phone
+                          Phone{' '}
+                          <span className="required-asterisk" aria-hidden="true">*</span>
+                          <span className="visually-hidden">required</span>
                         </label>
                         <input
                           className="form-control"
@@ -142,7 +146,9 @@ const RequestQuotePage = () => {
                       </div>
                       <div className="col-12">
                         <label className="form-label" htmlFor="quote-email">
-                          Email
+                          Email{' '}
+                          <span className="required-asterisk" aria-hidden="true">*</span>
+                          <span className="visually-hidden">required</span>
                         </label>
                         <input
                           className="form-control"
@@ -172,7 +178,9 @@ const RequestQuotePage = () => {
                       </div>
                       <div className="col-md-6">
                         <label className="form-label" htmlFor="quote-purpose">
-                          Loan purpose
+                          Loan purpose{' '}
+                          <span className="required-asterisk" aria-hidden="true">*</span>
+                          <span className="visually-hidden">required</span>
                         </label>
                         <select
                           className="form-select"
