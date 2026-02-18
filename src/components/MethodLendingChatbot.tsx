@@ -135,11 +135,21 @@ What NOT to do:
         }),
       })
 
+      const contentType = response.headers.get('content-type') || ''
+      const isJson = contentType.includes('application/json')
+      const data = isJson ? await response.json() : await response.text()
+
       if (!response.ok) {
-        throw new Error('Request failed')
+        const errorDetails =
+          typeof data === 'string'
+            ? data
+            : data?.error || data?.message || JSON.stringify(data)
+        const requestId = typeof data === 'object' ? data?.requestId : undefined
+        throw new Error(
+          `API error (${response.status}).${requestId ? ` Request ID: ${requestId}.` : ''} ${errorDetails}`
+        )
       }
 
-      const data = await response.json()
       const assistantMessage = Array.isArray(data?.content)
         ? data.content
             .filter((item: { type?: string }) => item.type === 'text')
@@ -156,13 +166,17 @@ What NOT to do:
             "Thanks for reaching out! Please visit methodlending.com/request-quote to submit your info or book a call with a loan officer.",
         },
       ])
-    } catch {
+    } catch (error) {
+      const message = error instanceof Error ? error.message : 'Unknown error'
       setMessages((prev) => [
         ...prev,
         {
           role: 'assistant',
           content:
-            "I apologize, I'm having trouble connecting. Please visit methodlending.com/request-quote to submit your information directly, or call us!",
+            "I apologize, I'm having trouble connecting. " +
+            'Debug info: ' +
+            message +
+            ' Please visit methodlending.com/request-quote to submit your information directly, or call us!',
         },
       ])
     } finally {

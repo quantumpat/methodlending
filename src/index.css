@@ -386,6 +386,7 @@ a {
   }
 }
 
+
 .hero-cta-grid {
   margin-top: 0;
   display: grid;
@@ -436,19 +437,17 @@ a {
 
 .hero-cta-button {
   background-color: #ffffff;
-  background-position: center;
-  background-size: contain;
-  background-repeat: no-repeat;
   border: 1px solid rgba(15, 23, 42, 0.12);
-  border-radius: 0.5rem;
-  padding: 0;
-  text-align: center;
+  border-radius: 999px;
+  padding: 0.8rem 1.1rem;
+  text-align: left;
   box-shadow: 0 8px 18px rgba(15, 23, 42, 0.08);
   transition: transform 0.2s ease, box-shadow 0.2s ease, border-color 0.2s ease;
-  aspect-ratio: 1 / 1;
-  height: auto;
+  min-height: 72px;
   width: 100%;
-  display: block;
+  display: flex;
+  align-items: center;
+  gap: 0.9rem;
 }
 
 @media (max-width: 992px) {
@@ -466,20 +465,54 @@ a {
 
 @media (max-width: 768px) {
   .hero-cta-button {
-    aspect-ratio: 1 / 1;
+    min-height: 64px;
+    padding: 0.65rem 0.9rem;
   }
 }
 
+.hero-cta-button__badge {
+  width: 44px;
+  height: 44px;
+  border-radius: 0;
+  border: none;
+  background-color: transparent;
+  background-image: var(--cta-icon);
+  background-repeat: no-repeat;
+  background-position: center;
+  background-size: contain;
+  flex-shrink: 0;
+}
+
+@media (max-width: 768px) {
+  .hero-cta-button__badge {
+    width: 38px;
+    height: 38px;
+  }
+}
+
+.hero-cta-button__text {
+  font-size: 1.02rem;
+  font-weight: 600;
+  color: #0f172a;
+  letter-spacing: 0.01em;
+  flex: 1;
+}
+
+.hero-cta-button__arrow {
+  font-size: 1.1rem;
+  color: #0f172a;
+}
+
 .hero-cta-button--access-equity {
-  background-image: url('/images/coins%20and%20house.png');
+  --cta-icon: url('/images/coins%20and%20house.png');
 }
 
 .hero-cta-button--refinance {
-  background-image: url('/images/keys.png');
+  --cta-icon: url('/images/house%20with%20money.png');
 }
 
 .hero-cta-button--purchase {
-  background-image: url('/images/house%20with%20money.png');
+  --cta-icon: url('/images/keys.png');
 }
 
 .hero-card,

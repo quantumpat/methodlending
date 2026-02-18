@@ -44,6 +44,11 @@ const Home = () => (
             to="/purchase"
             aria-label="Investment Property Purchase"
           >
+            <span className="hero-cta-button__badge" aria-hidden="true" />
+            <span className="hero-cta-button__text">Purchase</span>
+            <span className="hero-cta-button__arrow" aria-hidden="true">
+              &gt;
+            </span>
             <span className="visually-hidden">Investment Property Purchase</span>
           </Link>
           <Link
@@ -51,6 +56,11 @@ const Home = () => (
             to="/refinance"
             aria-label="Refinance"
           >
+            <span className="hero-cta-button__badge" aria-hidden="true" />
+            <span className="hero-cta-button__text">Refinance</span>
+            <span className="hero-cta-button__arrow" aria-hidden="true">
+              &gt;
+            </span>
             <span className="visually-hidden">Refinance</span>
           </Link>
           <Link
@@ -58,6 +68,11 @@ const Home = () => (
             to="/access-equity"
             aria-label="Access Equity"
           >
+            <span className="hero-cta-button__badge" aria-hidden="true" />
+            <span className="hero-cta-button__text">Access Equity</span>
+            <span className="hero-cta-button__arrow" aria-hidden="true">
+              &gt;
+            </span>
             <span className="visually-hidden">Access Equity</span>
           </Link>
         </div>

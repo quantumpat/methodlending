@@ -17,12 +17,9 @@ const TeamPage = () => (
               expertise with hands-on project guidance.
             </p>
             <div className="d-flex flex-wrap gap-3">
-              <a className="btn btn-primary btn-lg" href="/#contact">
+              <Link className="btn btn-primary btn-lg" to="/request-quote">
                 Connect with us
-              </a>
-                <Link className="btn btn-outline-primary btn-lg" to="/request-quote">
-                  Request a Quote
-                </Link>
+              </Link>
               <a className="btn btn-outline-primary btn-lg" href="/loan-options">
                 View loan options
               </a>
@@ -88,11 +85,7 @@ const TeamPage = () => (
             </div>
           </div>
         </div>
-        <div className="mt-4 text-center">
-              <Link className="btn btn-primary" to="/request-quote">
-                Request a Quote
-              </Link>
-        </div>
+        <div className="mt-4 text-center" />
       </div>
     </section>
   </main>
