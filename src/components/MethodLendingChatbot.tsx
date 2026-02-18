@@ -109,7 +109,10 @@ What NOT to do:
     if (!inputValue.trim() || isLoading) return
 
     const userMessage = inputValue.trim()
-    const nextMessages = [...messages, { role: 'user', content: userMessage }]
+    const nextMessages: ChatMessage[] = [
+      ...messages,
+      { role: 'user', content: userMessage },
+    ]
 
     setInputValue('')
     setMessages(nextMessages)
