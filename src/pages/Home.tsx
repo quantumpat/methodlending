@@ -7,14 +7,11 @@ const Home = () => (
         <div className="row align-items-center g-4">
           <div className="col-lg-8">
             <h1 className="display-5 fw-bold">
-              Finding the Right Mortgage for You
+              Built for Real Estate Investors.
             </h1>
             <h5 className="display-7 fs-3">
-              Your path to home investment starts here
+              Business-purpose loans with clarity, speed, and structure at every step.
             </h5>
-            <p className="lead text-muted">
-              Purchase, refinance, and investment opportunity with clarity. <br /> Professional guidance and structure at every step.
-            </p>
             <div className="d-flex flex-wrap gap-3">
               <Link className="btn btn-primary btn-lg" to="/request-quote">
                 Request a Quote
