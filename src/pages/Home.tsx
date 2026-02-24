@@ -5,28 +5,30 @@ const Home = () => (
     <section id="home" className="hero-section hero-section--image">
       <div className="container">
         <div className="row align-items-center g-4">
-          <div className="col-lg-8">
-            <h1 className="display-5 fw-bold">
-              Built for Real Estate Investors.
-            </h1>
-            <h5 className="display-7 fs-3">
-              Business-purpose loans with clarity, speed, and structure at every step.
-            </h5>
-            <div className="d-flex flex-wrap gap-3">
-              <Link className="btn btn-primary btn-lg" to="/request-quote">
-                Request a Quote
-              </Link>
-              <a
-                className="btn btn-success btn-lg hidden"
-                href="http://methodlending.loanzify.io/register"
-                target="_blank"
-                rel="noopener noreferrer"
-              >
-                Apply Now
-              </a>
-              <Link className="btn btn-lg btn-loan-options" to="/loan-options">
-                Loan Options
-              </Link>
+          <div className="col-lg-12">
+            <div className="hero-glass-card">
+              <h1 className="display-5 fw-bold">
+                Built for Real Estate Investors.
+              </h1>
+              <h5 className="lead display-9 fs-3">
+                Business-purpose loans with clarity, speed, and structure at every step.
+              </h5>
+              <div className="d-flex flex-wrap gap-3">
+                <Link className="btn btn-primary btn-lg" to="/request-quote">
+                  Request a Quote
+                </Link>
+                <a
+                  className="btn btn-success btn-lg hidden"
+                  href="http://methodlending.loanzify.io/register"
+                  target="_blank"
+                  rel="noopener noreferrer"
+                >
+                  Apply Now
+                </a>
+                <Link className="btn btn-lg btn-loan-options" to="/loan-options">
+                  Loan Options
+                </Link>
+              </div>
             </div>
           </div>
         </div>
