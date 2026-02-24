@@ -258,6 +258,298 @@ a {
   color: #0f172a;
 }
 
+.markets-page {
+  background: radial-gradient(circle at top, #f7fafc 0%, #edf2f7 48%, #f8fafc 100%);
+}
+
+.markets-hero {
+  padding: 5rem 0 4rem;
+  background:
+    linear-gradient(130deg, rgba(13, 78, 135, 0.08), rgba(248, 250, 252, 0.9)),
+    repeating-linear-gradient(120deg, rgba(13, 78, 135, 0.08), rgba(13, 78, 135, 0.08) 6px, transparent 6px, transparent 18px);
+  border-bottom: 1px solid rgba(15, 23, 42, 0.08);
+}
+
+.markets-hero h1 {
+  font-size: clamp(2.5rem, 4vw, 3.75rem);
+  font-weight: 700;
+  margin-bottom: 1rem;
+}
+
+.markets-hero em {
+  color: #0d4e87;
+  font-style: normal;
+  text-shadow: 0 8px 18px rgba(13, 78, 135, 0.2);
+}
+
+.markets-hero p {
+  max-width: 680px;
+  font-size: 1.1rem;
+  color: #475569;
+}
+
+.markets-hero__eyebrow {
+  display: inline-flex;
+  align-items: center;
+  gap: 0.5rem;
+  font-family: 'Vend Sans', 'Gowun Dodum', system-ui, -apple-system,
+    BlinkMacSystemFont, 'Segoe UI', sans-serif;
+  letter-spacing: 0.18em;
+  text-transform: uppercase;
+  font-size: 0.75rem;
+  font-weight: 600;
+  color: #0d4e87;
+  margin-bottom: 0.75rem;
+}
+
+.markets-hero__dot {
+  width: 10px;
+  height: 10px;
+  border-radius: 999px;
+  background: #0d4e87;
+  box-shadow: 0 0 0 4px rgba(13, 78, 135, 0.15);
+}
+
+.markets-hero__actions {
+  display: flex;
+  flex-wrap: wrap;
+  gap: 1rem;
+  margin-top: 2rem;
+}
+
+.markets-section-header {
+  margin-bottom: 2rem;
+}
+
+.markets-section-header h2 {
+  font-size: 2rem;
+  margin-bottom: 0.35rem;
+}
+
+.markets-section-header p {
+  color: #64748b;
+  margin-bottom: 0;
+}
+
+.markets-map {
+  padding-top: 4rem;
+}
+
+.markets-map-card {
+  border: 1px solid rgba(15, 23, 42, 0.08);
+  border-radius: 1.25rem;
+  padding: 1.5rem;
+  background: #ffffff;
+  box-shadow: 0 20px 40px rgba(15, 23, 42, 0.08);
+}
+
+.markets-map-frame {
+  position: relative;
+  border-radius: 1rem;
+  overflow: hidden;
+  background: linear-gradient(180deg, #f8fafc 0%, #eef2f7 100%);
+  padding: 1rem;
+  min-height: 320px;
+}
+
+.markets-map-frame svg {
+  width: 100%;
+  height: auto;
+  display: block;
+}
+
+.markets-map-fallback {
+  text-align: center;
+  padding: 3rem 1rem;
+  color: #94a3b8;
+  margin: 0;
+}
+
+.markets-legend {
+  display: flex;
+  flex-wrap: wrap;
+  gap: 1rem 2rem;
+  align-items: center;
+  margin-bottom: 1rem;
+}
+
+.markets-legend__item {
+  display: inline-flex;
+  align-items: center;
+  gap: 0.5rem;
+  font-size: 0.9rem;
+  color: #475569;
+}
+
+.markets-legend__swatch {
+  width: 14px;
+  height: 14px;
+  border-radius: 4px;
+  border: 1px solid rgba(15, 23, 42, 0.12);
+}
+
+.markets-legend__swatch--active {
+  background: #0d4e87;
+}
+
+.markets-legend__swatch--inactive {
+  background: #e2e8f0;
+}
+
+.markets-state {
+  stroke: rgba(255, 255, 255, 0.8);
+  stroke-width: 1;
+  transition: fill 0.2s ease, filter 0.2s ease;
+}
+
+.markets-state--active {
+  fill: #0d4e87;
+}
+
+.markets-state--inactive {
+  fill: #d8dee7;
+}
+
+.markets-state:hover {
+  filter: brightness(1.05);
+}
+
+.markets-state-label {
+  font-size: 9px;
+  font-weight: 600;
+  pointer-events: none;
+}
+
+.markets-grid {
+  padding-top: 4rem;
+}
+
+.markets-grid__list {
+  display: grid;
+  grid-template-columns: repeat(auto-fit, minmax(220px, 1fr));
+  gap: 1rem;
+}
+
+.markets-state-card {
+  display: flex;
+  gap: 0.75rem;
+  align-items: center;
+  padding: 0.85rem 1rem;
+  border-radius: 0.75rem;
+  background: #ffffff;
+  border: 1px solid rgba(15, 23, 42, 0.08);
+  box-shadow: 0 10px 20px rgba(15, 23, 42, 0.05);
+}
+
+.markets-state-card__indicator {
+  width: 10px;
+  height: 44px;
+  border-radius: 999px;
+}
+
+.markets-state-card__indicator--yes {
+  background: linear-gradient(180deg, #0d4e87, #0a3b66);
+}
+
+.markets-state-card__indicator--no {
+  background: linear-gradient(180deg, #cbd5e1, #94a3b8);
+}
+
+.markets-state-card__name {
+  font-weight: 600;
+}
+
+.markets-state-card__status {
+  color: #64748b;
+  font-size: 0.9rem;
+}
+
+.markets-cta {
+  padding-top: 4rem;
+}
+
+.markets-cta__card {
+  border-radius: 1.25rem;
+  padding: 2.5rem 3rem;
+  background: linear-gradient(120deg, #0d4e87 0%, #0a3b66 60%);
+  color: #ffffff;
+  display: flex;
+  flex-wrap: wrap;
+  justify-content: space-between;
+  align-items: center;
+  gap: 2rem;
+  box-shadow: 0 30px 60px rgba(13, 78, 135, 0.3);
+}
+
+.markets-cta__card h3 {
+  margin-bottom: 0.35rem;
+}
+
+.markets-cta__card p {
+  margin-bottom: 0;
+  color: rgba(255, 255, 255, 0.85);
+}
+
+.markets-disclaimer {
+  padding-top: 3rem;
+  padding-bottom: 4rem;
+}
+
+.markets-disclaimer p {
+  color: #64748b;
+  font-size: 0.95rem;
+  margin-bottom: 0;
+}
+
+.markets-tooltip {
+  position: fixed;
+  z-index: 20;
+  background: #0f172a;
+  color: #ffffff;
+  padding: 0.5rem 0.75rem;
+  border-radius: 0.5rem;
+  font-size: 0.85rem;
+  display: flex;
+  align-items: center;
+  gap: 0.5rem;
+  opacity: 0;
+  transform: translateY(6px);
+  pointer-events: none;
+  transition: opacity 0.2s ease, transform 0.2s ease;
+}
+
+.markets-tooltip--visible {
+  opacity: 1;
+  transform: translateY(0);
+}
+
+.markets-tooltip__badge {
+  padding: 0.1rem 0.4rem;
+  border-radius: 999px;
+  font-size: 0.7rem;
+  background: rgba(255, 255, 255, 0.12);
+}
+
+.markets-tooltip__badge.is-yes {
+  background: rgba(34, 197, 94, 0.2);
+  color: #4ade80;
+}
+
+.markets-tooltip__badge.is-no {
+  background: rgba(248, 113, 113, 0.2);
+  color: #fca5a5;
+}
+
+@media (max-width: 768px) {
+  .markets-hero {
+    padding: 4rem 0 3rem;
+  }
+
+  .markets-cta__card {
+    padding: 2rem;
+  }
+}
+
 .btn-loan-options:hover,
 .btn-loan-options:focus {
   background-color: #0f172a;
@@ -438,7 +730,7 @@ a {
 .hero-cta-button {
   background-color: #ffffff;
   border: 1px solid rgba(15, 23, 42, 0.12);
-  border-radius: 999px;
+  border-radius: 5px;
   padding: 0.8rem 1.1rem;
   text-align: left;
   box-shadow: 0 8px 18px rgba(15, 23, 42, 0.08);
@@ -491,7 +783,7 @@ a {
 }
 
 .hero-cta-button__text {
-  font-size: 1.02rem;
+  font-size: 1.3376rem;
   font-weight: 600;
   color: #0f172a;
   letter-spacing: 0.01em;

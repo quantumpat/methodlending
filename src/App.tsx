@@ -6,6 +6,7 @@ import PurchasePage from './pages/PurchasePage.tsx'
 import RefinancePage from './pages/RefinancePage.tsx'
 import AccessEquityPage from './pages/AccessEquityPage.tsx'
 import LoanOptionsPage from './pages/LoanOptionsPage.tsx'
+import MarketsServedPage from './pages/MarketsServedPage.tsx'
 import TeamPage from './pages/TeamPage.tsx'
 import RequestQuotePage from './pages/RequestQuotePage.tsx'
 import PrivacyPolicy from './pages/PrivacyPolicy.tsx'
@@ -123,6 +124,12 @@ function App() {
       { label: 'Overview', href: '/loan-options#loan-options-hero' },
       { label: 'Compare Options', href: '/loan-options#loan-options-compare' },
     ],
+    '/markets-served': [
+      { label: 'Overview', href: '/markets-served#markets-hero' },
+      { label: 'Coverage Map', href: '/markets-served#markets-map' },
+      { label: 'State List', href: '/markets-served#markets-grid' },
+      { label: 'Disclaimer', href: '/markets-served#markets-disclaimer' },
+    ],
     '/team': [
       { label: 'Overview', href: '/team#team-hero' },
       { label: 'Leadership', href: '/team#team-leadership' },
@@ -211,6 +218,15 @@ function App() {
               <li className="nav-item">
                 <NavLink
                   className={({ isActive }) => `nav-link${isActive ? ' active' : ''}`}
+                  to="/markets-served"
+                  onClick={closeMobileNav}
+                >
+                  Markets Served
+                </NavLink>
+              </li>
+              <li className="nav-item">
+                <NavLink
+                  className={({ isActive }) => `nav-link${isActive ? ' active' : ''}`}
                   to="/team"
                   onClick={closeMobileNav}
                 >
@@ -233,6 +249,7 @@ function App() {
         <Route path="/refinance" element={<RefinancePage />} />
         <Route path="/access-equity" element={<AccessEquityPage />} />
         <Route path="/loan-options" element={<LoanOptionsPage />} />
+        <Route path="/markets-served" element={<MarketsServedPage />} />
         <Route path="/team" element={<TeamPage />} />
         <Route path="/request-quote" element={<RequestQuotePage />} />
         <Route path="/privacy-policy" element={<PrivacyPolicy />} />

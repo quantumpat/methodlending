@@ -140,10 +140,14 @@ What NOT to do:
       const data = isJson ? await response.json() : await response.text()
 
       if (!response.ok) {
-        const errorDetails =
+        const errorDetailsRaw =
           typeof data === 'string'
             ? data
-            : data?.details || data?.error || data?.message || JSON.stringify(data)
+            : data?.details || data?.error || data?.message || data
+        const errorDetails =
+          typeof errorDetailsRaw === 'string'
+            ? errorDetailsRaw
+            : JSON.stringify(errorDetailsRaw)
         const requestId = typeof data === 'object' ? data?.requestId : undefined
         throw new Error(
           `API error (${response.status}).${requestId ? ` Request ID: ${requestId}.` : ''} ${errorDetails}`
