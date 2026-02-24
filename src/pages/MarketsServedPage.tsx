@@ -125,9 +125,11 @@ const decodeTopojson = (topology: any, objectName: string) => {
   const features = obj.geometries.map((geom: any) => {
     let geometry
     if (geom.type === 'Polygon') {
-      geometry = { type: 'Polygon', coordinates: geom.arcs.map(ringCoords) }
+      const polygonArcs = geom.arcs as number[][]
+      geometry = { type: 'Polygon', coordinates: polygonArcs.map(ringCoords) }
     } else if (geom.type === 'MultiPolygon') {
-      geometry = { type: 'MultiPolygon', coordinates: geom.arcs.map((poly: number[][][]) => poly.map(ringCoords)) }
+      const multiPolygonArcs = geom.arcs as number[][][]
+      geometry = { type: 'MultiPolygon', coordinates: multiPolygonArcs.map((poly) => poly.map(ringCoords)) }
     }
     return { type: 'Feature', properties: geom.properties, geometry }
   })
@@ -145,12 +147,11 @@ const MarketsServedPage = () => {
     x: 0,
     y: 0,
   })
-  const { projection, geoPath } = useMemo(() => {
+  const { geoPath } = useMemo(() => {
     const width = 960
     const height = 600
     const projectionInstance = d3.geoAlbersUsa().scale(1280).translate([width / 2, height / 2])
     return {
-      projection: projectionInstance,
       geoPath: d3.geoPath(projectionInstance),
     }
   }, [])
