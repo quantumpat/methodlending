@@ -1,22 +1,6 @@
-import { useEffect } from 'react'
 import { Link } from 'react-router-dom'
 
 const RequestQuotePage = () => {
-  useEffect(() => {
-    const existingScript = document.querySelector<HTMLScriptElement>(
-      'script[src="https://app.woosender.com/assets/script/woo-calendar.js"]'
-    )
-
-    if (existingScript) {
-      return
-    }
-
-    const script = document.createElement('script')
-    script.src = 'https://app.woosender.com/assets/script/woo-calendar.js'
-    script.async = true
-    document.body.appendChild(script)
-  }, [])
-
   return (
     <main>
     <section id="request-hero" className="hero-section">
@@ -50,13 +34,15 @@ const RequestQuotePage = () => {
             <div className="card border-0 shadow-sm h-100 quote-panel">
               <div className="card-body p-3 p-md-4">
                 <h2 className="h5 fw-bold mb-3">Schedule a meeting</h2>
-                <div
-                  className="woo-calendar-iframe-container"
-                  id="woo-calendar-iframe-container"
-                  data-slug="methodlending/methodteam"
-                  data-domain="https://go.woosender.com"
-                  style={{ minWidth: '320px', height: '600px' }}
-                />
+                <div style={{ width: '100%', height: '700px' }}>
+                  <iframe
+                    title="Schedule a meeting"
+                    src="https://go.woosender.com/methodlending/methodteam"
+                    style={{ width: '100%', height: '100%', border: 'none', display: 'block' }}
+                    loading="lazy"
+                    scrolling="no"
+                  />
+                </div>
               </div>
             </div>
           </div>
@@ -71,13 +57,15 @@ const RequestQuotePage = () => {
                   </p>
                 </div>
                 <div className="d-flex flex-column flex-grow-1 quote-form">
-                  <div
-                    className="woo-calendar-iframe-container"
-                    id="woo-calendar-iframe-container"
-                    data-slug="8n9j-7ok-b6f"
-                    data-domain="https://go.woosender.com/smart-form"
-                    style={{ minWidth: '320px', height: '600px' }}
-                  />
+                  <div style={{ width: '100%', height: '700px' }}>
+                    <iframe
+                      title="Email request"
+                      src="https://go.woosender.com/smart-form/8n9j-7ok-b6f"
+                      style={{ width: '100%', height: '100%', border: 'none', display: 'block' }}
+                      loading="lazy"
+                      scrolling="no"
+                    />
+                  </div>
                 </div>
               </div>
             </div>
