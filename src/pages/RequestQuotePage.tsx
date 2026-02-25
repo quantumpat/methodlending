@@ -1,10 +1,7 @@
-import { useEffect, useState, type FormEvent } from 'react'
+import { useEffect } from 'react'
 import { Link } from 'react-router-dom'
 
 const RequestQuotePage = () => {
-  const [submitStatus, setSubmitStatus] = useState<'idle' | 'sending' | 'success' | 'error'>('idle')
-  const [submitMessage, setSubmitMessage] = useState('')
-
   useEffect(() => {
     const existingScript = document.querySelector<HTMLScriptElement>(
       'script[src="https://app.woosender.com/assets/script/woo-calendar.js"]'
@@ -19,42 +16,6 @@ const RequestQuotePage = () => {
     script.async = true
     document.body.appendChild(script)
   }, [])
-
-  const handleSubmit = async (event: FormEvent<HTMLFormElement>) => {
-    event.preventDefault()
-    if (submitStatus === 'sending') {
-      return
-    }
-
-    setSubmitStatus('sending')
-    setSubmitMessage('')
-
-    const form = event.currentTarget
-    const formData = new FormData(form)
-    const payload = Object.fromEntries(
-      Array.from(formData.entries()).map(([key, value]) => [key, String(value).trim()])
-    )
-
-    try {
-      const response = await fetch('/api/send-quote', {
-        method: 'POST',
-        headers: {
-          'Content-Type': 'application/json',
-        },
-        body: JSON.stringify(payload),
-      })
-
-      if (!response.ok) {
-        throw new Error('Request failed')
-      }
-
-      setSubmitStatus('success')
-      form.reset()
-    } catch {
-      setSubmitStatus('error')
-      setSubmitMessage('We could not send your request. Please try again or email us directly.')
-    }
-  }
 
   return (
     <main>
@@ -109,137 +70,15 @@ const RequestQuotePage = () => {
                     Share a few details and we will reply within one business day.
                   </p>
                 </div>
-                <form className="d-flex flex-column flex-grow-1 quote-form" onSubmit={handleSubmit}>
-                  <div className="quote-form-section">
-                    <div className="quote-form-section__title">Contact</div>
-                    <div className="row g-3">
-                      <div className="col-md-6">
-                        <label className="form-label" htmlFor="quote-name">
-                          Full name{' '}
-                          <span className="required-asterisk" aria-hidden="true">*</span>
-                          <span className="visually-hidden">required</span>
-                        </label>
-                        <input
-                          className="form-control"
-                          id="quote-name"
-                          name="name"
-                          placeholder="Alex Morgan"
-                          type="text"
-                          required
-                        />
-                      </div>
-                      <div className="col-md-6">
-                        <label className="form-label" htmlFor="quote-phone">
-                          Phone{' '}
-                          <span className="required-asterisk" aria-hidden="true">*</span>
-                          <span className="visually-hidden">required</span>
-                        </label>
-                        <input
-                          className="form-control"
-                          id="quote-phone"
-                          name="phone"
-                          placeholder="(555) 123-4567"
-                          type="tel"
-                          required
-                        />
-                      </div>
-                      <div className="col-12">
-                        <label className="form-label" htmlFor="quote-email">
-                          Email{' '}
-                          <span className="required-asterisk" aria-hidden="true">*</span>
-                          <span className="visually-hidden">required</span>
-                        </label>
-                        <input
-                          className="form-control"
-                          id="quote-email"
-                          name="email"
-                          placeholder="alex@email.com"
-                          type="email"
-                          required
-                        />
-                      </div>
-                    </div>
-                  </div>
-                  <div className="quote-form-section">
-                    <div className="quote-form-section__title">Loan details</div>
-                    <div className="row g-3">
-                      <div className="col-12">
-                        <label className="form-label" htmlFor="quote-address">
-                          Property address (optional)
-                        </label>
-                        <input
-                          className="form-control"
-                          id="quote-address"
-                          name="propertyAddress"
-                          placeholder="123 Main St, San Juan Capistrano, CA"
-                          type="text"
-                        />
-                      </div>
-                      <div className="col-md-6">
-                        <label className="form-label" htmlFor="quote-purpose">
-                          Loan purpose{' '}
-                          <span className="required-asterisk" aria-hidden="true">*</span>
-                          <span className="visually-hidden">required</span>
-                        </label>
-                        <select
-                          className="form-select"
-                          id="quote-purpose"
-                          name="purpose"
-                          required
-                          defaultValue=""
-                        >
-                          <option value="" disabled>
-                            Select purchase or refinance
-                          </option>
-                          <option value="purchase">Purchase</option>
-                          <option value="refinance">Refinance</option>
-                        </select>
-                      </div>
-                      <div className="col-md-6">
-                        <label className="form-label" htmlFor="quote-amount">
-                          Loan amount sought (optional)
-                        </label>
-                        <input
-                          className="form-control"
-                          id="quote-amount"
-                          name="loanAmount"
-                          placeholder="$350,000"
-                          type="text"
-                        />
-                      </div>
-                    </div>
-                  </div>
-                  <div className="quote-form-section quote-form-section--grow">
-                    <div className="quote-form-section__title">Notes</div>
-                    <label className="form-label" htmlFor="quote-message">
-                      Details
-                    </label>
-                    <textarea
-                      className="form-control flex-grow-1"
-                      id="quote-message"
-                      name="details"
-                      placeholder="Property type, timeline, and any special circumstances."
-                      style={{ resize: 'none', overflowY: 'auto' }}
-                    />
-                  </div>
-                  <button
-                    className="btn btn-primary w-100"
-                    type="submit"
-                    disabled={submitStatus === 'sending'}
-                  >
-                    {submitStatus === 'sending' ? 'Sending...' : 'Send email'}
-                  </button>
-                  {submitStatus === 'success' && (
-                    <p className="text-success mt-3 mb-0" role="status">
-                      Thanks! We received your request and will reply within one business day.
-                    </p>
-                  )}
-                  {submitStatus === 'error' && (
-                    <p className="text-danger mt-3 mb-0" role="alert">
-                      {submitMessage}
-                    </p>
-                  )}
-                </form>
+                <div className="d-flex flex-column flex-grow-1 quote-form">
+                  <div
+                    className="woo-calendar-iframe-container"
+                    id="woo-calendar-iframe-container"
+                    data-slug="8n9j-7ok-b6f"
+                    data-domain="https://go.woosender.com/smart-form"
+                    style={{ minWidth: '320px', height: '600px' }}
+                  />
+                </div>
               </div>
             </div>
           </div>
