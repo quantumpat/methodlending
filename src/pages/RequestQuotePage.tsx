@@ -7,7 +7,7 @@ const RequestQuotePage = () => {
 
   useEffect(() => {
     const existingScript = document.querySelector<HTMLScriptElement>(
-      'script[src="https://assets.calendly.com/assets/external/widget.js"]'
+      'script[src="https://app.woosender.com/assets/script/woo-calendar.js"]'
     )
 
     if (existingScript) {
@@ -15,7 +15,7 @@ const RequestQuotePage = () => {
     }
 
     const script = document.createElement('script')
-    script.src = 'https://assets.calendly.com/assets/external/widget.js'
+    script.src = 'https://app.woosender.com/assets/script/woo-calendar.js'
     script.async = true
     document.body.appendChild(script)
   }, [])
@@ -76,9 +76,6 @@ const RequestQuotePage = () => {
               <Link className="btn btn-outline-primary btn-lg" to="/loan-options">
                 View loan options
               </Link>
-              <a className="btn btn-link px-0" href="/#contact">
-                Prefer email? Contact us
-              </a>
             </div>
           </div>
         </div>
@@ -93,9 +90,11 @@ const RequestQuotePage = () => {
               <div className="card-body p-3 p-md-4">
                 <h2 className="h5 fw-bold mb-3">Schedule a meeting</h2>
                 <div
-                  className="calendly-inline-widget"
-                  data-url="https://calendly.com/aiverson-methodlending/discovery-call?hide_gdpr_banner=1"
-                  style={{ minWidth: '320px', height: '700px' }}
+                  className="woo-calendar-iframe-container"
+                  id="woo-calendar-iframe-container"
+                  data-slug="methodlending/methodteam"
+                  data-domain="https://go.woosender.com"
+                  style={{ minWidth: '320px', height: '600px' }}
                 />
               </div>
             </div>
