@@ -150,9 +150,7 @@ const RequestQuotePage = () => {
                       </div>
                       <div className="col-md-6">
                         <label className="form-label" htmlFor="quote-phone">
-                          Phone{' '}
-                          <span className="required-asterisk" aria-hidden="true">*</span>
-                          <span className="visually-hidden">required</span>
+                          Phone (optional)
                         </label>
                         <input
                           className="form-control"
@@ -160,7 +158,6 @@ const RequestQuotePage = () => {
                           name="phone"
                           placeholder="(555) 123-4567"
                           type="tel"
-                          required
                         />
                       </div>
                       <div className="col-12 col-md-6">
