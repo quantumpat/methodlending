@@ -150,7 +150,7 @@ function App() {
   return (
     <div className="page">
       <ScrollToTop />
-      <header className="navbar navbar-expand-lg bg-white border-bottom sticky-top shadow-sm">
+      <header className="navbar navbar-expand-xxl bg-white border-bottom sticky-top shadow-sm">
         <div className="container">
           <Link className="navbar-brand d-flex align-items-center" to="/">
             <img className="navbar-logo" src="/images/Method%20Logo%20Trace.png" alt="Method logo" />
