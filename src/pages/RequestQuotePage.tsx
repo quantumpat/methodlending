@@ -33,7 +33,13 @@ const RequestQuotePage = () => {
     const formData = new FormData(form)
     const payload = Object.fromEntries(
       Array.from(formData.entries()).map(([key, value]) => [key, String(value).trim()])
-    )
+    ) as Record<string, string>
+    const smsConsent = formData.get('smsConsent') === 'on'
+
+    payload.smsConsent = smsConsent ? 'true' : 'false'
+    if (smsConsent) {
+      payload.smsConsentTimestamp = new Date().toISOString()
+    }
 
     try {
       const response = await fetch('/api/send-quote', {
@@ -87,12 +93,12 @@ const RequestQuotePage = () => {
         <div className="row g-4">
           <div className="col-12 col-lg-6">
             <div className="card border-0 shadow-sm h-100 quote-panel">
-              <div className="card-body p-3 p-md-4">
+              <div className="card-body p-3 p-md-4 h-100 d-flex flex-column">
                 <h2 className="h5 fw-bold mb-3">Schedule a meeting</h2>
                 <div
-                  className="calendly-inline-widget"
-                  data-url="https://calendly.com/d/cxnp-zp2-b7w/15-minute-meeting?hide_gdpr_banner=1&primary_color=3274d2"
-                  style={{ minWidth: '320px', height: '700px' }}
+                  className="calendly-inline-widget flex-grow-1"
+                  data-url="https://calendly.com/aiverson-methodlending/discovery-call"
+                  style={{ minWidth: '320px', height: '100%' }}
                 />
               </div>
             </div>
@@ -102,26 +108,42 @@ const RequestQuotePage = () => {
               <div className="card-body p-3 p-md-4 h-100 d-flex flex-column">
                 <div className="quote-form-header">
                   <p className="text-uppercase text-primary fw-semibold mb-2">Email request</p>
-                  <h2 className="h5 fw-bold mb-2">Email us instead</h2>
+                  <h2 className="h5 fw-bold mb-2">Email Us Instead (Form)</h2>
                   <p className="text-muted mb-0">
                     Share a few details and we will reply within one business day.
                   </p>
+                  <p className="text-muted small mt-2 mb-0">Method Lending</p>
                 </div>
                 <form className="d-flex flex-column flex-grow-1 quote-form" onSubmit={handleSubmit}>
                   <div className="quote-form-section">
                     <div className="quote-form-section__title">Contact</div>
                     <div className="row g-3">
                       <div className="col-md-6">
-                        <label className="form-label" htmlFor="quote-name">
-                          Full name{' '}
+                        <label className="form-label" htmlFor="quote-first-name">
+                          First name{' '}
                           <span className="required-asterisk" aria-hidden="true">*</span>
                           <span className="visually-hidden">required</span>
                         </label>
                         <input
                           className="form-control"
-                          id="quote-name"
-                          name="name"
-                          placeholder="Alex Morgan"
+                          id="quote-first-name"
+                          name="firstName"
+                          placeholder="Alex"
+                          type="text"
+                          required
+                        />
+                      </div>
+                      <div className="col-md-6">
+                        <label className="form-label" htmlFor="quote-last-name">
+                          Last name{' '}
+                          <span className="required-asterisk" aria-hidden="true">*</span>
+                          <span className="visually-hidden">required</span>
+                        </label>
+                        <input
+                          className="form-control"
+                          id="quote-last-name"
+                          name="lastName"
+                          placeholder="Morgan"
                           type="text"
                           required
                         />
@@ -141,7 +163,7 @@ const RequestQuotePage = () => {
                           required
                         />
                       </div>
-                      <div className="col-12">
+                      <div className="col-12 col-md-6">
                         <label className="form-label" htmlFor="quote-email">
                           Email{' '}
                           <span className="required-asterisk" aria-hidden="true">*</span>
@@ -219,6 +241,26 @@ const RequestQuotePage = () => {
                       placeholder="Property type, timeline, and any special circumstances."
                       style={{ resize: 'none', overflowY: 'auto' }}
                     />
+                  </div>
+                  <div className="quote-form-section">
+                    <div className="form-check">
+                      <input
+                        className="form-check-input"
+                        id="sms-consent"
+                        name="smsConsent"
+                        type="checkbox"
+                      />
+                      <label className="form-check-label" htmlFor="sms-consent">
+                        By checking this box, you agree to receive SMS messages from Method Lending related to loan inquiries, application updates, and customer support. Message frequency may vary. Message and data rates may apply. Reply STOP to opt out or HELP for assistance.
+                      </label>
+                    </div>
+                    <p className="small text-muted mt-2 mb-0">
+                      SMS consent applies only to the email form, not the Calendly scheduler.
+                    </p>
+                    <p className="small text-muted mt-2 mb-0">
+                      <Link to="/privacy-policy">Privacy Policy</Link> {' | '}
+                      <Link to="/terms-of-use">Terms of Service</Link>
+                    </p>
                   </div>
                   <button
                     className="btn btn-primary w-100"

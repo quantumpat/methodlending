@@ -30,15 +30,24 @@ export default async function handler(req, res) {
     }
   }
 
-  const name = getString(payload?.name)
+  const firstName = getString(payload?.firstName)
+  const lastName = getString(payload?.lastName)
   const phone = getString(payload?.phone)
   const email = getString(payload?.email)
   const propertyAddress = getString(payload?.propertyAddress)
   const purpose = getString(payload?.purpose)
   const loanAmount = getString(payload?.loanAmount)
   const details = getString(payload?.details)
+  const smsConsent = String(payload?.smsConsent).toLowerCase() === 'true'
+  const smsConsentTimestamp = getString(payload?.smsConsentTimestamp)
+  const requestIpRaw = req.headers['x-forwarded-for'] || req.socket?.remoteAddress || ''
+  const requestIp = Array.isArray(requestIpRaw)
+    ? requestIpRaw[0]
+    : String(requestIpRaw).split(',')[0].trim()
 
-  if (!name || !phone || !email || !purpose) {
+  const name = [firstName, lastName].filter(Boolean).join(' ')
+
+  if (!firstName || !lastName || !phone || !email || !purpose) {
     return res.status(400).json({ error: 'Missing required fields.' })
   }
 
@@ -84,8 +93,13 @@ export default async function handler(req, res) {
     '',
     'Contact',
     `Name: ${name}`,
+    `First name: ${firstName}`,
+    `Last name: ${lastName}`,
     `Phone: ${phone}`,
     `Email: ${email}`,
+    `SMS consent: ${smsConsent ? 'Yes' : 'No'}`,
+    `SMS consent timestamp: ${smsConsent ? smsConsentTimestamp || 'N/A' : 'N/A'}`,
+    `SMS consent IP: ${smsConsent ? requestIp || 'N/A' : 'N/A'}`,
     '',
     'Loan details',
     `Purpose: ${purposeLabel}`,
@@ -118,12 +132,36 @@ export default async function handler(req, res) {
                       <td style="padding:6px 0;font-weight:600;">${escapeHtml(name)}</td>
                     </tr>
                     <tr>
+                      <td style="padding:6px 0;color:#64748b;">First name</td>
+                      <td style="padding:6px 0;font-weight:600;">${escapeHtml(firstName)}</td>
+                    </tr>
+                    <tr>
+                      <td style="padding:6px 0;color:#64748b;">Last name</td>
+                      <td style="padding:6px 0;font-weight:600;">${escapeHtml(lastName)}</td>
+                    </tr>
+                    <tr>
                       <td style="padding:6px 0;color:#64748b;">Phone</td>
                       <td style="padding:6px 0;font-weight:600;">${escapeHtml(phone)}</td>
                     </tr>
                     <tr>
                       <td style="padding:6px 0;color:#64748b;">Email</td>
                       <td style="padding:6px 0;font-weight:600;">${escapeHtml(email)}</td>
+                    </tr>
+                    <tr>
+                      <td style="padding:6px 0;color:#64748b;">SMS consent</td>
+                      <td style="padding:6px 0;font-weight:600;">${smsConsent ? 'Yes' : 'No'}</td>
+                    </tr>
+                    <tr>
+                      <td style="padding:6px 0;color:#64748b;">SMS consent timestamp</td>
+                      <td style="padding:6px 0;font-weight:600;">${escapeHtml(
+                        smsConsent ? smsConsentTimestamp || 'N/A' : 'N/A'
+                      )}</td>
+                    </tr>
+                    <tr>
+                      <td style="padding:6px 0;color:#64748b;">SMS consent IP</td>
+                      <td style="padding:6px 0;font-weight:600;">${escapeHtml(
+                        smsConsent ? requestIp || 'N/A' : 'N/A'
+                      )}</td>
                     </tr>
                   </table>
                 </td>
