@@ -257,13 +257,22 @@ const RequestQuotePage = () => {
                     <p className="small text-muted mt-2 mb-0">
                       SMS consent applies only to the email form, not the Calendly scheduler.
                     </p>
-                    <p className="small text-muted mt-2 mb-0">
-                      <Link to="/privacy-policy">Privacy Policy</Link> {' | '}
-                      <Link to="/terms-of-use">Terms of Service</Link>
-                    </p>
+                    <div className="form-check mt-2">
+                      <input
+                        className="form-check-input"
+                        id="terms-privacy"
+                        name="termsPrivacy"
+                        type="checkbox"
+                        required
+                      />
+                      <label className="form-check-label" htmlFor="terms-privacy">
+                        By checking, I accept <a href="/terms-of-use" target="_blank" rel="noopener noreferrer">Terms of Service</a> {' & '}
+                        <a href="/privacy-policy" target="_blank" rel="noopener noreferrer">Privacy Policy</a>
+                      </label>
+                    </div>
                   </div>
                   <button
-                    className="btn btn-primary w-100"
+                    className="btn btn-primary w-100 mt-3"
                     type="submit"
                     disabled={submitStatus === 'sending'}
                   >
