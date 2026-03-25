@@ -107,8 +107,8 @@ const RequestQuotePage = () => {
             <div className="card border-0 shadow-sm h-100 quote-form-card quote-panel">
               <div className="card-body p-3 p-md-4 h-100 d-flex flex-column">
                 <div className="quote-form-header">
-                  <p className="text-uppercase text-primary fw-semibold mb-2">Email request</p>
-                  <h2 className="h5 fw-bold mb-2">Email Us Instead (Form)</h2>
+                  <p className="text-uppercase text-primary fw-semibold mb-2">Contact Request</p>
+                  <h2 className="h5 fw-bold mb-2">Text us instead</h2>
                   <p className="text-muted mb-0">
                     Share a few details and we will reply within one business day.
                   </p>
