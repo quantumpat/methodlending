@@ -1,6 +1,42 @@
 {
   "rewrites": [
     {
+      "source": "/purchase(.*)",
+      "destination": "/purchase/index.html"
+    },
+    {
+      "source": "/refinance(.*)",
+      "destination": "/refinance/index.html"
+    },
+    {
+      "source": "/access-equity(.*)",
+      "destination": "/access-equity/index.html"
+    },
+    {
+      "source": "/loan-options(.*)",
+      "destination": "/loan-options/index.html"
+    },
+    {
+      "source": "/markets-served(.*)",
+      "destination": "/markets-served/index.html"
+    },
+    {
+      "source": "/team(.*)",
+      "destination": "/team/index.html"
+    },
+    {
+      "source": "/request-quote(.*)",
+      "destination": "/request-quote/index.html"
+    },
+    {
+      "source": "/privacy-policy(.*)",
+      "destination": "/privacy-policy/index.html"
+    },
+    {
+      "source": "/terms-of-use(.*)",
+      "destination": "/terms-of-use/index.html"
+    },
+    {
       "source": "/api/(.*)",
       "destination": "/api/$1"
     },
