@@ -11,67 +11,67 @@ const routes = [
     title: 'Method Lending',
     description:
       'Tailored mortgage solutions for real estate investors, purchases, refinances, and DSCR loans.',
-    image: '/images/Method Banner.png',
+    image: '/images/og/page-home.png',
   },
   {
     path: '/purchase',
     title: 'DSCR Purchase Loans | Method Lending',
     description:
       'DSCR purchase loans built for real estate investors with clear underwriting, flexible terms, and fast closings.',
-    image: '/images/PurchaseBtn.png',
+    image: '/images/og/page-purchase.png',
   },
   {
     path: '/refinance',
     title: 'DSCR Refinance | Method Lending',
     description:
       'Refinance to unlock equity and stabilize cash flow with DSCR-focused options and flexible structures.',
-    image: '/images/RefinanceBtn.png',
+    image: '/images/og/page-refinance.png',
   },
   {
     path: '/access-equity',
     title: 'Access Equity | Method Lending',
     description:
       'Turn built-up equity into capital for acquisitions, renovations, or portfolio growth.',
-    image: '/images/AccessEquityBtn.png',
+    image: '/images/og/page-access-equity.png',
   },
   {
     path: '/loan-options',
     title: 'Loan Options | Method Lending',
     description:
       'Compare DSCR, asset utilization, and alternative documentation programs built for investors.',
-    image: '/images/House 1.png',
+    image: '/images/og/page-loan-options.png',
   },
   {
     path: '/markets-served',
     title: 'Markets Served | Method Lending',
     description:
       'Investor-focused lending in markets nationwide with business-purpose DSCR programs.',
-    image: '/images/House 2.jpg',
+    image: '/images/og/page-markets-served.png',
   },
   {
     path: '/team',
     title: 'Team | Method Lending',
     description: 'Meet the Method Lending team serving real estate investors.',
-    image: '/images/Method Solo Logo.png',
+    image: '/images/og/page-team.png',
   },
   {
     path: '/request-quote',
     title: 'Request a Quote | Method Lending',
     description:
       'Request a custom quote for your investment property purchase, refinance, or cash-out.',
-    image: '/images/Method Banner.png',
+    image: '/images/og/page-request-quote.png',
   },
   {
     path: '/privacy-policy',
     title: 'Privacy Policy | Method Lending',
     description: 'Privacy Policy for Method Lending.',
-    image: '/images/Method Banner.png',
+    image: '/images/og/page-privacy-policy.png',
   },
   {
     path: '/terms-of-use',
     title: 'Terms of Use | Method Lending',
     description: 'Terms of Use for Method Lending.',
-    image: '/images/Method Banner.png',
+    image: '/images/og/page-terms-of-use.png',
   },
 ]
 
