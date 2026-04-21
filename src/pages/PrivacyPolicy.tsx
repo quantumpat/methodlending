@@ -55,6 +55,7 @@ const PrivacyPolicy = () => (
         <ul className="text-muted">
           <li>Service providers assisting with website operations or communications</li>
           <li>Regulatory or legal authorities when required by law</li>
+          <li>We do NOT sell, rent, or share user data with unaffiliated companies for marketing.</li>
         </ul>
         <p className="text-muted">
           Any information sharing related to loan origination, underwriting, or funding will occur only
