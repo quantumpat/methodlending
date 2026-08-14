@@ -42,7 +42,7 @@ const ScrollToTop = () => {
 function App() {
   const location = useLocation()
   useEffect(() => {
-    document.title = 'Method Lending'
+    document.title = 'Method Lending: Built for real estate investors'
   }, [location.pathname])
   useEffect(() => {
     const shouldAnimate = location.pathname !== '/request-quote'
