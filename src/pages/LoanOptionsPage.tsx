@@ -11,7 +11,7 @@ const LoanOptionsPage = () => (
                 Loan options
               </p>
               <h1 className="display-5 fw-bold">
-                Find the right structure for every investment
+                Find the right structure for every investment.
               </h1>
               <p className="display-7">
                 Business-purpose financing solutions built for real estate investors.
