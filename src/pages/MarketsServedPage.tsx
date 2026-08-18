@@ -25,9 +25,7 @@ const activeStates = new Set([
   'Missouri',
   'Nebraska',
   'New Hampshire',
-  'New Jersey',
   'New Mexico',
-  'New York',
   'North Carolina',
   'Ohio',
   'Oklahoma',
@@ -220,7 +218,7 @@ const MarketsServedPage = () => {
             Markets We <em>Serve</em>
           </h1>
           <p>
-            Method Lending originates business purpose DSCR loans across 38 states. No W-2s. No personal income
+            Method Lending originates business purpose DSCR loans across 36 states. No W-2s. No personal income
             docs. Just cash-flow-based lending for real estate investors.
           </p>
           <div className="markets-hero__actions">
