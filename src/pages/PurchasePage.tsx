@@ -1,5 +1,4 @@
 import { Link } from 'react-router-dom'
-import PurchaseCalculator from '../components/PurchaseCalculator'
 
 const PurchasePage = () => (
   <main>
@@ -81,8 +80,6 @@ const PurchasePage = () => (
         </div>
       </div>
     </section>
-
-    <PurchaseCalculator />
 
     <section id="purchase-cta" className="section bg-primary text-white">
       <div className="container text-center">

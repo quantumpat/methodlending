@@ -104,20 +104,17 @@ function App() {
     '/purchase': [
       { label: 'Overview', href: '/purchase#purchase-hero' },
       { label: 'Highlights', href: '/purchase#purchase-highlights' },
-      { label: 'Loan/DSCR Calc', href: '/purchase#purchase-calculator' },
       { label: 'Request a Quote', href: '/purchase#purchase-cta' },
     ],
     '/refinance': [
       { label: 'Overview', href: '/refinance#refinance-hero' },
       { label: 'Why Refi?', href: '/refinance#refinance-reasons' },
-      { label: 'Refi Calculator', href: '/refinance#refinance-savings-calculator' },
       { label: 'Request a Quote', href: '/refinance#refinance-cta' },
     ],
     '/access-equity': [
       { label: 'Overview', href: '/access-equity#access-equity-hero' },
       { label: 'Cashout Refi', href: '/access-equity#access-equity-cashout' },
       { label: 'Cashout Benefits', href: '/access-equity#access-equity-benefits' },
-      { label: 'Cashout Calc', href: '/access-equity#access-equity-calc' },
       { label: 'Request a Quote', href: '/access-equity#access-equity-cta' },
     ],
     '/loan-options': [
@@ -127,7 +124,6 @@ function App() {
     '/markets-served': [
       { label: 'Overview', href: '/markets-served#markets-hero' },
       { label: 'Coverage Map', href: '/markets-served#markets-map' },
-      { label: 'State List', href: '/markets-served#markets-grid' },
       { label: 'Disclaimer', href: '/markets-served#markets-disclaimer' },
     ],
     '/team': [

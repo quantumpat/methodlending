@@ -1,5 +1,4 @@
 import { Link } from 'react-router-dom'
-import RefinanceCalculator from '../components/RefinanceCalculator'
 
 const RefinancePage = () => {
   return (
@@ -69,8 +68,6 @@ const RefinancePage = () => {
           </div>
         </div>
       </section>
-
-      <RefinanceCalculator />
 
       <section id="refinance-cta" className="section bg-primary text-white">
         <div className="container text-center">
