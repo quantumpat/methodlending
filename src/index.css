@@ -465,50 +465,6 @@ a {
   pointer-events: none;
 }
 
-.markets-grid {
-  padding-top: 4rem;
-}
-
-.markets-grid__list {
-  display: grid;
-  grid-template-columns: repeat(auto-fit, minmax(220px, 1fr));
-  gap: 1rem;
-}
-
-.markets-state-card {
-  display: flex;
-  gap: 0.75rem;
-  align-items: center;
-  padding: 0.85rem 1rem;
-  border-radius: 0.75rem;
-  background: #ffffff;
-  border: 1px solid rgba(15, 23, 42, 0.08);
-  box-shadow: 0 10px 20px rgba(15, 23, 42, 0.05);
-}
-
-.markets-state-card__indicator {
-  width: 10px;
-  height: 44px;
-  border-radius: 999px;
-}
-
-.markets-state-card__indicator--yes {
-  background: linear-gradient(180deg, #0d4e87, #0a3b66);
-}
-
-.markets-state-card__indicator--no {
-  background: linear-gradient(180deg, #cbd5e1, #94a3b8);
-}
-
-.markets-state-card__name {
-  font-weight: 600;
-}
-
-.markets-state-card__status {
-  color: #64748b;
-  font-size: 0.9rem;
-}
-
 .markets-cta {
   padding-top: 4rem;
 }

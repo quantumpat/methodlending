@@ -179,11 +179,6 @@ const MarketsServedPage = () => {
     }
   }, [])
 
-  const sortedStates = useMemo(
-    () => [...stateList].sort((a, b) => a.name.localeCompare(b.name)),
-    []
-  )
-
   const handleMouseEnter = (name: string, available: boolean) => (event: MouseEvent) => {
     setTooltip({
       visible: true,
@@ -300,36 +295,6 @@ const MarketsServedPage = () => {
                 </svg>
               )}
             </div>
-          </div>
-        </div>
-      </section>
-
-      <section id="markets-grid" className="markets-grid section">
-        <div className="container">
-          <div className="markets-section-header">
-            <h2>All States at a Glance</h2>
-            <p>Full alphabetical list of coverage by state.</p>
-          </div>
-          <div className="markets-grid__list">
-            {sortedStates.map((state) => {
-              const available = activeStates.has(state.name)
-              return (
-                <div className="markets-state-card" key={state.name}>
-                  <span
-                    className={`markets-state-card__indicator ${
-                      available ? 'markets-state-card__indicator--yes' : 'markets-state-card__indicator--no'
-                    }`}
-                    aria-hidden="true"
-                  />
-                  <div>
-                    <div className="markets-state-card__name">{state.name}</div>
-                    <div className="markets-state-card__status">
-                      {available ? 'Available' : 'Not available'}
-                    </div>
-                  </div>
-                </div>
-              )
-            })}
           </div>
         </div>
       </section>

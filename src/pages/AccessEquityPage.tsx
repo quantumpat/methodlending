@@ -1,5 +1,4 @@
 import { Link } from 'react-router-dom'
-import AccessEquityCalculator from '../components/AccessEquityCalculator'
 const AccessEquityPage = () => {
   return (
     <main>
@@ -107,8 +106,6 @@ const AccessEquityPage = () => {
           </div>
         </div>
       </section>
-
-      <AccessEquityCalculator />
 
       <section id="access-equity-cta" className="section bg-primary text-white">
         <div className="container text-center">
