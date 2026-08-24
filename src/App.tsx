@@ -11,7 +11,6 @@ import TeamPage from './pages/TeamPage.tsx'
 import RequestQuotePage from './pages/RequestQuotePage.tsx'
 import PrivacyPolicy from './pages/PrivacyPolicy.tsx'
 import TermsOfUse from './pages/TermsOfUse.tsx'
-import MethodLendingChatbot from './components/MethodLendingChatbot.tsx'
 
 const ScrollToTop = () => {
   const location = useLocation()
@@ -251,8 +250,6 @@ function App() {
         <Route path="/privacy-policy" element={<PrivacyPolicy />} />
         <Route path="/terms-of-use" element={<TermsOfUse />} />
       </Routes>
-
-      <MethodLendingChatbot />
 
       <footer className="footer border-top">
         <div className="container">
