@@ -261,7 +261,7 @@ function App() {
             <div className="col-lg-5">
               <p className="text-muted mb-3 text-center">
                 Business-purpose financing only. No consumer mortgage services offered. No loan
-                applications accepted through this website. Licensing pending.
+                applications accepted through this website.
               </p>
               <p className="text-muted mb-0 hidden">
                 Method Lending is a mortgage brokerage company. NMLS #2753300. Licensed by the California
