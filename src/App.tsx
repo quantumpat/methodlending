@@ -119,6 +119,7 @@ function App() {
     '/access-equity': [
       { label: 'Overview', href: '/access-equity#access-equity-hero' },
       { label: 'Cashout Refi', href: '/access-equity#access-equity-cashout' },
+      { label: 'Second Lien', href: '/access-equity#access-equity-second-lien' },
       { label: 'Cashout Benefits', href: '/access-equity#access-equity-benefits' },
       { label: 'Ways to Qualify', href: '/access-equity#access-equity-qualify' },
       { label: 'Request a Quote', href: '/access-equity#access-equity-cta' },

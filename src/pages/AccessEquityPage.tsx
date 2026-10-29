@@ -1,5 +1,6 @@
 import { Link } from 'react-router-dom'
 import QualificationOptions from '../components/QualificationOptions'
+import { HighlightGrid } from '../components/ProgramPage'
 const AccessEquityPage = () => {
   return (
     <main>
@@ -54,6 +55,46 @@ const AccessEquityPage = () => {
               </div>
             </div>
           </div>
+        </div>
+      </section>
+
+      <section id="access-equity-second-lien" className="section bg-light">
+        <div className="container">
+          <div className="text-center mb-5">
+            <h2 className="h2 fw-bold">DSCR Second Lien</h2>
+            <p className="text-muted mb-0">
+              Access equity while keeping your existing first mortgage in place.
+            </p>
+          </div>
+          <p className="text-muted mx-auto mb-4 program-intro">
+            A closed-end second mortgage lets you take cash out of a rental property without refinancing
+            your first mortgage, so its rate and terms stay as they are. Qualification is based on the
+            property&rsquo;s rental income rather than personal income.
+          </p>
+          <HighlightGrid
+            highlights={[
+              { title: 'Up to 80%', detail: 'combined loan-to-value (CLTV)' },
+              { title: '$75,000 – $750,000', detail: 'loan amounts' },
+              { title: 'DSCR 1.00+', detail: 'qualify on the property’s rental income' },
+              { title: '10–30 years', detail: 'fixed-rate, fully amortizing terms' },
+              { title: 'Keep your first mortgage', detail: 'stand-alone second lien; proceeds may be all cash out' },
+              { title: '680 minimum', detail: 'credit score' },
+              {
+                title: 'Experienced investors',
+                detail: '12+ months of investment property ownership within the last 36 months',
+              },
+              { title: 'Long- and short-term rentals', detail: 'short-term rental income with 12 months of history' },
+            ]}
+          />
+          <p className="program-disclaimer text-muted mt-4 mb-0">
+            Figures shown are program maximums. Maximum CLTV depends on credit score, loan amount, property
+            type, and market conditions; 2–4 unit and condominium properties are limited to 70% CLTV.
+            Investment properties owned at least 6 months only. A prepayment penalty applies where permitted
+            by law. Not available in all areas, including Texas. Actual terms depend on the borrower,
+            property, and lender approval. Not a commitment to lend. Method Lending, LLC is a mortgage broker
+            that arranges business-purpose financing through third-party lending partners. Method Lending
+            does not fund loans, perform lender valuations, or make underwriting or credit decisions.
+          </p>
         </div>
       </section>
 

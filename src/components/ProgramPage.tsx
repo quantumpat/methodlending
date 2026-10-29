@@ -5,6 +5,19 @@ export type ProgramHighlight = {
   detail: string
 }
 
+export const HighlightGrid = ({ highlights }: { highlights: ProgramHighlight[] }) => (
+  <div className="row g-3">
+    {highlights.map((highlight) => (
+      <div key={highlight.title} className="col-sm-6 col-lg-3">
+        <div className="program-highlight h-100">
+          <h3 className="program-highlight__title">{highlight.title}</h3>
+          <p className="program-highlight__detail">{highlight.detail}</p>
+        </div>
+      </div>
+    ))}
+  </div>
+)
+
 type ProgramPageProps = {
   idPrefix: string
   eyebrow: string
@@ -35,16 +48,7 @@ const ProgramPage = ({ idPrefix, eyebrow, title, intro, highlights, disclaimer, 
     <section id={`${idPrefix}-highlights`} className="section bg-light">
       <div className="container">
         <h2 className="h3 fw-bold mb-4">Program Highlights</h2>
-        <div className="row g-3">
-          {highlights.map((highlight) => (
-            <div key={highlight.title} className="col-sm-6 col-lg-3">
-              <div className="program-highlight h-100">
-                <h3 className="program-highlight__title">{highlight.title}</h3>
-                <p className="program-highlight__detail">{highlight.detail}</p>
-              </div>
-            </div>
-          ))}
-        </div>
+        <HighlightGrid highlights={highlights} />
         <p className="program-disclaimer text-muted mt-4 mb-0">{disclaimer}</p>
       </div>
     </section>
