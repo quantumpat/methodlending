@@ -1,4 +1,5 @@
 import { Link } from 'react-router-dom'
+import QualificationOptions from '../components/QualificationOptions'
 const AccessEquityPage = () => {
   return (
     <main>
@@ -106,6 +107,8 @@ const AccessEquityPage = () => {
           </div>
         </div>
       </section>
+
+      <QualificationOptions id="access-equity-qualify" purpose="cash-out" shaded />
 
       <section id="access-equity-cta" className="section bg-primary text-white">
         <div className="container text-center">

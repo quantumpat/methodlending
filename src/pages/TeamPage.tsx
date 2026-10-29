@@ -20,9 +20,9 @@ const TeamPage = () => (
               <Link className="btn btn-primary btn-lg" to="/request-quote">
                 Connect with us
               </Link>
-              <a className="btn btn-outline-primary btn-lg" href="/loan-options">
+              <Link className="btn btn-outline-primary btn-lg" to="/#solutions">
                 View loan options
-              </a>
+              </Link>
             </div>
           </div>
         </div>

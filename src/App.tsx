@@ -1,16 +1,20 @@
-import { Route, Routes, Link, NavLink, useLocation } from 'react-router-dom'
+import { Navigate, Route, Routes, Link, NavLink, useLocation } from 'react-router-dom'
 import { useEffect } from 'react'
 import './App.css'
 import Home from './pages/Home.tsx'
 import PurchasePage from './pages/PurchasePage.tsx'
 import RefinancePage from './pages/RefinancePage.tsx'
 import AccessEquityPage from './pages/AccessEquityPage.tsx'
-import LoanOptionsPage from './pages/LoanOptionsPage.tsx'
+import GroundUpConstructionPage from './pages/GroundUpConstructionPage.tsx'
+import RehabPage from './pages/RehabPage.tsx'
+import FixFlipPage from './pages/FixFlipPage.tsx'
 import MarketsServedPage from './pages/MarketsServedPage.tsx'
 import TeamPage from './pages/TeamPage.tsx'
 import RequestQuotePage from './pages/RequestQuotePage.tsx'
 import PrivacyPolicy from './pages/PrivacyPolicy.tsx'
 import TermsOfUse from './pages/TermsOfUse.tsx'
+import LoanOptionsMenu from './components/LoanOptionsMenu.tsx'
+import { loanOptionLinks } from './components/loanOptionLinks.ts'
 
 const ScrollToTop = () => {
   const location = useLocation()
@@ -103,22 +107,36 @@ function App() {
     '/purchase': [
       { label: 'Overview', href: '/purchase#purchase-hero' },
       { label: 'Highlights', href: '/purchase#purchase-highlights' },
+      { label: 'Ways to Qualify', href: '/purchase#purchase-qualify' },
       { label: 'Request a Quote', href: '/purchase#purchase-cta' },
     ],
     '/refinance': [
       { label: 'Overview', href: '/refinance#refinance-hero' },
       { label: 'Why Refi?', href: '/refinance#refinance-reasons' },
+      { label: 'Ways to Qualify', href: '/refinance#refinance-qualify' },
       { label: 'Request a Quote', href: '/refinance#refinance-cta' },
     ],
     '/access-equity': [
       { label: 'Overview', href: '/access-equity#access-equity-hero' },
       { label: 'Cashout Refi', href: '/access-equity#access-equity-cashout' },
       { label: 'Cashout Benefits', href: '/access-equity#access-equity-benefits' },
+      { label: 'Ways to Qualify', href: '/access-equity#access-equity-qualify' },
       { label: 'Request a Quote', href: '/access-equity#access-equity-cta' },
     ],
-    '/loan-options': [
-      { label: 'Overview', href: '/loan-options#loan-options-hero' },
-      { label: 'Compare Options', href: '/loan-options#loan-options-compare' },
+    '/ground-up-construction': [
+      { label: 'Overview', href: '/ground-up-construction#ground-up-hero' },
+      { label: 'Program Highlights', href: '/ground-up-construction#ground-up-highlights' },
+      { label: 'Request a Quote', href: '/ground-up-construction#ground-up-cta' },
+    ],
+    '/rehab': [
+      { label: 'Overview', href: '/rehab#rehab-hero' },
+      { label: 'Program Highlights', href: '/rehab#rehab-highlights' },
+      { label: 'Request a Quote', href: '/rehab#rehab-cta' },
+    ],
+    '/fix-and-flip': [
+      { label: 'Overview', href: '/fix-and-flip#fix-flip-hero' },
+      { label: 'Program Highlights', href: '/fix-and-flip#fix-flip-highlights' },
+      { label: 'Request a Quote', href: '/fix-and-flip#fix-flip-cta' },
     ],
     '/markets-served': [
       { label: 'Overview', href: '/markets-served#markets-hero' },
@@ -174,42 +192,7 @@ function App() {
                   Home
                 </NavLink>
               </li>
-              <li className="nav-item">
-                <NavLink
-                  className={({ isActive }) => `nav-link${isActive ? ' active' : ''}`}
-                  to="/purchase"
-                  onClick={closeMobileNav}
-                >
-                  Purchase
-                </NavLink>
-              </li>
-              <li className="nav-item">
-                <NavLink
-                  className={({ isActive }) => `nav-link${isActive ? ' active' : ''}`}
-                  to="/refinance"
-                  onClick={closeMobileNav}
-                >
-                  Refinance
-                </NavLink>
-              </li>
-              <li className="nav-item">
-                <NavLink
-                  className={({ isActive }) => `nav-link${isActive ? ' active' : ''}`}
-                  to="/access-equity"
-                  onClick={closeMobileNav}
-                >
-                  Access Equity
-                </NavLink>
-              </li>
-              <li className="nav-item">
-                <NavLink
-                  className={({ isActive }) => `nav-link${isActive ? ' active' : ''}`}
-                  to="/loan-options"
-                  onClick={closeMobileNav}
-                >
-                  Loan Options
-                </NavLink>
-              </li>
+              <LoanOptionsMenu onNavigate={closeMobileNav} />
               <li className="nav-item">
                 <NavLink
                   className={({ isActive }) => `nav-link${isActive ? ' active' : ''}`}
@@ -243,7 +226,10 @@ function App() {
         <Route path="/purchase" element={<PurchasePage />} />
         <Route path="/refinance" element={<RefinancePage />} />
         <Route path="/access-equity" element={<AccessEquityPage />} />
-        <Route path="/loan-options" element={<LoanOptionsPage />} />
+        <Route path="/ground-up-construction" element={<GroundUpConstructionPage />} />
+        <Route path="/rehab" element={<RehabPage />} />
+        <Route path="/fix-and-flip" element={<FixFlipPage />} />
+        <Route path="/loan-options" element={<Navigate to="/#solutions" replace />} />
         <Route path="/markets-served" element={<MarketsServedPage />} />
         <Route path="/team" element={<TeamPage />} />
         <Route path="/request-quote" element={<RequestQuotePage />} />
@@ -281,18 +267,11 @@ function App() {
                     <Link className="text-muted" to="/">
                       Home
                     </Link>
-                    <Link className="text-muted" to="/purchase">
-                      Purchase
-                    </Link>
-                    <Link className="text-muted" to="/refinance">
-                      Refinance
-                    </Link>
-                    <Link className="text-muted" to="/access-equity">
-                      Access Equity
-                    </Link>
-                    <Link className="text-muted" to="/loan-options">
-                      Loan Options
-                    </Link>
+                    {loanOptionLinks.map((link) => (
+                      <Link key={link.to} className="text-muted" to={link.to}>
+                        {link.label}
+                      </Link>
+                    ))}
                     <Link className="text-muted" to="/team">
                       Our Team
                     </Link>
