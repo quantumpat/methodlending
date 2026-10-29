@@ -38,7 +38,7 @@ const RequestQuotePage = () => {
               options tailored to your timeline.
             </p>
             <div className="d-flex flex-wrap gap-3">
-              <Link className="btn btn-outline-primary btn-lg" to="/loan-options">
+              <Link className="btn btn-outline-primary btn-lg" to="/#solutions">
                 View loan options
               </Link>
             </div>

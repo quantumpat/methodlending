@@ -220,7 +220,7 @@ const MarketsServedPage = () => {
             <Link className="btn btn-primary btn-lg" to="/request-quote">
               Request a Quote
             </Link>
-            <Link className="btn btn-outline-primary btn-lg" to="/loan-options">
+            <Link className="btn btn-outline-primary btn-lg" to="/#solutions">
               View loan options
             </Link>
           </div>

@@ -35,11 +35,25 @@ const routes = [
     image: '/images/og/page-access-equity.png',
   },
   {
-    path: '/loan-options',
-    title: 'Loan Options | Method Lending',
+    path: '/ground-up-construction',
+    title: 'Ground-Up Construction Loans | Method Lending',
     description:
-      'Compare DSCR, asset utilization, and alternative documentation programs built for investors.',
-    image: '/images/og/page-loan-options.png',
+      'Short-term financing to build new residential investment properties, arranged through our lending partners.',
+    image: '/images/og/page-ground-up-construction.png',
+  },
+  {
+    path: '/rehab',
+    title: 'Rehab Loans | Method Lending',
+    description:
+      'Short-term financing to renovate an investment property you plan to hold as a rental.',
+    image: '/images/og/page-rehab.png',
+  },
+  {
+    path: '/fix-and-flip',
+    title: 'Fix & Flip Loans | Method Lending',
+    description:
+      'Short-term financing to purchase and renovate residential investment properties for resale.',
+    image: '/images/og/page-fix-and-flip.png',
   },
   {
     path: '/markets-served',
