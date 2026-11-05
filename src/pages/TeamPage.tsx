@@ -65,7 +65,7 @@ const TeamPage = () => (
           <div className="col-lg-6">
             <div className="card team-card h-100 border-0 shadow-sm">
               <img
-                className="card-img-top team-photo"
+                className="card-img-top team-photo team-photo--miles"
                 src="/images/Miles%20Trotter.jpg"
                 alt="Miles Trotter"
               />
