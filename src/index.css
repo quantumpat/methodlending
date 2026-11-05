@@ -920,7 +920,8 @@ a {
   background: #f8fafc;
 }
 
-.team-photo--aaron {
+.team-photo--aaron,
+.team-photo--miles {
   object-position: 50% 20%;
 }
 
