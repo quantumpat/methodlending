@@ -1,4 +1,5 @@
 import { Link } from 'react-router-dom'
+import QualificationOptions from '../components/QualificationOptions'
 
 const RefinancePage = () => {
   return (
@@ -68,6 +69,8 @@ const RefinancePage = () => {
           </div>
         </div>
       </section>
+
+      <QualificationOptions id="refinance-qualify" purpose="refinance" shaded />
 
       <section id="refinance-cta" className="section bg-primary text-white">
         <div className="container text-center">

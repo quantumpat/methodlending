@@ -25,7 +25,7 @@ const Home = () => (
                 >
                   Apply Now
                 </a>
-                <Link className="btn btn-lg btn-loan-options" to="/loan-options">
+                <Link className="btn btn-lg btn-loan-options" to="/#solutions">
                   Loan Options
                 </Link>
               </div>

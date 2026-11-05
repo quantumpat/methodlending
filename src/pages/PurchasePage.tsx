@@ -1,4 +1,5 @@
 import { Link } from 'react-router-dom'
+import QualificationOptions from '../components/QualificationOptions'
 
 const PurchasePage = () => (
   <main>
@@ -80,6 +81,8 @@ const PurchasePage = () => (
         </div>
       </div>
     </section>
+
+    <QualificationOptions id="purchase-qualify" purpose="purchase" />
 
     <section id="purchase-cta" className="section bg-primary text-white">
       <div className="container text-center">
