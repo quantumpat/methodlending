@@ -95,7 +95,31 @@ const stateList = [
   { name: 'Wyoming', abbr: 'WY' },
 ]
 
-const decodeTopojson = (topology: any, objectName: string) => {
+type TopoGeometry = {
+  type: string
+  arcs: number[][] | number[][][]
+  properties?: { name?: string }
+}
+
+type Topology = {
+  objects: Record<string, { geometries: TopoGeometry[] }>
+  arcs: number[][][]
+  transform?: { scale: number[]; translate: number[] }
+}
+
+type StateFeature = {
+  type: 'Feature'
+  properties?: { name?: string }
+  geometry:
+    | { type: 'Polygon'; coordinates: number[][][] }
+    | { type: 'MultiPolygon'; coordinates: number[][][][] }
+    | undefined
+}
+
+// d3's GeoJSON types don't model the decoder's possibly-missing geometry, which d3 already tolerates
+const asGeoObject = (feature: StateFeature) => feature as unknown as d3.GeoPermissibleObjects
+
+const decodeTopojson = (topology: Topology, objectName: string) => {
   const obj = topology.objects[objectName]
   const arcs = topology.arcs
   const scale = topology.transform ? topology.transform.scale : [1, 1]
@@ -120,8 +144,8 @@ const decodeTopojson = (topology: any, objectName: string) => {
 
   const ringCoords = (ring: number[]) => ring.reduce((pts: number[][], idx) => pts.concat(getArc(idx)), [])
 
-  const features = obj.geometries.map((geom: any) => {
-    let geometry
+  const features = obj.geometries.map((geom): StateFeature => {
+    let geometry: StateFeature['geometry']
     if (geom.type === 'Polygon') {
       const polygonArcs = geom.arcs as number[][]
       geometry = { type: 'Polygon', coordinates: polygonArcs.map(ringCoords) }
@@ -136,7 +160,7 @@ const decodeTopojson = (topology: any, objectName: string) => {
 }
 
 const MarketsServedPage = () => {
-  const [features, setFeatures] = useState<any[]>([])
+  const [features, setFeatures] = useState<StateFeature[]>([])
   const [isMapReady, setIsMapReady] = useState(true)
   const [tooltip, setTooltip] = useState({
     visible: false,
@@ -207,21 +231,21 @@ const MarketsServedPage = () => {
         <div className="container">
           <div className="markets-hero__eyebrow">
             <span className="markets-hero__dot" aria-hidden="true" />
-            Nationwide Coverage
+            36 states
           </div>
           <h1>
             Markets We <em>Serve</em>
           </h1>
           <p>
-            Method Lending originates business purpose DSCR loans across 36 states. No W-2s. No personal income
-            docs. Just cash-flow-based lending for real estate investors.
+            We quote business-purpose DSCR loans in 36 states. No <span className="text-nowrap">W-2s</span>. No
+            personal income docs. Qualification is based on the property’s cash flow.
           </p>
           <div className="markets-hero__actions">
             <Link className="btn btn-primary btn-lg" to="/request-quote">
               Request a Quote
             </Link>
-            <Link className="btn btn-outline-primary btn-lg" to="/loan-options">
-              View loan options
+            <Link className="btn btn-outline-primary btn-lg" to="/loan-programs">
+              View loan programs
             </Link>
           </div>
         </div>
@@ -251,10 +275,10 @@ const MarketsServedPage = () => {
                 </p>
               )}
               {isMapReady && (
-                <svg viewBox="0 0 960 600" preserveAspectRatio="xMidYMid meet">
+                <svg viewBox="-60 0 1020 600" preserveAspectRatio="xMidYMid meet">
                   {features.map((feature, index) => {
                     const name = feature.properties?.name
-                    const path = geoPath(feature)
+                    const path = geoPath(asGeoObject(feature))
                     if (!name || !path) {
                       return null
                     }
@@ -272,8 +296,8 @@ const MarketsServedPage = () => {
                   })}
                   {features.map((feature) => {
                     const name = feature.properties?.name
-                    const available = activeStates.has(name)
-                    const [x, y] = geoPath.centroid(feature)
+                    const available = name !== undefined && activeStates.has(name)
+                    const [x, y] = geoPath.centroid(asGeoObject(feature))
                     const match = stateList.find((state) => state.name === name)
                     if (!match || Number.isNaN(x) || Number.isNaN(y)) {
                       return null
@@ -303,11 +327,10 @@ const MarketsServedPage = () => {
         <div className="container">
           <div className="markets-cta__card">
             <div>
-              <h3>Ready to finance your next deal?</h3>
-              <p>Get a fast, cash-flow-based quote with no personal income documentation.</p>
+              <h3>If your state is in blue, send the deal and we will quote it.</h3>
             </div>
             <Link className="btn btn-light" to="/request-quote">
-              Book a Call
+              Request a Quote
             </Link>
           </div>
         </div>

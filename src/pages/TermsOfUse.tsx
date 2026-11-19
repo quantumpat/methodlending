@@ -4,7 +4,7 @@ const TermsOfUse = () => (
 		<section id="terms-of-use" className="section policy-body">
 			<div className="container">
 				<h1 className="display-6 fw-bold mb-3">Terms of Use</h1>
-				<p className="text-muted mb-4">Effective Date: 02/10/2026</p>
+				<p className="text-muted mb-4">Effective Date: 11/19/2026</p>
 
 				<p className="text-muted">
 					By accessing or using this website, you agree to be bound by these Terms of Use. If you do
@@ -13,8 +13,8 @@ const TermsOfUse = () => (
 
 				<h2 className="h4 fw-semibold mt-5">Informational Use Only</h2>
 				<p className="text-muted">
-					This website is provided for informational purposes only and relates solely to business-
-					purpose real estate financing. Nothing on this site constitutes:
+					This website is provided for informational purposes only and relates solely to
+					business-purpose real estate financing. Nothing on this site constitutes:
 				</p>
 				<ul className="text-muted">
 					<li>A loan application</li>
@@ -39,9 +39,8 @@ const TermsOfUse = () => (
 
 				<h2 className="h4 fw-semibold mt-5">Licensing Status</h2>
 				<p className="text-muted">
-					Method Lending is in the process of obtaining required state and regulatory licenses. No
-					loan origination, brokering, or funding activity will occur until all applicable licenses
-					are approved.
+					Method Lending, LLC is a mortgage broker that arranges business-purpose financing through
+					third-party lending partners.
 				</p>
 
 				<h2 className="h4 fw-semibold mt-5">Intellectual Property</h2>
@@ -81,13 +80,13 @@ const TermsOfUse = () => (
 
 				<h2 className="h4 fw-semibold mt-5">Contact Information</h2>
 				<p className="text-muted mb-0">Method Lending</p>
-				<p className="text-muted mb-0">31751 Via Granada, CA 92675</p>
+				<p className="text-muted mb-0">323 S 600 E, Suite 170, Salt Lake City, UT 84102</p>
 				<p className="text-muted mb-0">Phone: 949-531-9623</p>
 				<p className="text-muted">
 					Email:{" "}
 					<a href="mailto:aiverson@methodlending.com">aiverson@methodlending.com</a>
 					{" "}/ {" "}
-					<a href="mailto:mrotter@methodlending.com">mrotter@methodlending.com</a>
+					<a href="mailto:mtrotter@methodlending.com">mtrotter@methodlending.com</a>
 				</p>
 			</div>
 		</section>

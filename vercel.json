@@ -1,4 +1,11 @@
 {
+  "redirects": [
+    {
+      "source": "/loan-options",
+      "destination": "/loan-programs",
+      "statusCode": 301
+    }
+  ],
   "rewrites": [
     {
       "source": "/purchase(.*)",
@@ -13,8 +20,20 @@
       "destination": "/access-equity/index.html"
     },
     {
-      "source": "/loan-options(.*)",
-      "destination": "/loan-options/index.html"
+      "source": "/loan-programs(.*)",
+      "destination": "/loan-programs/index.html"
+    },
+    {
+      "source": "/fix-and-flip(.*)",
+      "destination": "/fix-and-flip/index.html"
+    },
+    {
+      "source": "/rehab-loans(.*)",
+      "destination": "/rehab-loans/index.html"
+    },
+    {
+      "source": "/ground-up-construction(.*)",
+      "destination": "/ground-up-construction/index.html"
     },
     {
       "source": "/markets-served(.*)",

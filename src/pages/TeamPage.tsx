@@ -10,18 +10,18 @@ const TeamPage = () => (
               Our team
             </p>
             <h1 className="display-5 fw-bold">
-              Lending experts with real estate in their DNA
+              The two people who will work your deal.
             </h1>
             <p className="lead text-muted">
-              We partner with investors nationwide, combining underwriting
-              expertise with hands-on project guidance.
+              Aaron and Miles quote business-purpose loans for investors and stay
+              on the file through closing.
             </p>
             <div className="d-flex flex-wrap gap-3">
               <Link className="btn btn-primary btn-lg" to="/request-quote">
-                Connect with us
+                Request a Quote
               </Link>
-              <a className="btn btn-outline-primary btn-lg" href="/loan-options">
-                View loan options
+              <a className="btn btn-outline-primary btn-lg" href="/loan-programs">
+                View loan programs
               </a>
             </div>
           </div>
@@ -33,10 +33,7 @@ const TeamPage = () => (
       <div className="container">
         <div className="row g-4">
           <div className="col-12">
-            <h2 className="h3 fw-bold">Meet the people behind Method</h2>
-            <p className="text-muted">
-              Dedicated teams for underwriting, closing, and portfolio support.
-            </p>
+            <h2 className="h3 fw-bold">Meet the people behind Method.</h2>
           </div>
         </div>
         <div className="row g-4 mt-1">
@@ -51,10 +48,9 @@ const TeamPage = () => (
                 <h3 className="h5">Aaron Iverson</h3>
                 <p className="fw-semibold mb-2">CEO</p>
                 <p className="text-muted mb-0">
-                  With years of mortgage industry experience, Aaron Iverson is
-                  dedicated to making financing simple and stress-free. He
-                  focuses on clear communication, smart solutions, and building
-                  trust with every client.
+                  Aaron is CEO of Method Lending. He works with investors on DSCR
+                  and other business-purpose loans, from the first quote through
+                  closing.
                 </p>
                 <p className="mt-3 mb-0">
                   <a href="mailto:aiverson@methodlending.com">aiverson@methodlending.com</a>
@@ -73,10 +69,9 @@ const TeamPage = () => (
                 <h3 className="h5">Miles Trotter</h3>
                 <p className="fw-semibold mb-2">President</p>
                 <p className="text-muted mb-0">
-                  Miles Trotter brings expertise in both mortgages and real
-                  estate, offering clients a well-rounded perspective. His goal
-                  is to guide borrowers with insight and confidence through
-                  every step of the process.
+                  Miles is President of Method Lending. He comes from both mortgage
+                  and real estate and works investor deals the same way: direct
+                  communication and a clear quote.
                 </p>
                 <p className="mt-3 mb-0">
                   <a href="mailto:mtrotter@methodlending.com">mtrotter@methodlending.com</a>
