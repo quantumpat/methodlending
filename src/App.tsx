@@ -1,16 +1,39 @@
-import { Route, Routes, Link, NavLink, useLocation } from 'react-router-dom'
+import { Navigate, Route, Routes, Link, useLocation } from 'react-router-dom'
 import { useEffect } from 'react'
 import './App.css'
+import './styles/method-site.css'
 import Home from './pages/Home.tsx'
 import PurchasePage from './pages/PurchasePage.tsx'
 import RefinancePage from './pages/RefinancePage.tsx'
 import AccessEquityPage from './pages/AccessEquityPage.tsx'
-import LoanOptionsPage from './pages/LoanOptionsPage.tsx'
+import LoanProgramsPage from './pages/LoanProgramsPage.tsx'
+import FixAndFlipPage from './pages/FixAndFlipPage.tsx'
+import RehabLoansPage from './pages/RehabLoansPage.tsx'
+import GroundUpConstructionPage from './pages/GroundUpConstructionPage.tsx'
 import MarketsServedPage from './pages/MarketsServedPage.tsx'
 import TeamPage from './pages/TeamPage.tsx'
 import RequestQuotePage from './pages/RequestQuotePage.tsx'
 import PrivacyPolicy from './pages/PrivacyPolicy.tsx'
 import TermsOfUse from './pages/TermsOfUse.tsx'
+import SiteHeader from './components/SiteHeader.tsx'
+import usePageMeta from './hooks/usePageMeta.ts'
+import usePixelPageView from './hooks/usePixelPageView.ts'
+
+const footerPages = [
+  { to: '/', label: 'Home' },
+  { to: '/purchase', label: 'Purchase' },
+  { to: '/refinance', label: 'Refinance' },
+  { to: '/access-equity', label: 'Access Equity' },
+  { to: '/loan-programs', label: 'Loan Programs' },
+  { to: '/markets-served', label: 'Markets Served' },
+  { to: '/fix-and-flip', label: 'Fix & Flip' },
+  { to: '/rehab-loans', label: 'Rehab' },
+  { to: '/ground-up-construction', label: 'Ground-Up Construction' },
+  { to: '/team', label: 'Our Team' },
+  { to: '/request-quote', label: 'Request a Quote' },
+  { to: '/privacy-policy', label: 'Privacy Policy' },
+  { to: '/terms-of-use', label: 'Terms of Use' },
+]
 
 const ScrollToTop = () => {
   const location = useLocation()
@@ -40,9 +63,8 @@ const ScrollToTop = () => {
 
 function App() {
   const location = useLocation()
-  useEffect(() => {
-    document.title = 'Method Lending: Built for real estate investors'
-  }, [location.pathname])
+  usePageMeta()
+  usePixelPageView()
   useEffect(() => {
     const shouldAnimate = location.pathname !== '/request-quote'
     const sections = Array.from(document.querySelectorAll('main > section'))
@@ -87,163 +109,33 @@ function App() {
 
     return () => observer.disconnect()
   }, [location.pathname])
-  const closeMobileNav = () => {
-    const nav = document.getElementById('mainNav')
-    if (nav?.classList.contains('show')) {
-      const toggler = document.querySelector<HTMLButtonElement>('.navbar-toggler')
-      toggler?.click()
-    }
-  }
+  const programSections = (path: string) => [
+    { label: 'Overview', href: `${path}#overview` },
+    { label: 'Program Highlights', href: `${path}#highlights` },
+    { label: 'Request a Quote', href: `${path}#quote` },
+  ]
   const footerSectionsByPath: Record<string, { label: string; href: string }[]> = {
-    '/': [
-      { label: 'Hero', href: '/#home' },
-      { label: 'Solutions', href: '/#solutions' },
-      { label: 'Contact', href: '/#contact' },
-    ],
-    '/purchase': [
-      { label: 'Overview', href: '/purchase#purchase-hero' },
-      { label: 'Highlights', href: '/purchase#purchase-highlights' },
-      { label: 'Request a Quote', href: '/purchase#purchase-cta' },
-    ],
-    '/refinance': [
-      { label: 'Overview', href: '/refinance#refinance-hero' },
-      { label: 'Why Refi?', href: '/refinance#refinance-reasons' },
-      { label: 'Request a Quote', href: '/refinance#refinance-cta' },
-    ],
-    '/access-equity': [
-      { label: 'Overview', href: '/access-equity#access-equity-hero' },
-      { label: 'Cashout Refi', href: '/access-equity#access-equity-cashout' },
-      { label: 'Cashout Benefits', href: '/access-equity#access-equity-benefits' },
-      { label: 'Request a Quote', href: '/access-equity#access-equity-cta' },
-    ],
-    '/loan-options': [
-      { label: 'Overview', href: '/loan-options#loan-options-hero' },
-      { label: 'Compare Options', href: '/loan-options#loan-options-compare' },
-    ],
-    '/markets-served': [
-      { label: 'Overview', href: '/markets-served#markets-hero' },
-      { label: 'Coverage Map', href: '/markets-served#markets-map' },
-      { label: 'Disclaimer', href: '/markets-served#markets-disclaimer' },
-    ],
-    '/team': [
-      { label: 'Overview', href: '/team#team-hero' },
-      { label: 'Leadership', href: '/team#team-leadership' },
-    ],
-    '/request-quote': [
-      { label: 'Overview', href: '/request-quote#request-hero' },
-      { label: 'Schedule a Meeting', href: '/request-quote#request-connect' },
-    ],
-    '/privacy-policy': [
-      { label: 'Privacy Policy', href: '/privacy-policy#privacy-policy' },
-    ],
-    '/terms-of-use': [
-      { label: 'Terms of Use', href: '/terms-of-use#terms-of-use' },
-    ],
+    '/fix-and-flip': programSections('/fix-and-flip'),
+    '/rehab-loans': programSections('/rehab-loans'),
+    '/ground-up-construction': programSections('/ground-up-construction'),
   }
-  const footerSections = footerSectionsByPath[location.pathname] ?? footerSectionsByPath['/']
+  const footerSections = footerSectionsByPath[location.pathname]
 
   return (
     <div className="page">
       <ScrollToTop />
-      <header className="navbar navbar-expand-xxl bg-white border-bottom sticky-top shadow-sm">
-        <div className="container">
-          <Link className="navbar-brand d-flex align-items-center" to="/">
-            <img className="navbar-logo" src="/images/Method%20Logo%20Trace.png" alt="Method logo" />
-          </Link>
-          <button
-            className="navbar-toggler navbar-toggler--animated"
-            type="button"
-            data-bs-toggle="collapse"
-            data-bs-target="#mainNav"
-            aria-controls="mainNav"
-            aria-expanded="false"
-            aria-label="Toggle navigation"
-          >
-            <span className="navbar-toggler-line" />
-            <span className="navbar-toggler-line" />
-            <span className="navbar-toggler-line" />
-          </button>
-          <div className="collapse navbar-collapse" id="mainNav">
-            <ul className="navbar-nav ms-auto mb-2 mb-lg-0 gap-2 gap-lg-4">
-              <li className="nav-item">
-                <NavLink
-                  className={({ isActive }) => `nav-link${isActive ? ' active' : ''}`}
-                  to="/"
-                  onClick={closeMobileNav}
-                >
-                  Home
-                </NavLink>
-              </li>
-              <li className="nav-item">
-                <NavLink
-                  className={({ isActive }) => `nav-link${isActive ? ' active' : ''}`}
-                  to="/purchase"
-                  onClick={closeMobileNav}
-                >
-                  Purchase
-                </NavLink>
-              </li>
-              <li className="nav-item">
-                <NavLink
-                  className={({ isActive }) => `nav-link${isActive ? ' active' : ''}`}
-                  to="/refinance"
-                  onClick={closeMobileNav}
-                >
-                  Refinance
-                </NavLink>
-              </li>
-              <li className="nav-item">
-                <NavLink
-                  className={({ isActive }) => `nav-link${isActive ? ' active' : ''}`}
-                  to="/access-equity"
-                  onClick={closeMobileNav}
-                >
-                  Access Equity
-                </NavLink>
-              </li>
-              <li className="nav-item">
-                <NavLink
-                  className={({ isActive }) => `nav-link${isActive ? ' active' : ''}`}
-                  to="/loan-options"
-                  onClick={closeMobileNav}
-                >
-                  Loan Options
-                </NavLink>
-              </li>
-              <li className="nav-item">
-                <NavLink
-                  className={({ isActive }) => `nav-link${isActive ? ' active' : ''}`}
-                  to="/markets-served"
-                  onClick={closeMobileNav}
-                >
-                  Markets Served
-                </NavLink>
-              </li>
-              <li className="nav-item">
-                <NavLink
-                  className={({ isActive }) => `nav-link${isActive ? ' active' : ''}`}
-                  to="/team"
-                  onClick={closeMobileNav}
-                >
-                  Our Team
-                </NavLink>
-              </li>
-            </ul>
-            <div className="d-flex flex-column flex-lg-row gap-2 ms-lg-3">
-              <Link className="btn btn-primary w-100 w-lg-auto" to="/request-quote" onClick={closeMobileNav}>
-                Request a Quote
-              </Link>
-            </div>
-          </div>
-        </div>
-      </header>
+      <SiteHeader />
 
       <Routes>
         <Route path="/" element={<Home />} />
         <Route path="/purchase" element={<PurchasePage />} />
         <Route path="/refinance" element={<RefinancePage />} />
         <Route path="/access-equity" element={<AccessEquityPage />} />
-        <Route path="/loan-options" element={<LoanOptionsPage />} />
+        <Route path="/loan-programs" element={<LoanProgramsPage />} />
+        <Route path="/loan-options" element={<Navigate to="/loan-programs" replace />} />
+        <Route path="/fix-and-flip" element={<FixAndFlipPage />} />
+        <Route path="/rehab-loans" element={<RehabLoansPage />} />
+        <Route path="/ground-up-construction" element={<GroundUpConstructionPage />} />
         <Route path="/markets-served" element={<MarketsServedPage />} />
         <Route path="/team" element={<TeamPage />} />
         <Route path="/request-quote" element={<RequestQuotePage />} />
@@ -263,60 +155,31 @@ function App() {
                 Business-purpose financing only. No consumer mortgage services offered. No loan
                 applications accepted through this website.
               </p>
-              <p className="text-muted mb-0 hidden">
-                Method Lending is a mortgage brokerage company. NMLS #2753300. Licensed by the California
-                Department of Financial Protection and Innovation under the California Residential Mortgage
-                Lending Act. Equal Housing Opportunity. For licensing information, visit{' '}
-                <a className="text-muted" href="https://www.nmlsconsumeraccess.org/" target="_blank" rel="noreferrer">
-                  NMLS Consumer Access
-                </a>
-                .
-              </p>
             </div>
             <div className="col-lg-4">
               <div className="row gy-3">
                 <div className="col-6">
                   <div className="footer-heading text-uppercase text-muted">Pages</div>
                   <div className="footer-links d-flex flex-column gap-2">
-                    <Link className="text-muted" to="/">
-                      Home
-                    </Link>
-                    <Link className="text-muted" to="/purchase">
-                      Purchase
-                    </Link>
-                    <Link className="text-muted" to="/refinance">
-                      Refinance
-                    </Link>
-                    <Link className="text-muted" to="/access-equity">
-                      Access Equity
-                    </Link>
-                    <Link className="text-muted" to="/loan-options">
-                      Loan Options
-                    </Link>
-                    <Link className="text-muted" to="/team">
-                      Our Team
-                    </Link>
-                    <Link className="text-muted" to="/request-quote">
-                      Request a Quote
-                    </Link>
-                    <Link className="text-muted" to="/privacy-policy">
-                      Privacy Policy
-                    </Link>
-                    <Link className="text-muted" to="/terms-of-use">
-                      Terms of Use
-                    </Link>
-                  </div>
-                </div>
-                <div className="col-6">
-                  <div className="footer-heading text-uppercase text-muted">Sections</div>
-                  <div className="footer-links d-flex flex-column gap-2">
-                    {footerSections.map((section) => (
-                      <Link key={section.href} className="text-muted" to={section.href}>
-                        {section.label}
+                    {footerPages.map((page) => (
+                      <Link key={page.to} className="text-muted" to={page.to}>
+                        {page.label}
                       </Link>
                     ))}
                   </div>
                 </div>
+                {footerSections && (
+                  <div className="col-6">
+                    <div className="footer-heading text-uppercase text-muted">Sections</div>
+                    <div className="footer-links d-flex flex-column gap-2">
+                      {footerSections.map((section) => (
+                        <Link key={section.href} className="text-muted" to={section.href}>
+                          {section.label}
+                        </Link>
+                      ))}
+                    </div>
+                  </div>
+                )}
                 <div className="col-12 d-flex align-items-center gap-2">
                   <img src="/images/fheo75.gif" alt="Equal Housing Opportunity" />
                   <span className="text-muted">Equal Housing Opportunity</span>

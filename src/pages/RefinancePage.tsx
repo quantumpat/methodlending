@@ -5,18 +5,17 @@ const RefinancePage = () => {
     <main>
       <section
         id="refinance-hero"
-        className="hero-section hero-section--image hero-section--image-sky hero-section--image-contrast"
+        className="hero-section"
       >
         <div className="container">
           <div className="row align-items-center g-4">
             <div className="col-lg-6">
               <p className="text-uppercase text-primary fw-semibold mb-2">Refinance program</p>
               <h1 className="display-5 fw-bold">
-                Refinance to unlock equity and stabilize cash flow
+                Refinance the rental. Keep the DSCR qualification.
               </h1>
               <p className="lead text-muted">
-                Transition from short-term capital to a longer runway with clear terms, flexible
-                structures, and fast underwriting.
+                Move a short-term or high-rate loan onto a longer DSCR term. Qualify on the property’s rent.
               </p>
             </div>
           </div>
@@ -25,57 +24,24 @@ const RefinancePage = () => {
 
       <section id="refinance-reasons" className="section">
         <div className="container">
-          <div className="text-center mb-5">
-            <h2 className="h2 fw-bold">Why Refinance with DSCR?</h2>
-            <p className="text-muted">Optimize your investment property financing.</p>
-          </div>
-          <div className="row g-4">
-            {[
-              {
-                title: 'Lower Your Interest Rate',
-                copy: 'Reduce your rate to improve monthly cash flow and profitability.',
-              },
-              {
-                title: 'No Income Documentation',
-                copy: 'Qualify based on property performance, not personal income.',
-              },
-              {
-                title: 'Close in Your LLC',
-                copy: 'Take title in your business entity while keeping financing flexible.',
-              },
-              {
-                title: 'Improve Cash Flow',
-                copy: 'Lower monthly payments increase rental property returns.',
-              },
-              {
-                title: 'Flexible Loan Terms',
-                copy: 'Choose fixed or ARM options to match your investment timeline.',
-              },
-              {
-                title: 'Portfolio Refinancing',
-                copy: 'Refinance multiple properties to streamline management.',
-              },
-            ].map((reason) => (
-              <div key={reason.title} className="col-md-6 col-lg-4">
-                <div className="card h-100 border-0 shadow-sm">
-                  <div className="card-body">
-                    <h3 className="h5">{reason.title}</h3>
-                    <p className="text-muted mb-0">{reason.copy}</p>
-                  </div>
-                </div>
-              </div>
-            ))}
-          </div>
+          <h2 className="h2 fw-bold">Why investors refinance with DSCR</h2>
+          <ul className="check-list mb-0">
+            <li>Qualify on the property, not your tax returns.</li>
+            <li>Close in your LLC.</li>
+            <li>
+              If you want cash out, go to <Link to="/access-equity">Access Equity</Link>.
+            </li>
+          </ul>
         </div>
       </section>
 
       <section id="refinance-cta" className="section bg-primary text-white">
         <div className="container text-center">
-          <h2 className="h2 fw-bold">Ready to Optimize Your Investment?</h2>
-          <p className="lead">Get a custom DSCR refinance quote for your property today.</p>
+          <h2 className="h2 fw-bold">Want a refinance quote?</h2>
+          <p className="lead">Send the property and the current loan. We will come back with options.</p>
           <div className="d-flex flex-wrap justify-content-center gap-3">
             <Link className="btn btn-light" to="/request-quote">
-              Get Your Rate Quote
+              Request a Quote
             </Link>
           </div>
         </div>

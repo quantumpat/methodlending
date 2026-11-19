@@ -3,7 +3,7 @@ const PrivacyPolicy = () => (
     <section id="privacy-policy" className="section policy-body">
       <div className="container">
         <h1 className="display-6 fw-bold mb-3">Privacy Policy</h1>
-        <p className="text-muted mb-4">Effective Date: 02/10/2026</p>
+        <p className="text-muted mb-4">Effective Date: 11/19/2026</p>
 
         <p className="text-muted">
           Method Lending (&quot;Method,&quot; &quot;we,&quot; &quot;us,&quot; or &quot;our&quot;) respects your privacy and is committed to
@@ -23,7 +23,8 @@ const PrivacyPolicy = () => (
             <strong>Contact information:</strong> Name, email address, phone number
           </li>
           <li>
-            <strong>Business inquiry details:</strong> Property type, estimated loan amount, investment intent
+            <strong>Business inquiry details:</strong> Property type, estimated loan amount, investment intent,
+            self-reported credit score range
           </li>
           <li>
             <strong>Technical information:</strong> IP address, browser type, device information, and website usage
@@ -31,8 +32,10 @@ const PrivacyPolicy = () => (
           </li>
         </ul>
         <p className="text-muted">
-          We do not collect Social Security numbers, dates of birth, credit information, bank account
-          information, or other sensitive consumer financial data through this website.
+          We do not collect Social Security numbers, dates of birth, bank account information, or other
+          sensitive financial data through this website. If you request a quote, we collect a
+          self-reported credit score range and use it only to prepare your quote. Submitting information
+          is not a loan application.
         </p>
 
         <h2 className="h4 fw-semibold mt-5">How We Use Your Information</h2>
@@ -57,10 +60,6 @@ const PrivacyPolicy = () => (
           <li>Regulatory or legal authorities when required by law</li>
           <li>We do NOT sell, rent, or share user data with unaffiliated companies for marketing.</li>
         </ul>
-        <p className="text-muted">
-          Any information sharing related to loan origination, underwriting, or funding will occur only
-          after all required licenses are obtained and in compliance with applicable privacy laws.
-        </p>
 
         <h2 className="h4 fw-semibold mt-5">Your Privacy Rights</h2>
         <p className="text-muted">
@@ -76,21 +75,32 @@ const PrivacyPolicy = () => (
           the information collected through our website.
         </p>
 
+        <h2 className="h4 fw-semibold mt-5">Cookies and Advertising</h2>
+        <p className="text-muted">
+          Our website uses the Meta Pixel and similar cookies to measure the performance of our
+          advertising and to show relevant ads on Meta platforms. You can manage how Meta uses this
+          information in your Facebook or Instagram{' '}
+          <a href="https://www.facebook.com/adpreferences" target="_blank" rel="noopener noreferrer">
+            ad settings
+          </a>
+          , or limit cookies in your browser settings.
+        </p>
+
         <h2 className="h4 fw-semibold mt-5">Licensing Disclosure</h2>
         <p className="text-muted">
-          Method Lending is in the process of obtaining required state licensing. No lending or brokering
-          activity will occur until all applicable licenses are approved.
+          Method Lending, LLC is a mortgage broker that arranges business-purpose financing through
+          third-party lending partners.
         </p>
 
         <h2 className="h4 fw-semibold mt-5">Contact Information</h2>
         <p className="text-muted mb-0">Method Lending</p>
-        <p className="text-muted mb-0">31751 Via Granada, CA 92675</p>
+        <p className="text-muted mb-0">323 S 600 E, Suite 170, Salt Lake City, UT 84102</p>
         <p className="text-muted mb-0">Phone: 949-531-9623</p>
         <p className="text-muted">
           Email:{" "}
           <a href="mailto:aiverson@methodlending.com">aiverson@methodlending.com</a>
           {" "}/ {" "}
-          <a href="mailto:mrotter@methodlending.com">mrotter@methodlending.com</a>
+          <a href="mailto:mtrotter@methodlending.com">mtrotter@methodlending.com</a>
         </p>
       </div>
     </section>

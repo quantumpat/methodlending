@@ -1,89 +1,141 @@
-import { Link } from 'react-router-dom'
+import { useEffect } from 'react'
 
-type WooSenderEmbedProps = {
-  title: string
-  domain: string
-  slug: string
+const FORM_IFRAME_ID = 'inline-U8aJhSFaofCQPUowojHC'
+const CALENDAR_IFRAME_ID = '6Q8mdj3PWaajnwQPSB2Q_website'
+const CALENDAR_ID = '6Q8mdj3PWaajnwQPSB2Q'
+const FORM_EMBED_SCRIPT_ID = 'ghl-form-embed'
+
+const isGhlOrigin = (origin: string) => {
+  let hostname: string
+  try {
+    hostname = new URL(origin).hostname
+  } catch {
+    return false
+  }
+  return (
+    hostname === 'leadconnectorhq.com' ||
+    hostname === 'msgsndr.com' ||
+    hostname.endsWith('.leadconnectorhq.com') ||
+    hostname.endsWith('.msgsndr.com')
+  )
 }
 
-const WooSenderEmbed = ({ title, domain, slug }: WooSenderEmbedProps) => (
-  <div
-    className="flex-grow-1"
-    style={{ minWidth: '320px', minHeight: '600px', height: '100%' }}
-  >
-    <iframe
-      title={title}
-      src={`${domain}/${slug}`}
-      style={{ width: '100%', height: '100%', border: 'none' }}
-      loading="lazy"
-    />
-  </div>
-)
+// In-memory flags back up sessionStorage, which can be unavailable (private mode, blocked storage)
+const leadsSent: Record<string, boolean> = {}
+
+const trackLeadOnce = (storageKey: string, contentName: string) => {
+  if (leadsSent[storageKey]) return false
+  try {
+    if (window.sessionStorage.getItem(storageKey)) {
+      leadsSent[storageKey] = true
+      return false
+    }
+    window.sessionStorage.setItem(storageKey, '1')
+  } catch {
+    // Storage unavailable: the in-memory flag still dedupes within this page load
+  }
+  leadsSent[storageKey] = true
+  window.fbq?.('track', 'Lead', { content_name: contentName }, { eventID: crypto.randomUUID() })
+  return true
+}
+
+const iframeWindow = (id: string) =>
+  (document.getElementById(id) as HTMLIFrameElement | null)?.contentWindow
+
+// Reads only the action name (e.data[0]) and, for bookings, the calendar id. The rest of the
+// message can hold the visitor's contact details and is never read, stored, or logged.
+const handleGhlMessage = (event: MessageEvent) => {
+  if (!isGhlOrigin(event.origin) || !Array.isArray(event.data)) return
+
+  const action: unknown = event.data[0]
+  let leadFired = false
+
+  if (action === 'set-sticky-contacts' && event.source && event.source === iframeWindow(FORM_IFRAME_ID)) {
+    leadFired = trackLeadOnce('ml_lead_form', 'website_form')
+  } else if (
+    action === 'msgsndr-booking-complete' &&
+    event.source &&
+    event.source === iframeWindow(CALENDAR_IFRAME_ID)
+  ) {
+    const details: unknown = event.data[1]
+    const calendarId =
+      details && typeof details === 'object' ? (details as { calendarId?: unknown }).calendarId : undefined
+    if (calendarId === undefined || calendarId === CALENDAR_ID) {
+      leadFired = trackLeadOnce('ml_lead_booking', 'website_booking')
+    }
+  }
+
+  if (new URLSearchParams(window.location.search).get('pixel_debug') === '1') {
+    console.info('[pixel_debug]', typeof action === 'string' ? action : '(non-string action)', { leadFired })
+  }
+}
 
 const RequestQuotePage = () => {
+  useEffect(() => {
+    // Loaded once for the whole session; it sizes GHL iframes that mount on later visits too
+    if (document.getElementById(FORM_EMBED_SCRIPT_ID) === null) {
+      const script = document.createElement('script')
+      script.id = FORM_EMBED_SCRIPT_ID
+      script.src = 'https://link.msgsndr.com/js/form_embed.js'
+      script.async = true
+      document.body.appendChild(script)
+    }
+  }, [])
+
+  useEffect(() => {
+    window.addEventListener('message', handleGhlMessage)
+    return () => window.removeEventListener('message', handleGhlMessage)
+  }, [])
+
   return (
     <main>
-    <section id="request-hero" className="hero-section">
-      <div className="container">
-        <div className="row align-items-center g-4">
-          <div className="col-lg-6">
-            <p className="text-uppercase text-primary fw-semibold mb-2">
-              Request a Quote
-            </p>
-            <h1 className="display-5 fw-bold">
-              Tell us about your deal. We’ll respond fast.
-            </h1>
-            <p className="lead text-muted">
-              Share a few details and a lending specialist will follow up with
-              options tailored to your timeline.
-            </p>
-            <div className="d-flex flex-wrap gap-3">
-              <Link className="btn btn-outline-primary btn-lg" to="/loan-options">
-                View loan options
-              </Link>
+      <section id="request-hero" className="hero-section">
+        <div className="container">
+          <div className="row g-4">
+            <div className="col-lg-8">
+              <p className="text-uppercase text-primary fw-semibold mb-2">Request a Quote</p>
+              <h1 className="display-5 fw-bold">
+                Tell us about your deal.
+                <br />
+                We’ll respond fast.
+              </h1>
+              <p className="lead text-muted">Send the deal, or pick a time for a 20-minute call.</p>
             </div>
           </div>
-        </div>
-      </div>
-    </section>
 
-    <section id="request-connect" className="section bg-light">
-      <div className="container">
-        <div className="row g-4">
-          <div className="col-12 col-lg-6">
-            <div className="card border-0 shadow-sm h-100 quote-panel">
-              <div className="card-body p-3 p-md-4 h-100 d-flex flex-column">
-                <h2 className="h5 fw-bold mb-3">Schedule a meeting</h2>
-                <WooSenderEmbed
-                  title="Method Lending meeting scheduler"
-                  domain="https://go.woosender.com"
-                  slug="methodlending/methodteam"
-                />
-              </div>
+          <div className="row g-4 mt-2">
+            <div className="col-12 col-lg-6" style={{ minHeight: '640px' }}>
+              <h2 className="h4 fw-semibold mb-3">Have us reach out</h2>
+              <iframe
+                src="https://api.leadconnectorhq.com/widget/form/U8aJhSFaofCQPUowojHC"
+                id="inline-U8aJhSFaofCQPUowojHC"
+                style={{ width: '100%', height: '100%', border: 'none', borderRadius: '3px' }}
+                data-layout="{'id':'INLINE'}"
+                data-trigger-type="alwaysShow"
+                data-trigger-value=""
+                data-activation-type="alwaysActivated"
+                data-activation-value=""
+                data-deactivation-type="neverDeactivate"
+                data-deactivation-value=""
+                data-form-name="Website Quote Form"
+                data-layout-iframe-id="inline-U8aJhSFaofCQPUowojHC"
+                data-form-id="U8aJhSFaofCQPUowojHC"
+                title="Website Quote Form"
+              ></iframe>
             </div>
-          </div>
-          <div className="col-12 col-lg-6">
-            <div className="card border-0 shadow-sm h-100 quote-form-card quote-panel">
-              <div className="card-body p-3 p-md-4 h-100 d-flex flex-column">
-                <div className="quote-form-header">
-                  <p className="text-uppercase text-primary fw-semibold mb-2">Contact Request</p>
-                  <h2 className="h5 fw-bold mb-2">Send a request</h2>
-                  <p className="text-muted mb-0">
-                    Share a few details and we will reply within one business day.
-                  </p>
-                  <p className="text-muted small mt-2 mb-0">Method Lending</p>
-                </div>
-                <WooSenderEmbed
-                  title="Method Lending smart form"
-                  domain="https://go.woosender.com/smart-form"
-                  slug="8n9j-7ok-b6f"
-                />
-              </div>
+            <div className="col-12 col-lg-6" style={{ minHeight: '640px' }}>
+              <h2 className="h4 fw-semibold mb-3">Pick a time for a 20-minute call</h2>
+              <iframe
+                src="https://api.leadconnectorhq.com/widget/bookings/website-method-lending"
+                id="6Q8mdj3PWaajnwQPSB2Q_website"
+                title="Call with Method Lending"
+                style={{ width: '100%', border: 'none', overflow: 'hidden' }}
+                scrolling="no"
+              ></iframe>
             </div>
           </div>
         </div>
-      </div>
-    </section>
+      </section>
     </main>
   )
 }

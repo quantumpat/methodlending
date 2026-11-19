@@ -1,0 +1,579 @@
+/* ==========================================================================
+   Method Lending – new menu + program pages
+   All selectors are prefixed "ml-" so they don't collide with existing styles.
+   ========================================================================== */
+
+:root {
+  --ml-blue: #004b83;
+  --ml-blue-dark: #003561;
+  --ml-ink: #111827;
+  --ml-text: #374151;
+  --ml-muted: #4B5563;
+  --ml-subtle: #6B7280;
+  --ml-line: #E5E7EB;
+  --ml-line-soft: #EEF0F3;
+  --ml-bg-alt: #F6F8FA;
+  --ml-hover: #F3F6FA;
+  --ml-font: 'Vend Sans', 'Gowun Dodum', system-ui, -apple-system, BlinkMacSystemFont, 'Segoe UI', sans-serif;
+  --ml-max: 1296px;
+}
+
+.ml-header *,
+.ml-page * {
+  box-sizing: border-box;
+}
+
+.ml-container {
+  max-width: var(--ml-max);
+  margin: 0 auto;
+}
+
+/* ---------- Buttons ---------- */
+
+.ml-btn {
+  display: inline-block;
+  background: var(--ml-blue);
+  color: #FFFFFF;
+  font-family: var(--ml-font);
+  font-size: 15px;
+  font-weight: 400;
+  line-height: 1.3;
+  text-decoration: none;
+  padding: 10px 16px;
+  border-radius: 2px;
+  border: 0;
+  cursor: pointer;
+  white-space: nowrap;
+}
+
+.ml-btn:hover {
+  background: var(--ml-blue-dark);
+  color: #FFFFFF;
+}
+
+.ml-btn--light {
+  background: #FFFFFF;
+  color: var(--ml-ink);
+  padding: 11px 18px;
+}
+
+.ml-btn--light:hover {
+  background: #EEF2F7;
+  color: var(--ml-ink);
+}
+
+.ml-btn--sm {
+  font-size: 14px;
+  padding: 8px 12px;
+}
+
+.ml-header a:focus-visible,
+.ml-header button:focus-visible,
+.ml-page a:focus-visible {
+  outline: 2px solid var(--ml-blue);
+  outline-offset: 2px;
+}
+
+.ml-cta a:focus-visible {
+  outline-color: #FFFFFF;
+}
+
+/* ==========================================================================
+   Header + menu (desktop)
+   ========================================================================== */
+
+.ml-header {
+  /* Sticky like the previous header (Aaron's file has position: relative) */
+  position: sticky;
+  top: 0;
+  z-index: 50;
+  background: #FFFFFF;
+  box-shadow: 0 1px 4px rgba(15, 23, 42, 0.08);
+  font-family: var(--ml-font);
+}
+
+.ml-header__inner {
+  max-width: var(--ml-max);
+  margin: 0 auto;
+  padding: 22px 32px;
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+  gap: 24px;
+}
+
+.ml-logo {
+  display: flex;
+  align-items: center;
+  flex-shrink: 0;
+}
+
+.ml-logo img {
+  display: block;
+  height: 60px;
+  width: auto;
+}
+
+.ml-header__mobile-actions {
+  display: none;
+}
+
+.ml-nav__list {
+  list-style: none;
+  margin: 0;
+  padding: 0;
+  display: flex;
+  align-items: center;
+  gap: 34px;
+}
+
+.ml-nav__item {
+  position: relative;
+}
+
+.ml-nav__link,
+.ml-nav__trigger {
+  display: inline-flex;
+  align-items: center;
+  gap: 6px;
+  padding: 6px 0;
+  background: none;
+  border: 0;
+  border-bottom: 2px solid transparent;
+  font-family: var(--ml-font);
+  font-size: 15px;
+  font-weight: 300;
+  color: var(--ml-muted);
+  text-decoration: none;
+  cursor: pointer;
+}
+
+.ml-nav__link:hover,
+.ml-nav__trigger:hover {
+  color: var(--ml-ink);
+}
+
+/* Current page, parent of the current page, or open dropdown */
+.ml-nav__link[aria-current="page"],
+.ml-nav__item.is-active > .ml-nav__trigger,
+.ml-nav__trigger[aria-expanded="true"] {
+  color: var(--ml-ink);
+  border-bottom-color: var(--ml-ink);
+}
+
+.ml-chevron {
+  width: 10px;
+  height: 10px;
+  transition: transform 0.15s ease;
+}
+
+.ml-nav__trigger[aria-expanded="true"] .ml-chevron {
+  transform: rotate(180deg);
+}
+
+/* ---------- Dropdown panels ---------- */
+
+.ml-dropdown {
+  display: none;
+  position: absolute;
+  top: calc(100% + 10px);
+  left: -16px;
+  width: 340px;
+  padding: 10px;
+  background: #FFFFFF;
+  border: 1px solid var(--ml-line);
+  border-radius: 10px;
+  box-shadow: 0 18px 40px rgba(15, 23, 42, 0.14);
+}
+
+/* Invisible bridge so the panel stays open while the pointer moves down to it */
+.ml-dropdown::before {
+  content: "";
+  position: absolute;
+  left: 0;
+  right: 0;
+  top: -12px;
+  height: 12px;
+}
+
+.ml-dropdown--wide {
+  width: 360px;
+}
+
+.ml-nav__trigger[aria-expanded="true"] + .ml-dropdown {
+  display: block;
+}
+
+.ml-dropdown__label {
+  margin: 0;
+  padding: 8px 12px 4px;
+  font-size: 11px;
+  font-weight: 600;
+  letter-spacing: 1.2px;
+  color: var(--ml-blue);
+}
+
+.ml-dropdown__links {
+  list-style: none;
+  margin: 0;
+  padding: 0;
+  display: flex;
+  flex-direction: column;
+  gap: 2px;
+}
+
+.ml-dropdown__link {
+  display: flex;
+  flex-direction: column;
+  gap: 2px;
+  padding: 10px 12px;
+  border-radius: 6px;
+  text-decoration: none;
+}
+
+.ml-dropdown__link:hover,
+.ml-dropdown__link[aria-current="page"] {
+  background: var(--ml-hover);
+}
+
+.ml-dropdown__title {
+  font-size: 14.5px;
+  font-weight: 600;
+  color: var(--ml-ink);
+}
+
+.ml-dropdown__desc {
+  font-size: 13px;
+  color: var(--ml-subtle);
+}
+
+.ml-dropdown__note {
+  margin: 6px 0 0;
+  padding: 12px 12px 6px;
+  border-top: 1px solid var(--ml-line-soft);
+  font-size: 13px;
+  color: var(--ml-muted);
+}
+
+.ml-dropdown__note a {
+  color: var(--ml-blue);
+  text-decoration: underline;
+}
+
+/* Menu-toggle icon (mobile only) */
+.ml-menu-toggle {
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  width: 44px;
+  height: 44px;
+  padding: 0;
+  background: none;
+  border: 0;
+  color: var(--ml-ink);
+  cursor: pointer;
+}
+
+.ml-menu-toggle .ml-icon-close {
+  display: none;
+}
+
+.ml-menu-toggle[aria-expanded="true"] .ml-icon-open {
+  display: none;
+}
+
+.ml-menu-toggle[aria-expanded="true"] .ml-icon-close {
+  display: block;
+}
+
+/* ==========================================================================
+   Header + menu (tablet and phone)
+   ========================================================================== */
+
+@media (max-width: 1100px) {
+  .ml-header__inner {
+    padding: 14px 18px;
+  }
+
+  .ml-logo img {
+    height: 40px;
+  }
+
+  .ml-header__mobile-actions {
+    display: flex;
+    align-items: center;
+    gap: 8px;
+  }
+
+  .ml-nav {
+    display: none;
+    position: absolute;
+    top: 100%;
+    left: 0;
+    right: 0;
+    max-height: calc(100vh - 68px);
+    overflow-y: auto;
+    padding: 6px 22px 28px;
+    background: #FFFFFF;
+    box-shadow: 0 12px 24px rgba(15, 23, 42, 0.10);
+  }
+
+  .ml-header.is-open .ml-nav {
+    display: block;
+  }
+
+  .ml-nav__list {
+    flex-direction: column;
+    align-items: stretch;
+    gap: 0;
+  }
+
+  .ml-nav__item {
+    border-bottom: 1px solid var(--ml-line-soft);
+  }
+
+  .ml-nav__link,
+  .ml-nav__trigger {
+    width: 100%;
+    justify-content: space-between;
+    padding: 16px 0;
+    border-bottom: 0;
+    font-size: 17px;
+    font-weight: 600;
+    color: var(--ml-ink);
+  }
+
+  .ml-nav__link[aria-current="page"],
+  .ml-nav__item.is-active > .ml-nav__trigger,
+  .ml-nav__trigger[aria-expanded="true"] {
+    color: var(--ml-ink);
+    border-bottom: 0;
+  }
+
+  .ml-dropdown,
+  .ml-dropdown--wide {
+    position: static;
+    width: auto;
+    padding: 0 0 14px;
+    border: 0;
+    border-radius: 0;
+    box-shadow: none;
+  }
+
+  .ml-dropdown::before,
+  .ml-dropdown__label,
+  .ml-dropdown__desc {
+    display: none;
+  }
+
+  .ml-dropdown__links {
+    gap: 0;
+  }
+
+  .ml-dropdown__link {
+    padding: 10px 0 10px 14px;
+    border-left: 2px solid var(--ml-line);
+    border-radius: 0;
+  }
+
+  .ml-dropdown__link:hover,
+  .ml-dropdown__link[aria-current="page"] {
+    background: none;
+    border-left-color: var(--ml-blue);
+  }
+
+  .ml-dropdown__title {
+    font-size: 15px;
+    font-weight: 400;
+    color: var(--ml-text);
+  }
+
+  .ml-dropdown__note {
+    margin: 0;
+    padding: 8px 0 0 14px;
+    border-top: 0;
+    color: var(--ml-subtle);
+  }
+
+  .ml-nav__item--cta {
+    border-bottom: 0;
+    padding-top: 22px;
+  }
+
+  .ml-nav__item--cta .ml-btn {
+    display: block;
+    width: 100%;
+    text-align: center;
+    padding: 14px;
+    font-size: 16px;
+  }
+}
+
+/* ==========================================================================
+   Program pages
+   ========================================================================== */
+
+.ml-page {
+  font-family: var(--ml-font);
+  color: var(--ml-ink);
+}
+
+/* ---------- Hero (matches the Purchase page hero) ---------- */
+
+.ml-hero {
+  padding: 64px 32px 72px;
+  background: linear-gradient(180deg, #CDDCEC 0%, #E6EDF5 45%, #C3D6EA 100%);
+}
+
+.ml-hero .ml-container {
+  display: flex;
+  flex-direction: column;
+  gap: 14px;
+}
+
+.ml-eyebrow {
+  margin: 0;
+  font-size: 12px;
+  font-weight: 600;
+  letter-spacing: 1px;
+  color: var(--ml-blue);
+}
+
+.ml-hero__title {
+  margin: 0;
+  max-width: 680px;
+  font-size: 44px;
+  line-height: 1.12;
+  font-weight: 700;
+  color: var(--ml-ink);
+}
+
+.ml-hero__intro {
+  margin: 0;
+  max-width: 620px;
+  font-size: 16.5px;
+  line-height: 1.55;
+  color: var(--ml-text);
+}
+
+/* ---------- Program Highlights ---------- */
+
+.ml-highlights {
+  padding: 56px 32px 64px;
+  background: var(--ml-bg-alt);
+}
+
+.ml-highlights .ml-container {
+  display: flex;
+  flex-direction: column;
+  gap: 20px;
+}
+
+.ml-highlights__title {
+  margin: 0;
+  font-size: 24px;
+  font-weight: 700;
+  color: var(--ml-ink);
+}
+
+.ml-highlights__grid {
+  list-style: none;
+  margin: 0;
+  padding: 0;
+  display: grid;
+  grid-template-columns: repeat(auto-fit, minmax(280px, 1fr));
+  gap: 14px;
+}
+
+.ml-highlight {
+  display: flex;
+  flex-direction: column;
+  gap: 4px;
+  padding: 18px 20px;
+  background: #FFFFFF;
+  border: 1px solid var(--ml-line);
+  border-radius: 6px;
+  box-shadow: 0 1px 2px rgba(15, 23, 42, 0.04);
+}
+
+.ml-highlight__value {
+  font-size: 19px;
+  font-weight: 700;
+  color: var(--ml-blue);
+}
+
+.ml-highlight__desc {
+  font-size: 14px;
+  line-height: 1.45;
+  color: var(--ml-muted);
+}
+
+.ml-disclosure {
+  margin: 6px 0 0;
+  max-width: 920px;
+  font-size: 13.5px;
+  line-height: 1.6;
+  color: var(--ml-muted);
+}
+
+/* ---------- Closing CTA band ---------- */
+
+.ml-cta {
+  padding: 56px 32px;
+  background: var(--ml-blue);
+}
+
+.ml-cta .ml-container {
+  max-width: 760px;
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  gap: 18px;
+  text-align: center;
+}
+
+.ml-cta__text {
+  margin: 0;
+  font-size: 22px;
+  line-height: 1.35;
+  font-weight: 600;
+  color: #FFFFFF;
+}
+
+/* ---------- Program pages on phones ---------- */
+
+@media (max-width: 640px) {
+  .ml-hero {
+    padding: 44px 20px 52px;
+  }
+
+  .ml-hero__title {
+    font-size: 32px;
+  }
+
+  .ml-hero__intro {
+    font-size: 16px;
+  }
+
+  .ml-highlights {
+    padding: 40px 20px 48px;
+  }
+
+  .ml-highlights__grid {
+    grid-template-columns: 1fr;
+  }
+
+  .ml-cta {
+    padding: 44px 20px;
+  }
+
+  .ml-cta__text {
+    font-size: 19px;
+  }
+}
+
+@media (prefers-reduced-motion: reduce) {
+  .ml-chevron {
+    transition: none;
+  }
+}

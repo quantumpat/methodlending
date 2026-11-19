@@ -2,31 +2,24 @@ import { Link } from 'react-router-dom'
 
 const Home = () => (
   <main>
-    <section id="home" className="hero-section hero-section--image">
+    <section id="home" className="hero-section hero-section--navy">
       <div className="container">
         <div className="row align-items-center g-4">
           <div className="col-lg-12">
-            <div className="hero-glass-card">
+            <div className="hero-navy-content">
               <h1 className="display-5 fw-bold">
                 Built for Real Estate Investors.
               </h1>
               <h5 className="lead display-9 fs-3">
-                Business-purpose loans with clarity, speed, and structure at every step.
+                DSCR and other business-purpose loans for rental and investment property. Qualify on the
+                property’s cash flow, not your W-2.
               </h5>
               <div className="d-flex flex-wrap gap-3">
-                <Link className="btn btn-primary btn-lg" to="/request-quote">
+                <Link className="btn btn-light btn-lg" to="/request-quote">
                   Request a Quote
                 </Link>
-                <a
-                  className="btn btn-success btn-lg hidden"
-                  href="http://methodlending.loanzify.io/register"
-                  target="_blank"
-                  rel="noopener noreferrer"
-                >
-                  Apply Now
-                </a>
-                <Link className="btn btn-lg btn-loan-options" to="/loan-options">
-                  Loan Options
+                <Link className="btn btn-outline-light btn-lg" to="/loan-programs">
+                  Loan Programs
                 </Link>
               </div>
             </div>
@@ -43,7 +36,6 @@ const Home = () => (
             to="/purchase"
             aria-label="Investment Property Purchase"
           >
-            <span className="hero-cta-button__badge" aria-hidden="true" />
             <span className="hero-cta-button__text">Purchase</span>
             <span className="visually-hidden">Investment Property Purchase</span>
           </Link>
@@ -52,7 +44,6 @@ const Home = () => (
             to="/refinance"
             aria-label="Refinance"
           >
-            <span className="hero-cta-button__badge" aria-hidden="true" />
             <span className="hero-cta-button__text">Refinance</span>
             <span className="visually-hidden">Refinance</span>
           </Link>
@@ -61,7 +52,6 @@ const Home = () => (
             to="/access-equity"
             aria-label="Access Equity"
           >
-            <span className="hero-cta-button__badge" aria-hidden="true" />
             <span className="hero-cta-button__text">Access Equity</span>
             <span className="visually-hidden">Access Equity</span>
           </Link>
@@ -73,9 +63,10 @@ const Home = () => (
       <div className="container">
         <div className="row g-4">
           <div className="col-12">
-            <h2 className="h3 fw-bold">Loan options built for you</h2>
+            <h2 className="h3 fw-bold">Loan programs</h2>
             <p className="text-muted mb-0">
-              Business-purpose financing solutions built for real estate investors.
+              DSCR, assets, bank statements, and 5+ unit property. All of them are business-purpose and
+              non-owner-occupied only.
             </p>
           </div>
         </div>
@@ -84,11 +75,7 @@ const Home = () => (
             <div className="card h-100 border-0 shadow-sm loan-option-card">
               <div className="card-body">
                 <h3 className="h5">DSCR</h3>
-                <ul className="text-muted mb-0">
-                  <li>Purchase financing for income-producing investment properties</li>
-                  <li>Qualification based on property cash flow and debt service coverage</li>
-                  <li>Business-purpose, non-owner-occupied transactions only</li>
-                </ul>
+                <p className="text-muted mb-0">Purchase an income-producing rental based on the property’s cash flow, not your personal income.</p>
               </div>
             </div>
           </div>
@@ -96,11 +83,7 @@ const Home = () => (
             <div className="card h-100 border-0 shadow-sm loan-option-card">
               <div className="card-body">
                 <h3 className="h5">Asset Utilization</h3>
-                <ul className="text-muted mb-0">
-                  <li>Uses verified assets in place of traditional income documentation</li>
-                  <li>Ideal for investors with strong balance sheets and complex cash flow</li>
-                  <li>Business-purpose real estate financing only</li>
-                </ul>
+                <p className="text-muted mb-0">Use verified assets instead of tax returns or W-2s. A fit when the balance sheet is strong and income is messy.</p>
               </div>
             </div>
           </div>
@@ -108,11 +91,7 @@ const Home = () => (
             <div className="card h-100 border-0 shadow-sm loan-option-card">
               <div className="card-body">
                 <h3 className="h5">Bank Statement and Alt Doc for Business Purpose</h3>
-                <ul className="text-muted mb-0">
-                  <li>Uses business bank statements or alternative financial records in place of traditional income</li>
-                  <li>Designed for self-employed investors and entity-owned properties</li>
-                  <li>Business-purpose real estate transactions only</li>
-                </ul>
+                <p className="text-muted mb-0">Use business bank statements or other records when you are self-employed or the property sits in an entity.</p>
               </div>
             </div>
           </div>
@@ -120,18 +99,13 @@ const Home = () => (
             <div className="card h-100 border-0 shadow-sm loan-option-card">
               <div className="card-body">
                 <h3 className="h5">Multi-Unit Property</h3>
-                <ul className="text-muted mb-0">
-                  <li>Financing for 5+ unit residential investment properties</li>
-                  <li>Focused on cash flow, scale, and long-term portfolio growth</li>
-                  <li>Non-owner-occupied, business-purpose only</li>
-                </ul>
+                <p className="text-muted mb-0">Financing for 5+ unit residential investment property, based on cash flow.</p>
               </div>
             </div>
           </div>
         </div>
         <p className="text-muted fst-italic mt-4 mb-0">
-          Loan Options - All programs are offered for business-purpose, non-owner-occupied real estate
-          transactions only.
+          All programs are offered for business-purpose, non-owner-occupied real estate transactions only.
         </p>
       </div>
     </section>
@@ -176,9 +150,9 @@ const Home = () => (
                   <h3 className="h5">Premium Options</h3>
                   <ul className="check-list mb-0">
                     <li>Asset depletion allowed.</li>
-                    <li>Minimum 680 credit score</li>
+                    <li>Minimum 680 credit score.</li>
                     <li>Use assets to augment DSCR.</li>
-                    <li>Required credit (0x30x12).</li>
+                    <li>No 30-day late payments in the last 12 months.</li>
                     <li>Loan amounts up to $2M.</li>
                     <li>Initial DSCR 0.75-0.99.</li>
                   </ul>
