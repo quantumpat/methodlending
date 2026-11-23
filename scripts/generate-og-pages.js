@@ -3,7 +3,7 @@ import path from 'node:path'
 
 const distDir = path.resolve('dist')
 const indexPath = path.join(distDir, 'index.html')
-const baseUrl = 'https://methodlending.com'
+const baseUrl = 'https://www.methodlending.com'
 
 // Shared with the app's client-side title hook
 const routes = JSON.parse(fs.readFileSync(path.resolve('src/routeMeta.json'), 'utf8'))

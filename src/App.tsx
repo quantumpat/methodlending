@@ -141,6 +141,8 @@ function App() {
         <Route path="/request-quote" element={<RequestQuotePage />} />
         <Route path="/privacy-policy" element={<PrivacyPolicy />} />
         <Route path="/terms-of-use" element={<TermsOfUse />} />
+        <Route path="/privacy" element={<Navigate to="/privacy-policy" replace />} />
+        <Route path="/terms" element={<Navigate to="/terms-of-use" replace />} />
       </Routes>
 
       <footer className="footer border-top">

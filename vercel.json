@@ -4,6 +4,31 @@
       "source": "/loan-options",
       "destination": "/loan-programs",
       "statusCode": 301
+    },
+    {
+      "source": "/loan-options/",
+      "destination": "/loan-programs",
+      "statusCode": 301
+    },
+    {
+      "source": "/privacy",
+      "destination": "/privacy-policy",
+      "statusCode": 301
+    },
+    {
+      "source": "/privacy/",
+      "destination": "/privacy-policy",
+      "statusCode": 301
+    },
+    {
+      "source": "/terms",
+      "destination": "/terms-of-use",
+      "statusCode": 301
+    },
+    {
+      "source": "/terms/",
+      "destination": "/terms-of-use",
+      "statusCode": 301
     }
   ],
   "rewrites": [

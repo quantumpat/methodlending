@@ -2,11 +2,11 @@ import { Link } from 'react-router-dom'
 
 const Home = () => (
   <main>
-    <section id="home" className="hero-section hero-section--navy">
+    <section id="home" className="hero-section hero-section--image">
       <div className="container">
         <div className="row align-items-center g-4">
           <div className="col-lg-12">
-            <div className="hero-navy-content">
+            <div className="hero-glass-card">
               <h1 className="display-5 fw-bold">
                 Built for Real Estate Investors.
               </h1>
@@ -15,10 +15,10 @@ const Home = () => (
                 property’s cash flow, not your W-2.
               </h5>
               <div className="d-flex flex-wrap gap-3">
-                <Link className="btn btn-light btn-lg" to="/request-quote">
+                <Link className="btn btn-primary btn-lg" to="/request-quote">
                   Request a Quote
                 </Link>
-                <Link className="btn btn-outline-light btn-lg" to="/loan-programs">
+                <Link className="btn btn-lg btn-loan-options" to="/loan-programs">
                   Loan Programs
                 </Link>
               </div>
@@ -36,6 +36,7 @@ const Home = () => (
             to="/purchase"
             aria-label="Investment Property Purchase"
           >
+            <span className="hero-cta-button__badge" aria-hidden="true" />
             <span className="hero-cta-button__text">Purchase</span>
             <span className="visually-hidden">Investment Property Purchase</span>
           </Link>
@@ -44,6 +45,7 @@ const Home = () => (
             to="/refinance"
             aria-label="Refinance"
           >
+            <span className="hero-cta-button__badge" aria-hidden="true" />
             <span className="hero-cta-button__text">Refinance</span>
             <span className="visually-hidden">Refinance</span>
           </Link>
@@ -52,6 +54,7 @@ const Home = () => (
             to="/access-equity"
             aria-label="Access Equity"
           >
+            <span className="hero-cta-button__badge" aria-hidden="true" />
             <span className="hero-cta-button__text">Access Equity</span>
             <span className="visually-hidden">Access Equity</span>
           </Link>

@@ -4,7 +4,7 @@ const PurchasePage = () => (
   <main>
     <section
       id="purchase-hero"
-      className="hero-section"
+      className="hero-section hero-section--image hero-section--image-sky hero-section--image-contrast"
     >
       <div className="container">
         <div className="row align-items-center g-4">

@@ -2,23 +2,25 @@ import { Link } from 'react-router-dom'
 
 const LoanProgramsPage = () => (
   <main>
-    <section id="loan-options-hero" className="hero-section">
+    <section id="loan-options-hero" className="hero-section hero-section--image hero-section--image-house-2">
       <div className="container">
         <div className="row align-items-center g-4">
-          <div className="col-lg-6">
-            <p className="text-uppercase text-primary fw-semibold mb-2">
-              Loan programs
-            </p>
-            <h1 className="display-5 fw-bold">
-              Compare the programs.
-            </h1>
-            <p className="lead text-muted">
-              All of these are business-purpose loans on non-owner-occupied property.
-            </p>
-            <div className="d-flex flex-wrap gap-3">
-              <Link className="btn btn-outline-primary btn-lg" to="/request-quote">
-                Request a Quote
-              </Link>
+          <div className="col-lg-12">
+            <div className="hero-card p-4 p-md-5 light-fade">
+              <p className="text-uppercase text-primary fw-semibold mb-2">
+                Loan programs
+              </p>
+              <h1 className="display-5 fw-bold">
+                Compare the programs.
+              </h1>
+              <p className="lead text-muted">
+                All of these are business-purpose loans on non-owner-occupied property.
+              </p>
+              <div className="d-flex flex-wrap gap-3">
+                <Link className="btn btn-outline-primary btn-lg" to="/request-quote">
+                  Request a Quote
+                </Link>
+              </div>
             </div>
           </div>
         </div>
