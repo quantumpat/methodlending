@@ -2,9 +2,9 @@ import ProgramPage from '../components/ProgramPage'
 
 const FixAndFlipPage = () => (
   <ProgramPage
-    eyebrow="FIX & FLIP LENDING"
-    title="Fix & flip financing for real estate investors."
-    intro="Short-term financing to purchase and renovate residential investment properties for resale. We review your deal and arrange the loan through our third-party lending partners, so you can focus on the project."
+    eyebrow="FIX & FLIP LOANS"
+    title="Short-term financing to buy, renovate, and sell."
+    intro="For residential investment properties you plan to sell after the renovation. We review your deal and arrange the loan through our third-party lending partners."
     highlights={[
       { value: 'Up to 93%', desc: 'loan-to-cost (LTC)' },
       { value: 'Up to 90%', desc: 'of purchase price' },

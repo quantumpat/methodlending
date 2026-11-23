@@ -143,6 +143,8 @@ function App() {
         <Route path="/terms-of-use" element={<TermsOfUse />} />
         <Route path="/privacy" element={<Navigate to="/privacy-policy" replace />} />
         <Route path="/terms" element={<Navigate to="/terms-of-use" replace />} />
+        <Route path="/terms-of-service" element={<Navigate to="/terms-of-use" replace />} />
+        <Route path="/markets" element={<Navigate to="/markets-served" replace />} />
       </Routes>
 
       <footer className="footer border-top">

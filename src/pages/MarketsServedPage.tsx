@@ -233,12 +233,10 @@ const MarketsServedPage = () => {
             <span className="markets-hero__dot" aria-hidden="true" />
             36 states
           </div>
-          <h1>
-            Markets We <em>Serve</em>
-          </h1>
+          <h1>Available in 36 states.</h1>
           <p>
-            We quote business-purpose DSCR loans in 36 states. No <span className="text-nowrap">W-2s</span>. No
-            personal income docs. Qualification is based on the property’s cash flow.
+            We quote business-purpose DSCR loans in the states shown below. Qualification is based on the
+            property’s cash flow, not <span className="text-nowrap">W-2s</span> or personal income docs.
           </p>
           <div className="markets-hero__actions">
             <Link className="btn btn-primary btn-lg" to="/request-quote">
@@ -255,7 +253,7 @@ const MarketsServedPage = () => {
         <div className="container">
           <div className="markets-section-header">
             <h2>Coverage Map</h2>
-            <p>Hover any state to check availability. Blue means Method Lending is open for business there.</p>
+            <p>Blue states are ones where we can quote a business-purpose DSCR loan. Hover a state to check.</p>
           </div>
           <div className="markets-map-card">
             <div className="markets-legend">
@@ -339,10 +337,10 @@ const MarketsServedPage = () => {
       <section id="markets-disclaimer" className="markets-disclaimer section">
         <div className="container">
           <p>
-            <strong>Disclaimer:</strong> Method Lending, LLC originates business purpose loans only. This map
-            reflects states where Method Lending currently accepts business purpose DSCR loan applications through
-            its LLC structure. Availability subject to change. Not all products available in all states. This is not
-            an offer to lend.
+            <strong>Disclaimer:</strong> Method Lending, LLC is a mortgage broker that arranges business-purpose
+            financing through third-party lending partners. This map shows states where we can currently quote a
+            business-purpose DSCR loan. Availability can change, and not every program is available in every state.
+            This is not a commitment to lend.
           </p>
         </div>
       </section>

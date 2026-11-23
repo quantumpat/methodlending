@@ -2,7 +2,7 @@ import ProgramPage from '../components/ProgramPage'
 
 const RehabLoansPage = () => (
   <ProgramPage
-    eyebrow="REHAB / RENOVATE-TO-RENT LENDING"
+    eyebrow="REHAB / RENOVATE-TO-RENT LOANS"
     title="Rehab financing to renovate and rent."
     intro="Short-term financing to renovate an investment property you intend to hold as a rental. Any future DSCR refinance requires separate qualification and approval."
     highlights={[

@@ -7,62 +7,62 @@
   },
   {
     "path": "/purchase",
-    "title": "DSCR Purchase Loans | Method Lending",
-    "description": "DSCR purchase loans built for real estate investors with clear underwriting, flexible terms, and fast closings.",
+    "title": "Buy an Investment Property | Method Lending",
+    "description": "Buy an investment property. Most purchase quotes start with DSCR: the property’s rent, not your personal income.",
     "image": "/images/og/page-purchase.png"
   },
   {
     "path": "/refinance",
-    "title": "DSCR Refinance | Method Lending",
-    "description": "Refinance to unlock equity and stabilize cash flow with DSCR-focused options and flexible structures.",
+    "title": "Refinance an Investment Property | Method Lending",
+    "description": "Refinance an investment property and qualify on the property’s rent. Change your rate or term, or see Access Equity for cash-out.",
     "image": "/images/og/page-refinance.png"
   },
   {
     "path": "/access-equity",
     "title": "Access Equity | Method Lending",
-    "description": "Turn built-up equity into capital for acquisitions, renovations, or portfolio growth.",
+    "description": "Pull cash out of an investment property, qualified on the property’s income, not your tax returns.",
     "image": "/images/og/page-access-equity.png"
   },
   {
     "path": "/loan-programs",
     "title": "Loan Programs | Method Lending",
-    "description": "Compare DSCR, asset utilization, and alternative documentation programs built for investors.",
+    "description": "Loan programs for investment property, including DSCR, asset utilization, bank statement / alt doc, multi-unit, fix and flip, rehab, and ground-up.",
     "image": "/images/og/page-loan-options.png"
   },
   {
     "path": "/fix-and-flip",
-    "title": "Fix & Flip Loans – Method Lending",
-    "description": "Short-term fix & flip financing for residential investment properties, arranged through Method Lending’s third-party lending partners.",
+    "title": "Fix & Flip Loans | Method Lending",
+    "description": "Short-term financing to buy, renovate, and sell a residential investment property, arranged through third-party lending partners.",
     "image": "/images/og/page-home.png"
   },
   {
     "path": "/rehab-loans",
-    "title": "Rehab Loans – Method Lending",
-    "description": "Short-term rehab financing to renovate investment properties you plan to hold as rentals, arranged through third-party lending partners.",
+    "title": "Rehab Loans | Method Lending",
+    "description": "Short-term rehab financing to renovate an investment property you plan to hold as a rental, arranged through third-party lending partners.",
     "image": "/images/og/page-home.png"
   },
   {
     "path": "/ground-up-construction",
-    "title": "Construction Loans – Method Lending",
-    "description": "Ground-up construction financing for residential investment properties, arranged through Method Lending’s third-party lending partners.",
+    "title": "Construction Loans | Method Lending",
+    "description": "Financing to build a new residential investment property, arranged through third-party lending partners.",
     "image": "/images/og/page-home.png"
   },
   {
     "path": "/markets-served",
-    "title": "Markets Served | Method Lending",
-    "description": "Business-purpose DSCR loans for real estate investors in 36 states.",
+    "title": "Available in 36 States | Method Lending",
+    "description": "Available in 36 states. We quote business-purpose DSCR loans where the map is blue.",
     "image": "/images/og/page-markets-served.png"
   },
   {
     "path": "/team",
     "title": "Team | Method Lending",
-    "description": "Meet the Method Lending team serving real estate investors.",
+    "description": "Aaron Iverson and Miles Trotter, the two people who will work your deal.",
     "image": "/images/og/page-our-team.png"
   },
   {
     "path": "/request-quote",
     "title": "Request a Quote | Method Lending",
-    "description": "Request a custom quote for your investment property purchase, refinance, or cash-out.",
+    "description": "Tell us about your deal, or book a 20-minute call.",
     "image": "/images/og/page-request-a-quote.png"
   },
   {

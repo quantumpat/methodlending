@@ -29,6 +29,26 @@
       "source": "/terms/",
       "destination": "/terms-of-use",
       "statusCode": 301
+    },
+    {
+      "source": "/terms-of-service",
+      "destination": "/terms-of-use",
+      "statusCode": 301
+    },
+    {
+      "source": "/terms-of-service/",
+      "destination": "/terms-of-use",
+      "statusCode": 301
+    },
+    {
+      "source": "/markets",
+      "destination": "/markets-served",
+      "statusCode": 301
+    },
+    {
+      "source": "/markets/",
+      "destination": "/markets-served",
+      "statusCode": 301
     }
   ],
   "rewrites": [

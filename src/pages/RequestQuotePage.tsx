@@ -94,12 +94,8 @@ const RequestQuotePage = () => {
           <div className="row g-4">
             <div className="col-lg-8">
               <p className="text-uppercase text-primary fw-semibold mb-2">Request a Quote</p>
-              <h1 className="display-5 fw-bold">
-                Tell us about your deal.
-                <br />
-                We’ll respond fast.
-              </h1>
-              <p className="lead text-muted">Send the deal, or pick a time for a 20-minute call.</p>
+              <h1 className="display-5 fw-bold">Tell us about your deal, or book a 20-minute call.</h1>
+              <p className="lead text-muted">Use the form or the calendar below.</p>
             </div>
           </div>
 
