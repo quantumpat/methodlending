@@ -57,24 +57,24 @@
     "path": "/team",
     "title": "Team | Method Lending",
     "description": "Meet the Method Lending team serving real estate investors.",
-    "image": "/images/og/page-team.png"
+    "image": "/images/og/page-our-team.png"
   },
   {
     "path": "/request-quote",
     "title": "Request a Quote | Method Lending",
     "description": "Request a custom quote for your investment property purchase, refinance, or cash-out.",
-    "image": "/images/og/page-request-quote.png"
+    "image": "/images/og/page-request-a-quote.png"
   },
   {
     "path": "/privacy-policy",
     "title": "Privacy Policy | Method Lending",
     "description": "Privacy Policy for Method Lending.",
-    "image": "/images/og/page-privacy-policy.png"
+    "image": "/images/og/page-home.png"
   },
   {
     "path": "/terms-of-use",
     "title": "Terms of Use | Method Lending",
     "description": "Terms of Use for Method Lending.",
-    "image": "/images/og/page-terms-of-use.png"
+    "image": "/images/og/page-home.png"
   }
 ]

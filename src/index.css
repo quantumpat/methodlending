@@ -161,6 +161,19 @@ a {
   text-decoration: none;
 }
 
+.btn-loan-options {
+  background-color: #ffffff;
+  border-color: #f0f0f0;
+  color: #0f172a;
+}
+
+.btn-loan-options:hover,
+.btn-loan-options:focus {
+  background-color: #0f172a;
+  border-color: #0f172a;
+  color: #ffffff;
+}
+
 .markets-page {
   background: radial-gradient(circle at top, #f7fafc 0%, #edf2f7 48%, #f8fafc 100%);
 }
@@ -439,29 +452,72 @@ a {
   background: radial-gradient(circle at top right, #d9e8f4, #f8fafc 55%);
 }
 
-.hero-section--navy {
-  background: #004b83;
-  color: #ffffff;
+.hero-section--image {
+  position: relative;
+  background: url('/images/House%201.png') center/cover no-repeat;
+  color: #0f172a;
+  image-rendering: high-quality;
 }
 
-#home.hero-section--navy {
-  padding: 7rem 0 6.5rem;
+#home.hero-section--image {
+  min-height: calc(50vh - 168px);
+  padding: 8.25rem 0 7.5rem;
 }
 
-.hero-navy-content {
-  display: flex;
+.hero-section--image-house-2 {
+  background-image: url('/images/House%202.jpg');
+}
+
+.hero-section--image-sky {
+  background-image: url('/images/Sky.png');
+}
+
+.hero-section--image::before {
+  content: '';
+  position: absolute;
+  inset: 0;
+  background: linear-gradient(90deg, rgba(248, 250, 252, 0.3), rgba(248, 250, 252, 0.2) 45%, rgba(15, 23, 42, 0));
+  z-index: 0;
+}
+
+.hero-section--image-contrast::before {
+  background: linear-gradient(90deg, rgba(248, 250, 252, 0.85), rgba(248, 250, 252, 0.55) 55%, rgba(15, 23, 42, 0));
+}
+
+.hero-section--image .container {
+  position: relative;
+  z-index: 1;
+}
+
+.hero-glass-card {
+  display: inline-flex;
   flex-direction: column;
   gap: 1.1rem;
-  max-width: 840px;
+  padding: 2.5rem 2.75rem;
+  border-radius: 1.5rem;
+  background: linear-gradient(135deg, rgba(255, 255, 255, 0.72), rgba(255, 255, 255, 0.45));
+  border: 1px solid rgba(255, 255, 255, 0.7);
+  box-shadow:
+    0 30px 60px rgba(15, 23, 42, 0.2),
+    inset 0 0 0 1px rgba(255, 255, 255, 0.25);
+  backdrop-filter: blur(18px) saturate(150%);
+  -webkit-backdrop-filter: blur(18px) saturate(150%);
+  width: min(100%, 840px);
 }
 
-.hero-navy-content .display-5 {
+.hero-glass-card .display-5 {
   margin-bottom: 0;
 }
 
-.hero-navy-content .lead {
+.hero-glass-card .lead {
   margin-bottom: 0.25rem;
-  color: #ffffff;
+  color: #1f2937;
+}
+
+@media (max-width: 768px) {
+  .hero-glass-card {
+    padding: 2rem 1.75rem;
+  }
 }
 
 .check-list {
@@ -603,6 +659,26 @@ a {
   }
 }
 
+.hero-cta-button__badge {
+  width: 44px;
+  height: 44px;
+  border-radius: 0;
+  border: none;
+  background-color: transparent;
+  background-image: var(--cta-icon);
+  background-repeat: no-repeat;
+  background-position: center;
+  background-size: contain;
+  flex-shrink: 0;
+}
+
+@media (max-width: 768px) {
+  .hero-cta-button__badge {
+    width: 38px;
+    height: 38px;
+  }
+}
+
 .hero-cta-button__text {
   font-size: 1.3376rem;
   font-weight: 600;
@@ -614,6 +690,18 @@ a {
 .hero-cta-button__arrow {
   font-size: 1.1rem;
   color: #0f172a;
+}
+
+.hero-cta-button--access-equity {
+  --cta-icon: url('/images/coins%20and%20house.png');
+}
+
+.hero-cta-button--refinance {
+  --cta-icon: url('/images/house%20with%20money.png');
+}
+
+.hero-cta-button--purchase {
+  --cta-icon: url('/images/keys.png');
 }
 
 .hero-card,
