@@ -10,13 +10,14 @@ const PurchasePage = () => (
         <div className="row align-items-center g-4">
           <div className="col-lg-6">
             <p className="text-uppercase text-primary fw-semibold mb-2">
-              Purchase lending
+              Purchase loans
             </p>
             <h1 className="display-5 fw-bold">
-              DSCR purchase loans built for real estate investors.
+              Buy an investment property.
             </h1>
             <p className="lead text-muted">
-              Our DSCR programs focus on the property’s ability to generate cash flow, allowing investors to qualify based on rental income rather than personal earnings.
+              Most purchase quotes start with DSCR: the property’s rent, not your personal income. If that
+              isn’t a fit, we can also look at bank-statement or asset programs.
             </p>
           </div>
         </div>
@@ -25,7 +26,7 @@ const PurchasePage = () => (
 
     <section id="purchase-highlights" className="section bg-light">
       <div className="container">
-        <h2 className="h3 fw-bold">What you can expect on a purchase</h2>
+        <h2 className="h3 fw-bold">How a purchase loan works here.</h2>
         <ul className="check-list mb-0">
           <li>Qualify on the property’s rent, not your personal income.</li>
           <li>Credit scores from 620, depending on the program.</li>

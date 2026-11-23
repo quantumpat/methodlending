@@ -632,7 +632,7 @@ a {
   text-align: left;
   box-shadow: 0 8px 18px rgba(15, 23, 42, 0.08);
   transition: transform 0.2s ease, box-shadow 0.2s ease, border-color 0.2s ease;
-  min-height: 72px;
+  min-height: 88px;
   width: 100%;
   display: flex;
   align-items: center;
@@ -654,7 +654,7 @@ a {
 
 @media (max-width: 768px) {
   .hero-cta-button {
-    min-height: 64px;
+    min-height: 80px;
     padding: 0.65rem 0.9rem;
   }
 }
@@ -679,12 +679,25 @@ a {
   }
 }
 
+.hero-cta-button__copy {
+  display: flex;
+  flex-direction: column;
+  gap: 0.1rem;
+  flex: 1;
+}
+
 .hero-cta-button__text {
   font-size: 1.3376rem;
   font-weight: 600;
   color: #0f172a;
   letter-spacing: 0.01em;
-  flex: 1;
+}
+
+.hero-cta-button__sub {
+  font-size: 0.9rem;
+  font-weight: 400;
+  line-height: 1.35;
+  color: #475569;
 }
 
 .hero-cta-button__arrow {
@@ -730,6 +743,24 @@ a {
   display: flex;
   flex-direction: column;
   height: 100%;
+}
+
+.loan-option-card__facts {
+  margin-bottom: 1rem;
+}
+
+.loan-option-card__facts p {
+  margin-bottom: 0.6rem;
+  color: #475569;
+}
+
+.loan-option-card__facts p:last-child {
+  margin-bottom: 0;
+}
+
+.loan-option-card__facts strong {
+  font-weight: 600;
+  color: #0f172a;
 }
 
 .loan-option-card__cta {

@@ -2,9 +2,9 @@ import ProgramPage from '../components/ProgramPage'
 
 const GroundUpConstructionPage = () => (
   <ProgramPage
-    eyebrow="GROUND-UP CONSTRUCTION LENDING"
-    title="Ground-up construction financing for investors."
-    intro="Short-term financing to build new residential investment properties, whether you plan to sell the finished homes or hold them as rentals. We review your project and arrange the loan through our third-party lending partners."
+    eyebrow="GROUND-UP CONSTRUCTION LOANS"
+    title="Financing to build a new investment property."
+    intro="For new residential investment properties, whether you plan to sell them or hold them as rentals. We review your project and arrange the loan through our third-party lending partners."
     highlights={[
       { value: 'Up to 90%', desc: 'loan-to-cost (LTC)' },
       { value: 'Up to 75%', desc: 'of as-completed value' },

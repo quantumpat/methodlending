@@ -13,8 +13,8 @@ const TeamPage = () => (
               The two people who will work your deal.
             </h1>
             <p className="lead text-muted">
-              Aaron and Miles quote business-purpose loans for investors and stay
-              on the file through closing.
+              Aaron Iverson and Miles Trotter work investor deals here. One of them
+              will quote your file and stay on it through closing.
             </p>
             <div className="d-flex flex-wrap gap-3">
               <Link className="btn btn-primary btn-lg" to="/request-quote">
@@ -32,11 +32,6 @@ const TeamPage = () => (
     <section id="team-leadership" className="section bg-light">
       <div className="container">
         <div className="row g-4">
-          <div className="col-12">
-            <h2 className="h3 fw-bold">Meet the people behind Method.</h2>
-          </div>
-        </div>
-        <div className="row g-4 mt-1">
           <div className="col-lg-6">
             <div className="card team-card h-100 border-0 shadow-sm">
               <img
